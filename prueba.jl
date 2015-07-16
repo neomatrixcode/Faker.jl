@@ -9,10 +9,13 @@
 include("persona.jl")
 include("direccion.jl")
 include("trabajo.jl")
+include("datatime.jl")
 
 
 for i = 1:2
-	println("$(prefixe()) $(first_name()) $(last_name()) vive en $(state()) trabaja en $(trabajo()) $(zip_code("OAX"))")	
+	t= time("%H-%M:%S")
+	d = date("%Y-%m:%d")
+	println(" \n $(prefixe()) $(first_name()) $(last_name()) vive en $(state()) trabaja en $(trabajo()) $(zip_code("OAX")) $(timezone()) $(am_pm())  $(day_of_week()) $(months()) $(month_name()) $(time()) $(t) $(date()) $(d) $(iso8601()) $(date_time()) $(unix_time()) \n \n")	
 end
 
 
