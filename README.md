@@ -63,6 +63,7 @@ bs()             # => WestVirginia
 ###Date
 ---------------------
 
+```julia
 date_time_ad()                                       # => 1446-03-17 04:03:47
 month()                                              # => 10
 am_pm()                                              # => PM
@@ -83,6 +84,7 @@ century()                                            # => XV
 date(pattern="%Y-%m-%d")                             # => 1998-09-11
 year()         
 
+```
 ###Internet
 ---------------
 
