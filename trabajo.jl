@@ -626,4 +626,4 @@ jobs=("Academic librarian",
 
 
 
-trabajo() = jobs[rand(1:length(jobs))]
+job() = jobs[rand(1:length(jobs))]

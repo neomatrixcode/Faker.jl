@@ -88,9 +88,9 @@ function geo_coordinate( center=0, radius=0.001)
         end
 
         if center == 0
-            return float16(rand(-17.99 : 17.99))
+            return Float16(rand(-17.99 : 17.99))
         else
-            return float16(rand( center - radius : center + radius))
+            return Float16(rand( center - radius : center + radius))
         end
 end
 
