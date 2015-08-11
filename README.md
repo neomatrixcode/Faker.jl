@@ -76,7 +76,7 @@ date_time_this_decade()                              # => 2013-02-24 18:47:46
 day_of_week()                                        # => Thursday
 day_of_month()                                       # => 14
 time("%H:%M:%S")                                     # => 21:44:43
-date_time_between(start_date="-30y", end_date="now") # => 1990-01-30 11:47:01
+date_time_between("-30y", "now")                     # => 1990-01-30 11:47:01
 unix_time()                                          # => 711770812
 date_time_this_year()                                # => 2013-04-22 14:51:26
 timezone()                                           # => Atlantic/Reykjavik
@@ -121,16 +121,6 @@ words()          # => [u'corrupti', u'ipsum', u'inventore']
 paragraph()      # => Voluptatibus quae nihil aut amet quos. Vitae fugiat adipisci inventore eaque adipisci quia. Nostrum non et numquam illum. Sed id dolore quia.
 sentences()      # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro 
                       recusandae sit voluptatem sint accusamus.', u'Repellendus explicabo delectus ad #Name
---------------
-
-```julia
-
-first_name() # => "Kaci"
-last_name() # => "Ernser"
-prefixe() # => "Mr."
-
-
-```
 
 
 
@@ -139,15 +129,18 @@ prefixe() # => "Mr."
 
 Phone numbers may be in any of the following formats:
 
+  * +33(3)3333333333
+  * +33(3)3333333333
+  * 03333333333
+  * 03333333333
   * 333-333-3333
-  * (333) 333-3333
+  * (333)333-3333
   * 1-333-333-3333
   * 333.333.3333
   * 333-333-3333
-  * 333-333-3333 x3333
-  * (333) 333-3333 x3333
-  * 1-333-333-3333 x3333
-  * 333.333.3333 x3333
+  * (333)333-3333
+  * 1-333-333-3333
+  * 333-333-3333x333
 
 (Don't let the example output below fool you - any format can be returned at random.)
 
