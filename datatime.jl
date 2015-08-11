@@ -61,8 +61,8 @@
         	start_date = replace(start_date,"now","0y" )
 		end
 
-        start_date = DateTime(now()) + Dates.Year(int(replace(start_date,"y","")))
-        end_date = DateTime(now()) + Dates.Year(int(replace(end_date,"y","")))
+        start_date = DateTime(now()) + Dates.Year(Int(replace(start_date,"y","")))
+        end_date = DateTime(now()) + Dates.Year(Int(replace(end_date,"y","")))
 
          dr=(start_date : end_date)
         return replace(string(dr[rand(1:(length(dr)))]),"T"," ") 
