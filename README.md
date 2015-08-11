@@ -75,13 +75,13 @@ date_time_this_month()                               # => 2014-04-02 08:38:48
 date_time_this_decade()                              # => 2013-02-24 18:47:46
 day_of_week()                                        # => Thursday
 day_of_month()                                       # => 14
-time(pattern="%H:%M:%S")                             # => 21:44:43
+time("%H:%M:%S")                                     # => 21:44:43
 date_time_between(start_date="-30y", end_date="now") # => 1990-01-30 11:47:01
 unix_time()                                          # => 711770812
 date_time_this_year()                                # => 2013-04-22 14:51:26
 timezone()                                           # => Atlantic/Reykjavik
 century()                                            # => XV
-date(pattern="%Y-%m-%d")                             # => 1998-09-11
+date("%Y-%m-%d")                                     # => 1998-09-11
 year()         
 
 ```
