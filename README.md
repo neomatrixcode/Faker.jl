@@ -121,7 +121,7 @@ words()          # => [u'corrupti', u'ipsum', u'inventore']
 paragraph()      # => Voluptatibus quae nihil aut amet quos. Vitae fugiat adipisci inventore eaque adipisci quia. Nostrum non et numquam illum. Sed id dolore quia.
 sentences()      # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro 
                       recusandae sit voluptatem sint accusamus.', u'Repellendus explicabo delectus ad #Name
-
+```
 
 
 ###PhoneNumber
