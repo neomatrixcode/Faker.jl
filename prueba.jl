@@ -16,12 +16,14 @@ include("base.jl")
 include("company.jl")
 include("file.jl")
 include("internet.jl")
+include("lorem.jl")
+include("misc.jl")
 t= time("%H-%M:%S")
 d = date("%Y-%m:%d")
 p = bothify("## ??")
 
 for i=1:2
-	println(" \n $(prefixe()) $(first_name()) $(last_name()) vive en $(state()) trabaja en $(trabajo()) $(zip_code("OAX")) $(timezone()) $(am_pm())  $(day_of_week()) $(months()) $(month_name()) $(time()) $(t) $(date()) $(d) $(iso8601())$(date_time()) $(unix_time()) \n numero telefonico $(phone_number()) \n colores: $(color_name())  $(safe_color_name()) $(hex_color())  $(safe_hex_color())  $(rgb_color_list())  $(rgb_css_color()) \n$(street_name() ) \n $(p) \n $(company()) \n $(mime_type()) \n $(uri())")	
+	println(" \n $(prefixe()) $(first_name()) $(last_name()) vive en $(state()) trabaja en $(trabajo()) $(zip_code("OAX")) $(timezone()) $(am_pm())  $(day_of_week()) $(months()) $(month_name()) $(time()) $(t) $(date()) $(d) $(iso8601())$(date_time()) $(unix_time()) \n numero telefonico $(phone_number()) \n colores: $(color_name())  $(safe_color_name()) $(hex_color())  $(safe_hex_color())  $(rgb_color_list())  $(rgb_css_color()) \n$(street_name() ) \n $(p) \n $(company()) \n $(mime_type()) \n $(uri()) \n $(text(10)) \n $(password())")	
 
 end
 
