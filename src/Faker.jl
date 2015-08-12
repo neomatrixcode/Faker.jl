@@ -71,7 +71,7 @@ bothify
 #boolean
 
 
-#import Base: isequal isfinite isinf, isinteger,
+import Base #:  #isequal isfinite isinf, isinteger,
             # isless, isnan, isnull, isnumber, isreal, issubnormal,
             # typemin, typemax
 
