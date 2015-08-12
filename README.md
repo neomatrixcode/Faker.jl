@@ -1,7 +1,6 @@
 Faker
 =====
 [![Build Status](https://travis-ci.org/codeneomatrix/Faker.jl.svg)](https://travis-ci.org/codeneomatrix/Faker.jl)
-
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md)
 
 This package is a port of Perl's Data::Faker library that generates fake data.
