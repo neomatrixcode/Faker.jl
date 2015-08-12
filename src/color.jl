@@ -14,7 +14,7 @@
     hex_color()= [key for key in values(all_colors)][rand(1:140)]
         
 
-    safe_hex_color() = all_colors[ safe_color_name()]
+    safe_hex_color()= all_colors[ safe_color_name()]
     
         
 

@@ -1,11 +1,3 @@
-include("persona.jl")
-include("direccion.jl")
-include("trabajo.jl")
-include("company.jl")
-include("internet.jl")
-include("datatime.jl")
-include("trabajo.jl")
-#include("misc.jl")
 
  simple_profile()=
         return Dict(

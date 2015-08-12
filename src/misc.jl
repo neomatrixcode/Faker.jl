@@ -1,6 +1,6 @@
 #Pkg.add("Nettle")
 using Nettle
-include("datatime.jl")
+
 
     language_codes = ("cn", "de", "el", "en", "es", "fr", "it", "pt", "ru")
 
@@ -14,7 +14,7 @@ include("datatime.jl")
 
     sha256()= bytes2hex(sha256_hash(string(rand())))
 
-    country_code()= countries[rand(1:length(countries))]["code"]
+    country_code()= timeszon[rand(1:length(timeszon))]["code"]
 
     language_code() = language_codes[rand(1:length(language_codes))] 
 

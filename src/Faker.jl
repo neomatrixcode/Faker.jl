@@ -73,24 +73,27 @@ module Faker
 
 importall Base
 import Base.Callable
+import Base: getindex
 #:  #isequal isfinite isinf, isinteger,
             # isless, isnan, isnull, isnumber, isreal, issubnormal,
             # typemin, typemax
 
 # ---------------------------------------------------------------------------------------
-
-#include("persona.jl")
-#include("direccion.jl")
-#include("trabajo.jl")
-#include("datatime.jl")
-#include("phone_number.jl")
-#include("color.jl")
+include("creditcard.jl")
+include("persona.jl")
+include("direccion.jl")
+include("trabajo.jl")
+include("datatime.jl")
+include("phone_number.jl")
+include("color.jl")
 include("base.jl")
-#include("company.jl")
-#include("file.jl")
-#include("internet.jl")
-#include("lorem.jl")
-#include("misc.jl")
-#include("profile.jl")
+include("company.jl")
+include("file.jl")
+include("internet.jl")
+include("lorem.jl")
+include("misc.jl")
+include("profile.jl")
+include("country.jl")
+include("user_agent.jl")
 
 end # module

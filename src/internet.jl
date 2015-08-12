@@ -1,6 +1,3 @@
-include("persona.jl")
-include("base.jl")
-include("company.jl")
 
     safe_email_tlds = ("org", "com", "net")
     free_email_domains = ("gmail.com", "yahoo.com", "hotmail.com")
@@ -33,7 +30,7 @@ include("company.jl")
 
     free_email()= "$(user_name())@$(free_email_domain())"
 
-    tld()= tlds[rand(1:length(tlds))]
+    domain_suffix()= tlds[rand(1:length(tlds))]
 
     domain_word()=
        ( company_elements = split(company(), [',', ' ','-']);
@@ -46,7 +43,7 @@ include("company.jl")
 
         lowercase(sal) )
 
-    domain_name()="$(domain_word()).$(tld())"
+    domain_name()="$(domain_word()).$(domain_suffix())"
 
     company_email()= "$(user_name())@$(domain_name())"
 

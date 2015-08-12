@@ -1,4 +1,3 @@
-include("persona.jl")
 
     catch_phrase_words = (
         (  "habilidad", "acceso", "adaptador", "algoritmo", "alianza",

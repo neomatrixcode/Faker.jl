@@ -1,5 +1,4 @@
-include("base.jl")
-include("persona.jl")
+
 type CreditCard
     name :: String
     prefixes :: String
@@ -43,7 +42,7 @@ end
     end
    
     function credit_card_number(card="None")
-         if card_type == "None"
+         if card == "None"
             card = [key for key in  keys(credit_card_types)][rand(1:9)]
             card = credit_card_types[card]
         end 
@@ -58,8 +57,8 @@ end
         return expire_date.strftime(date_format)
     end=#
 
-    function credit_card_full(card_type="None")
-        if card_type == "None"
+    function credit_card_full(card_types="None")
+        if card_types == "None"
             card = [key for key in  keys(credit_card_types)][rand(1:9)]
         end
         card = credit_card_types[card]
