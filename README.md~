@@ -23,8 +23,6 @@ Faker.email() #  => "kirsten.greenholt@corkeryfisher.info"
 ```
 
 ##Base
------
-```julia
 fake.random_digit()                             # => 9
 fake.random_digit_not_null()                    # => 1
 fake.random_digit_or_empty()                    # => 5
@@ -36,7 +34,7 @@ fake.random_element(("a", "b", "b"))            # => b
 fake.lexify("????")                             # => cIxw
 fake.numerify("###")                            # => 643
 fake.bothify("## ??")                           # => 92 Hu
-```
+
 
 ###Address
 -----------------
