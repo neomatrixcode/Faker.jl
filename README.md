@@ -3,7 +3,7 @@ Faker
 [![Build Status](https://travis-ci.org/codeneomatrix/Faker.jl.svg)](https://travis-ci.org/codeneomatrix/Faker.jl)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md)
 
-This package is a port of Perl's Data::Faker library that generates fake data.
+This package is a library that generates fake data.
 
 
 NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
@@ -21,6 +21,20 @@ using Faker
 
 Faker.email() #  => "kirsten.greenholt@corkeryfisher.info"
 ```
+
+##Base
+fake.random_digit()                             # => 9
+fake.random_digit_not_null()                    # => 1
+fake.random_digit_or_empty()                    # => 5
+fake.random_number()                            # => 31730
+fake.random_int()                               # => 7545
+fake.randomize_nb_elements()                    # => 10
+fake.random_letter()                            # => N
+fake.random_element(("a", "b", "b"))            # => b
+fake.lexify("????")                             # => cIxw
+fake.numerify("###")                            # => 643
+fake.bothify("## ??")                           # => 92 Hu
+
 
 ###Address
 -----------------
@@ -76,8 +90,8 @@ Faker.date_time_this_month()                    # => 2014-04-02 08:38:48
 Faker.date_time_this_decade()                   # => 2013-02-24 18:47:46
 Faker.day_of_week()                             # => Thursday
 Faker.day_of_month()                            # => 14
-time("%H:%M:%S")                                # => 21:44:43
-date_time_between("-30y", "now")                # => 1990-01-30 11:47:01
+Faker.time("%H:%M:%S")                                # => 21:44:43
+Faker.date_time_between("-30y", "now")                # => 1990-01-30 11:47:01
 Faker.unix_time()                               # => 711770812
 Faker.date_time_this_year()                     # => 2013-04-22 14:51:26
 Faker.timezone()                                # => Atlantic/Reykjavik
