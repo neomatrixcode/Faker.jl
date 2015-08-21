@@ -11,7 +11,7 @@ NOTE: While Faker generates data at random, returned values are not guaranteed t
 Installing
 ----------
 ```bash
-Pkg.clone("git://github.com/codeneomatrix/Faker.jl.git")
+Pkg.add("Faker")
 ```
 
 ##Usage
@@ -25,17 +25,17 @@ Faker.email() #  => "kirsten.greenholt@corkeryfisher.info"
 ##Base
 -----
 ```julia
-fake.random_digit()                             # => 9
-fake.random_digit_not_null()                    # => 1
-fake.random_digit_or_empty()                    # => 5
-fake.random_number()                            # => 31730
-fake.random_int()                               # => 7545
-fake.randomize_nb_elements()                    # => 10
-fake.random_letter()                            # => N
-fake.random_element(("a", "b", "b"))            # => b
-fake.lexify("????")                             # => cIxw
-fake.numerify("###")                            # => 643
-fake.bothify("## ??")                           # => 92 Hu
+Faker.random_digit()                             # => 9
+Faker.random_digit_not_null()                    # => 1
+Faker.random_digit_or_empty()                    # => 5
+Faker.random_number()                            # => 31730
+Faker.random_int()                               # => 7545
+Faker.randomize_nb_elements()                    # => 10
+Faker.random_letter()                            # => N
+Faker.random_element(("a", "b", "b"))            # => b
+Faker.lexify("????")                             # => cIxw
+Faker.numerify("###")                            # => 643
+Faker.bothify("## ??")                           # => 92 Hu
 ```
 
 ###Address
