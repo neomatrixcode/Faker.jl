@@ -1,6 +1,7 @@
 Faker
 =====
 [![Build Status](https://travis-ci.org/codeneomatrix/Faker.jl.svg)](https://travis-ci.org/codeneomatrix/Faker.jl)
+[![Faker](http://pkg.julialang.org/badges/Faker_0.4.svg)](http://pkg.julialang.org/?pkg=Faker)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md)
 
 This package is a library that generates fake data.
