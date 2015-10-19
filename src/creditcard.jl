@@ -1,7 +1,7 @@
 
 type CreditCard
-    name :: String
-    prefixes :: String
+    name :: AbstractString
+    prefixes :: AbstractString
     length :: Int64
     security_code :: String
     security_code_length :: Int64
