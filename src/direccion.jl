@@ -43,7 +43,7 @@ state() = states[rand(1:length(states))][2]
 
 state_abbr() = states[rand(1:length(states))][1]
 
-zip_code(p::String)= zip_codes[p][rand(1:2)]
+zip_code(p::AbstractString)= zip_codes[p][rand(1:2)]
 
 street_name() = street_name_formats[rand(1:length(street_name_formats))]
 
