@@ -3,7 +3,7 @@ type CreditCard
     name :: AbstractString
     prefixes :: AbstractString
     length :: Int64
-    security_code :: String
+    security_code :: AbstractString
     security_code_length :: Int64
 end
 
