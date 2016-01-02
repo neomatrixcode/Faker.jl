@@ -17,7 +17,7 @@
      random_number( digits= 1 ) = AbstractString(rand(0 : (10^digits) - 1))
        
 
-     random_letter()= rand(0:1)>=0.5? AbstractString(rand('a':'z')) : AbstractString(rand('A':'Z'))
+     random_letter()= rand(0:1)>=0.5? "$(rand('a':'z'))" : "$(rand('A':'Z'))"
         
      random_element( elements=("a", "b", "b"))= elements[rand(1: length(elements))]
         
