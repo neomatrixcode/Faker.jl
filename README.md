@@ -13,7 +13,8 @@ NOTE: While Faker generates data at random, returned values are not guaranteed t
 Installing
 ----------
 ```bash
-Pkg.add("Faker")
+1) Pkg.add("Faker")
+2) Pkg.clone("git://github.com/codeneomatrix/Faker.jl.git")
 ```
 
 ##Usage
@@ -132,13 +133,13 @@ Faker.text()                                    # => Et dolor voluptates quaerat
 Faker.sentence()                                # => Alias officiis dignissimos maxime nam ad distinctio.
 Faker.word()                                    # => qui
 Faker.paragraphs()                              # => [u'Numquam cupiditate omnis impedit nesciunt laboriosam. Vitae hic iste qui deleniti quo incidunt ratione.
-                       Natus ullam libero dolore sunt.', u'Veritatis nostrum quod dolorem soluta cupiditate qui incidunt. 
-                       Rerum minus commodi repreh enderit. Sed in dolor quia ut est. Impedit eos nihil aut m olestiae 
+                       Natus ullam libero dolore sunt.', u'Veritatis nostrum quod dolorem soluta cupiditate qui incidunt.
+                       Rerum minus commodi repreh enderit. Sed in dolor quia ut est. Impedit eos nihil aut m olestiae
                        reiciendis.', u'Ullam dolor molestias sit officii s expedita fuga repellat. Et fuga sequi sit. Aperiam
                       quaer at sint quasi vel nam.']
 Faker.words()                                   # => [u'corrupti', u'ipsum', u'inventore']
 Faker.paragraph()                               # => Voluptatibus quae nihil aut amet quos. Vitae fugiat adipisci inventore eaque adipisci quia. Nostrum non et numquam illum. Sed id dolore quia.
-Faker.sentences()                               # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro 
+Faker.sentences()                               # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro
                       recusandae sit voluptatem sint accusamus.', u'Repellendus explicabo delectus ad #Name
 ```
 
@@ -232,7 +233,7 @@ Faker.simple_profile()                          # => ("name"=>"Benito","mail"=>"
                                                       "birthdate"=>"1997-3-16","sex"=>"F",
                                                       "address"=>"Pasaje Morelos 373 572 San Carlota de la Montaña,BC 47785")
 Faker.profile()                                 # => ("blood_group"=>"AB-","job"=>"Radiographer, therapeutic",
-                                                      "residence"=>"Ampliación Escobar 515 Interior 017 San Carlota de la Montaña, 
+                                                      "residence"=>"Ampliación Escobar 515 Interior 017 San Carlota de la Montaña,
                                                       Q. ROO 75906","company"=>"Bañuelos-Delgadillo y Asociados",
                                                       "website"=>Any["http://bdya.com/","http://www.mgyc.com/"],
                                                       "current_location"=>(4.50390625,17.015625))
