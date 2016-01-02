@@ -13,12 +13,12 @@
 
     function date_time()
     fec = DateTime(rand(1970:2020),1,1,rand(01:23),rand(00:59),rand(00:59)) + Dates.Day(rand(01:31)) + Dates.Month(rand(01:12))
-    sar=replace((string(fec)),"T"," ")
+    sar=replace((AbstractString(fec)),"T"," ")
     return sar
 	end 
 
         
-    date_time_ad()= replace((string(iso8601())),"T"," ")
+    date_time_ad()= replace((AbstractString(iso8601())),"T"," ")
 
     iso8601()= 
     DateTime(rand(1970:2020),1,1,rand(01:23),rand(00:59),rand(00:59)) + Dates.Day(rand(01:31)) + Dates.Month(rand(01:12))
@@ -65,7 +65,7 @@
         end_date = DateTime(now()) + Dates.Year(parse(Int,replace(end_date,"y","")))
 
          dr=(start_date : end_date)
-        return replace(string(dr[rand(1:(length(dr)))]),"T"," ") 
+        return replace(AbstractString(dr[rand(1:(length(dr)))]),"T"," ") 
 
     end
 
@@ -85,10 +85,10 @@
         elseif (after_now==false) && before_now
             dr=(this_century_start : r)
         else
-           return  replace(string(r),"T"," ")
+           return  replace(AbstractString(r),"T"," ")
         end
 
-        return replace(string(dr[rand(1:(length(dr)))]),"T"," ") 
+        return replace(AbstractString(dr[rand(1:(length(dr)))]),"T"," ") 
        
     end 
 
@@ -106,10 +106,10 @@
         elseif (after_now==false) && before_now
             dr=(this_decade_start : r)
         else
-           return  replace(string(r),"T"," ")
+           return  replace(AbstractString(r),"T"," ")
         end
 
-        return replace(string(dr[rand(1:(length(dr)))]),"T"," ") 
+        return replace(AbstractString(dr[rand(1:(length(dr)))]),"T"," ") 
     end
 
 
@@ -129,10 +129,10 @@
         elseif (after_now==false) && before_now
             dr=(this_year_start : r)
         else
-           return  replace(string(r),"T"," ")
+           return  replace(AbstractString(r),"T"," ")
         end
 
-        return replace(string(dr[rand(1:(length(dr)))]),"T"," ") 
+        return replace(AbstractString(dr[rand(1:(length(dr)))]),"T"," ") 
     end
 
 
@@ -151,10 +151,10 @@
         elseif (after_now==false) && before_now
             dr=(this_month_start : r)
         else
-           return  replace(string(r),"T"," ")
+           return  replace(AbstractString(r),"T"," ")
         end
 
-        return replace(string(dr[rand(1:(length(dr)))]),"T"," ") 
+        return replace(AbstractString(dr[rand(1:(length(dr)))]),"T"," ") 
     end
         
     am_pm()= ap[rand(1:length(ap))]

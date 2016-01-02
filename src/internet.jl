@@ -37,7 +37,7 @@
         sal = "";
         for i in company_elements
                    if length(i)>0
-                       sal*=string(i[1])
+                       sal*=AbstractString(i[1])
                    end
               end;
 

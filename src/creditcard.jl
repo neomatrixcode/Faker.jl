@@ -87,7 +87,7 @@ end
 
     function generate_number(prefix, len)
         """
-        "prefix" is the start of the CC number as a string, any number of digits.
+        "prefix" is the start of the CC number as a AbstractString, any number of digits.
         "len" is the len of the CC number to generate. Typically 13 or 16
         """
         number = prefix
@@ -100,7 +100,7 @@ end
         tot = 1
         pos = 1
         while pos < (len - 1)
-            tot += luhn_lookup[string(reverse[pos])]
+            tot += luhn_lookup[AbstractString(reverse[pos])]
             if pos != (len - 2)
                 tot += Int(reverse[pos+1])
             end
@@ -108,6 +108,6 @@ end
         end 
         # Calculate check digit
         check_digit = (10 - (tot % 10)) % 10
-        number *= string(check_digit)
+        number *= AbstractString(check_digit)
         return number
     end 
