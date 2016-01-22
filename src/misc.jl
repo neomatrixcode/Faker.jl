@@ -8,11 +8,11 @@ using Nettle
 
     null_boolean()=Dict( 0=> "none", 1=> true, -1=> false)[rand(-1:1)]
 
-    md5() = hexdigest("md5", AbstractString(rand()))
+    md5() = hexdigest("md5", "$(rand())")
 
-    sha1() = hexdigest("sha1", AbstractString(rand()))
+    sha1() = hexdigest("sha1", "$(rand())")
 
-    sha256() = hexdigest("sha256", AbstractString(rand()))
+    sha256() = hexdigest("sha256", "$(rand())")
 
     country_code()= timeszon[rand(1:length(timeszon))]["code"]
 
@@ -27,10 +27,10 @@ using Nettle
     password( longitud=10, special_caracteres=true, digitos=true, upper_case=true, lower_case=true)=
        ( caracteres = [];
         for x=1:longitud
-             special_caracteres==true && (push!(caracteres, AbstractString(rand('!':'+'))) )
-             digitos==true && (push!(caracteres, AbstractString(rand(0:9))))
-             upper_case==true && (push!(caracteres, AbstractString(rand('A':'Z'))))
-             lower_case==true && (push!(caracteres, AbstractString(rand('a':'z'))))
+             special_caracteres==true && (push!(caracteres, "$(rand('!':'+'))"))
+             digitos==true && (push!(caracteres, "$(rand(0:9))"))
+             upper_case==true && (push!(caracteres, "$(rand('A':'Z'))"))
+             lower_case==true && (push!(caracteres, "$(rand('a':'z'))"))
         end;
 
         for x=1:longitud

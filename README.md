@@ -56,7 +56,6 @@ Faker.longitude()                               # => 41.536069
 Faker.country()                                 # => Montserrat
 Faker.geo_coordinate("None", 0.001)             # => 48.396071
 Faker.secondary_address()                       # => Apt. 621
-Faker.street_suffix()                           # => Crossing
 Faker.city_prefix()                             # => Lake
 Faker.city_suffix()                             # => ville
 Faker.building_number()                         # => 7065

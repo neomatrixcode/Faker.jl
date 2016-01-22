@@ -27,6 +27,7 @@ city_adjetive() = city_adjetives[rand(1:length(city_adjetives))]
 
 street_prefix()= street_prefixes[rand(1:length(street_prefixes))]
 
+
 function secondary_address()
 
  Ρ = secondary_address_formats[rand(1:length(secondary_address_formats))]

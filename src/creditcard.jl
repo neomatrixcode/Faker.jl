@@ -100,7 +100,7 @@ end
         tot = 1
         pos = 1
         while pos < (len - 1)
-            tot += luhn_lookup[AbstractString(reverse[pos])]
+            tot += luhn_lookup["$(reverse[pos])"]
             if pos != (len - 2)
                 tot += Int(reverse[pos+1])
             end
@@ -108,6 +108,6 @@ end
         end 
         # Calculate check digit
         check_digit = (10 - (tot % 10)) % 10
-        number *= AbstractString(check_digit)
+        number *= "$(check_digit)"
         return number
     end 

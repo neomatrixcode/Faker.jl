@@ -33,7 +33,7 @@
 
     chrome()=
     (
-        saf = AbstractString(rand(531:536)) * AbstractString(rand(0:2));
+        saf = "$(rand(531:536))" * "$(rand(0:2))";
         platforms = (
             "($(linux_platform_token())) AppleWebKit/$(saf) (KHTML, like Gecko) Chrome/$(rand(13:15)).0.$(rand(800:899)).0 Safari/$(saf)",
             "($(windows_platform_token())) AppleWebKit/$(saf) (KHTML, like Gecko) Chrome/$(rand(13:15)).0.$(rand(800:899)).0 Safari/$(saf)",
