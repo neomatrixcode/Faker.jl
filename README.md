@@ -1,4 +1,5 @@
 Faker
+*Generator of fake data for julia .*
 =====
 [![Build Status](https://travis-ci.org/codeneomatrix/Faker.jl.svg)](https://travis-ci.org/codeneomatrix/Faker.jl)
 [![Faker](http://pkg.julialang.org/badges/Faker_0.4.svg)](http://pkg.julialang.org/?pkg=Faker)
