@@ -1,9 +1,10 @@
-#Faker
+# Faker
 *Generator of fake data for julia .*
 
 [![Build Status](https://travis-ci.org/codeneomatrix/Faker.jl.svg)](https://travis-ci.org/codeneomatrix/Faker.jl)
 [![Faker](http://pkg.julialang.org/badges/Faker_0.4.svg)](http://pkg.julialang.org/?pkg=Faker)
 [![Faker](http://pkg.julialang.org/badges/Faker_0.5.svg)](http://pkg.julialang.org/?pkg=Faker)
+[![Faker](http://pkg.julialang.org/badges/Faker_0.6.svg)](http://pkg.julialang.org/?pkg=Faker)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md)
 
 This package is a library that generates fake data.
@@ -18,7 +19,7 @@ Installing
 2) Pkg.clone("git://github.com/codeneomatrix/Faker.jl.git")
 ```
 
-##Usage
+## Usage
 -----
 ```julia
 using Faker
@@ -26,7 +27,7 @@ using Faker
 Faker.email() #  => "kirsten.greenholt@corkeryfisher.info"
 ```
 
-##Base
+## Base
 -----
 ```julia
 Faker.random_digit()                             # => 9
@@ -42,7 +43,7 @@ Faker.numerify("###")                            # => 643
 Faker.bothify("## ??")                           # => 92 Hu
 ```
 
-###Address
+### Address
 -----------------
 
 ```julia
@@ -68,7 +69,7 @@ Faker.state()                                   # => WestVirginia
 
 
 
-###Company
+### Company
 -----------------
 
 ```julia
@@ -80,7 +81,7 @@ Faker.bs()                                      # => WestVirginia
 
 ```
 
-###Date
+### Date
 ---------------------
 
 ```julia
@@ -105,7 +106,7 @@ Faker.date("%Y-%m-%d")                          # => 1998-09-11
 Faker.year()                                    # => 1998
 
 ```
-###Internet
+### Internet
 ---------------
 
 ```julia
@@ -124,7 +125,7 @@ Faker.url()                                     # => "http://schmeler.com/"
 
 ```
 
-###Lorem
+### Lorem
 ---------------
 
 ```julia
@@ -144,7 +145,7 @@ Faker.sentences()                               # => [u'Ipsam rerum molestias qu
 ```
 
 
-###PhoneNumber
+### PhoneNumber
 ---------------------
 
 Phone numbers may be in any of the following formats:
@@ -171,7 +172,7 @@ Faker.phone_number()                            # => 456-089-3337x803
 ```
 
 
-###Misc
+### Misc
 ---------------------
 ```julia
 Faker.password()                                # => cQYVB)X%0$
@@ -186,7 +187,7 @@ Faker.boolean()                                 # => True
 ```
 
 
-###Color
+### Color
 ---------------------
 ```julia
 Faker.color_name()                              # => DarkMagenta
@@ -199,7 +200,7 @@ Faker.rgb_css_color()                           # => rgb(88,244,35)
 ```
 
 
-###Credit_card
+### Credit_card
 ---------------------
 ```julia
 Faker.credit_card_security_code()               # => 768
@@ -209,7 +210,7 @@ Faker.credit_card_provider()                    # => American Express
 Faker.generate_number("52",16)                  # => 5268029839131090
 ```
 
-###File
+### File
 ---------------------
 ```julia
 Faker.mime_type()                               # => video/quicktime
@@ -218,7 +219,7 @@ Faker.file_name()                               # => sUwb.flac
 ```
 
 
-###Person
+### Person
 ---------------------
 ```julia
 Faker.first_name()                              # => Cayden
@@ -226,7 +227,7 @@ Faker.last_name()                               # => Hickle
 Faker.prefixe()                                 # => Mrs
 ```
 
-###Profile
+### Profile
 ---------------------
 ```julia
 Faker.simple_profile()                          # => ("name"=>"Benito","mail"=>"Sandra66@hotmail.com","username"=>"nGamez",
@@ -239,13 +240,13 @@ Faker.profile()                                 # => ("blood_group"=>"AB-","job"
                                                       "current_location"=>(4.50390625,17.015625))
 ```
 
-###Job
+### Job
 ---------------------
 ```julia
 Faker.job()                                     # => Geneticist, molecular
 ```
 
-###User_agent
+### User_agent
 ---------------------
 ```julia
 Faker.mac_processor()                           # => U; PPC
