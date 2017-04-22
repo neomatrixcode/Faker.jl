@@ -32,7 +32,7 @@ Below are some of the features that are planned to be added in future versions o
   ```bash
   Fake.seed(4321)
   ```
-### Version 0.1.4
+#### Version 0.1.4
   + Modularization of the method Faker.simple_profile()
   > Possible syntax :
   ```bash
