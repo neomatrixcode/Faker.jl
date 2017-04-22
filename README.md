@@ -9,14 +9,48 @@
 
 This package is a library that generates fake data.
 
-
-NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
+Roadmap
+-----
+Below are some of the features that are planned to be added in future versions of Faker.jl once version 1.0 of the language is released.
+### All contributions and suggestions are welcome !!!!
+#### Version 0.0.4
+ + Julia version 1.0 syntax update
+#### Version 0.0.5
+ + Unicode symbol generator
+ 
+#### Version 0.0.6
+ + Language support, generation in the formats of each language
+  > Possible syntax : 
+  ```bash
+   Faker.language("en_US")   - English (United States)
+   ```
+   
+#### Version 0.0.7
+  + Possibility of creating a generator
+  + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results. 
+  > Possible syntax :
+  ```bash
+  Fake.seed(4321)
+  ```
+### Version 0.0.8
+  + Modularization of the method Faker.simple_profile()
+  > Possible syntax :
+  ```bash
+  Faker.simple_profile("name,birthdate")   # => ("name"=>"Benito","birthdate"=>"1997-3-16")
+  ```
+  + Modularization of the method Faker.profile()
+  > Possible syntax :
+  ```bash
+  Faker.profile("blood_group,job")   # => ("blood_group"=>"AB-","job"=>"Radiographer)
+  ```
 
 Installing
 ----------
 ```bash
-1) Pkg.add("Faker")
-2) Pkg.clone("git://github.com/codeneomatrix/Faker.jl.git")
+1) Stable version
+  Pkg.add("Faker")
+2) Development version 
+  Pkg.clone("git://github.com/codeneomatrix/Faker.jl.git")
 ```
 
 ## Usage
@@ -26,6 +60,9 @@ using Faker
 
 Faker.email() #  => "kirsten.greenholt@corkeryfisher.info"
 ```
+
+NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
+
 
 ## Base
 -----
