@@ -13,26 +13,26 @@ Roadmap
 -----
 Below are some of the features that are planned to be added in future versions of Faker.jl once version 1.0 of the language is released.
 ### All contributions and suggestions are welcome !!!!
-#### Version 0.0.4
+#### Version 0.1.0
  + Julia version 1.0 syntax update
-#### Version 0.0.5
+#### Version 0.1.1
  + Unicode symbol generator
  
-#### Version 0.0.6
+#### Version 0.1.2
  + Language support, generation in the formats of each language
   > Possible syntax : 
   ```bash
    Faker.language("en_US")   - English (United States)
    ```
    
-#### Version 0.0.7
+#### Version 0.1.3
   + Possibility of creating a generator
   + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results. 
   > Possible syntax :
   ```bash
   Fake.seed(4321)
   ```
-### Version 0.0.8
+### Version 0.1.4
   + Modularization of the method Faker.simple_profile()
   > Possible syntax :
   ```bash
