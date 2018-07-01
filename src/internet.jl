@@ -7,7 +7,7 @@ reseed_internet(seed) = internet_rng = MersenneTwister(seed)
 
 safe_email_tlds = ("org", "com", "net")
 free_email_domains = ("gmail.com", "yahoo.com", "hotmail.com")
-tlds = ("com", "com", "com", "com", "com", "com", "biz", "info", "net", "org")
+tlds = ("com", "biz", "info", "net", "org")
 
 uri_pages = (
 "index", "home", "search", "main", "post", "homepage", "category", "register", "login", "faq", "about", "terms",
@@ -78,7 +78,7 @@ ipv4()= "$(rand(internet_rng, 172:255)).$(rand(internet_rng, 0:255)).$(rand(inte
 
 ipv6()= (res = "";
     for i = 1:8
-        res*= "$(hex(rand(internet_rng, 4100:65535)))"
+        res*= "$(string(rand(internet_rng, 4100:65535),base=16))"
         if i < 8
             res*= ":"
         end

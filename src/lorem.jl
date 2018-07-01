@@ -12,7 +12,7 @@ include("loremla.jl")
     sentence( nb_words=6, variable_nb_words=true)= ( nb_words <= 0 && (return " ");
         variable_nb_words && (nb_words = rand(1:nb_words));
         palabras = words(nb_words);
-        palabras[1] = ucfirst(palabras[1]);
+        palabras[1] = uppercasefirst(palabras[1]);
         sal = join(palabras," ");
         sal*= ".";
         sal)

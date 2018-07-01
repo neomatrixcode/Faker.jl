@@ -2,8 +2,6 @@
 *Generator of fake data for julia .*
 
 [![Build Status](https://travis-ci.org/codeneomatrix/Faker.jl.svg)](https://travis-ci.org/codeneomatrix/Faker.jl)
-[![Faker](http://pkg.julialang.org/badges/Faker_0.4.svg)](http://pkg.julialang.org/?pkg=Faker)
-[![Faker](http://pkg.julialang.org/badges/Faker_0.5.svg)](http://pkg.julialang.org/?pkg=Faker)
 [![Faker](http://pkg.julialang.org/badges/Faker_0.6.svg)](http://pkg.julialang.org/?pkg=Faker)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md)
 
@@ -67,17 +65,17 @@ NOTE: While Faker generates data at random, returned values are not guaranteed t
 ## Base
 -----
 ```julia
-Faker.random_digit()                             # => 9
-Faker.random_digit_not_null()                    # => 1
-Faker.random_digit_or_empty()                    # => 5
-Faker.random_number()                            # => 31730
-Faker.random_int()                               # => 7545
-Faker.randomize_nb_elements()                    # => 10
-Faker.random_letter()                            # => N
-Faker.random_element(("a", "b", "b"))            # => b
-Faker.lexify("????")                             # => cIxw
-Faker.numerify("###")                            # => 643
-Faker.bothify("## ??")                           # => 92 Hu
+Faker.random_digit()                                        # => 9
+Faker.random_digit_not_null()                               # => 1
+Faker.random_digit_or_empty()                               # => 5
+Faker.random_number(digits= 1)                              # => 31730
+Faker.random_int(min=0, max=9999)                           # => 7545
+Faker.randomize_nb_elements(number=10, le=false, ge=false)  # => 8.0
+Faker.random_letter()                                       # => N
+Faker.random_element(("a", "b", "b"))                       # => b
+Faker.lexify("????")                                        # => cIxw
+Faker.numerify("####")                                      # => 643
+Faker.bothify("## ??")                                      # => 92 Hu
 ```
 
 ### Address
@@ -85,21 +83,21 @@ Faker.bothify("## ??")                           # => 92 Hu
 
 ```julia
 
-Faker.state_abbr()                              # => AP
-Faker.latitude()                                # => -74.518224
-Faker.street_name()                             # => Green Knoll
-Faker.address()                                 # => 741 Drucilla Lights Marlenport, VT 54198-4463
-Faker.street_address()                          # => 4630 Kling Throughway
-Faker.postcode()                                # => 18604-5538
-Faker.longitude()                               # => 41.536069
-Faker.country()                                 # => Montserrat
-Faker.geo_coordinate("None", 0.001)             # => 48.396071
-Faker.secondary_address()                       # => Apt. 621
-Faker.city_prefix()                             # => Lake
-Faker.city_suffix()                             # => ville
-Faker.building_number()                         # => 7065
-Faker.city()                                    # => West Donato
-Faker.state()                                   # => WestVirginia
+Faker.state_abbr()                                 # => AP
+Faker.latitude()                                   # => -74.518224
+Faker.street_name()                                # => Green Knoll
+Faker.address()                                    # => 741 Drucilla Lights Marlenport, VT 54198-4463
+Faker.street_address()                             # => 4630 Kling Throughway
+Faker.postcode()                                   # => 18604-5538
+Faker.longitude()                                  # => 41.536069
+Faker.country()                                    # => Montserrat
+Faker.geo_coordinate(center="None", radius=0.001)  # => 48.396071
+Faker.secondary_address()                          # => Apt. 621
+Faker.city_prefix()                                # => Lake
+Faker.city_suffix()                                # => ville
+Faker.building_number()                            # => 7065
+Faker.city()                                       # => West Donato
+Faker.state()                                      # => WestVirginia
 
 
 ```
@@ -122,25 +120,25 @@ Faker.bs()                                      # => WestVirginia
 ---------------------
 
 ```julia
-Faker.date_time_ad()                            # => 1446-03-17 04:03:47
-Faker.months()                                  # => 10
-Faker.am_pm()                                   # => PM
-Faker.iso8601()                                 # => 1986-05-02T21:01:04
-Faker.date_time_this_century()                  # => 1941-12-05 15:52:02
-Faker.date_time()                               # => 1981-10-29 21:56:29
-Faker.month_name()                              # => November
-Faker.date_time_this_month()                    # => 2014-04-02 08:38:48
-Faker.date_time_this_decade()                   # => 2013-02-24 18:47:46
-Faker.day_of_week()                             # => Thursday
-Faker.day_of_month()                            # => 14
-Faker.time("%H:%M:%S")                          # => 21:44:43
-Faker.date_time_between("-30y", "now")          # => 1990-01-30 11:47:01
-Faker.unix_time()                               # => 711770812
-Faker.date_time_this_year()                     # => 2013-04-22 14:51:26
-Faker.timezone()                                # => Atlantic/Reykjavik
-Faker.century()                                 # => XV
-Faker.date("%Y-%m-%d")                          # => 1998-09-11
-Faker.year()                                    # => 1998
+Faker.date_time_ad()                                           # => 1446-03-17 04:03:47
+Faker.months()                                                 # => 10
+Faker.am_pm()                                                  # => PM
+Faker.iso8601()                                                # => 1986-05-02T21:01:04
+Faker.date_time()                                              # => 1981-10-29 21:56:29
+Faker.month_name()                                             # => November
+Faker.day_of_week()                                            # => Thursday
+Faker.day_of_month()                                           # => 14
+Faker.date_time_between("-30y", "now")                         # => 1990-01-30 11:47:01
+Faker.time("H:M:S")                                            # => 21:44:43
+Faker.unix_time()                                              # => 711770812
+Faker.timezone()                                               # => Atlantic/Reykjavik
+Faker.century()                                                # => XV
+Faker.date("Y-m-d")                                            # => 1998-09-11
+Faker.year()                                                   # => 1998
+Faker.date_time_this_century(before_now=true, after_now=false) # => 1941-12-05 15:52:02
+Faker.date_time_this_decade(before_now=true, after_now=false)  # => 2013-02-24 18:47:46
+Faker.date_time_this_year(before_now=true, after_now=false)    # => 2013-04-22 14:51:26
+Faker.date_time_this_month(before_now=true, after_now=false)   # => 2014-04-02 08:38:48
 
 ```
 ### Internet
@@ -167,17 +165,17 @@ Faker.url()                                     # => "http://schmeler.com/"
 
 ```julia
 
-Faker.text()                                    # => Et dolor voluptates quaerat. Natus qui consequatur dolor facere. Tenetur repudiandae totam id vitae aut.
-Faker.sentence()                                # => Alias officiis dignissimos maxime nam ad distinctio.
+Faker.text(max_nb_chars=200)                                    # => Et dolor voluptates quaerat. Natus qui consequatur dolor facere. Tenetur repudiandae totam id vitae aut.
+Faker.sentence(number_words=6, variable_nb_words=true)                                # => Alias officiis dignissimos maxime nam ad distinctio.
 Faker.word()                                    # => qui
 Faker.paragraphs()                              # => [u'Numquam cupiditate omnis impedit nesciunt laboriosam. Vitae hic iste qui deleniti quo incidunt ratione.
                        Natus ullam libero dolore sunt.', u'Veritatis nostrum quod dolorem soluta cupiditate qui incidunt.
                        Rerum minus commodi repreh enderit. Sed in dolor quia ut est. Impedit eos nihil aut m olestiae
                        reiciendis.', u'Ullam dolor molestias sit officii s expedita fuga repellat. Et fuga sequi sit. Aperiam
                       quaer at sint quasi vel nam.']
-Faker.words()                                   # => [u'corrupti', u'ipsum', u'inventore']
-Faker.paragraph()                               # => Voluptatibus quae nihil aut amet quos. Vitae fugiat adipisci inventore eaque adipisci quia. Nostrum non et numquam illum. Sed id dolore quia.
-Faker.sentences()                               # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro
+Faker.words(number_words=3)                                   # => [u'corrupti', u'ipsum', u'inventore']
+Faker.paragraph(number=3)                               # => Voluptatibus quae nihil aut amet quos. Vitae fugiat adipisci inventore eaque adipisci quia. Nostrum non et numquam illum. Sed id dolore quia.
+Faker.sentences(number_sentences=3)                               # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro
                       recusandae sit voluptatem sint accusamus.', u'Repellendus explicabo delectus ad #Name
 ```
 

@@ -1,7 +1,3 @@
-#Pkg.add("Nettle")
-#using Nettle
-
-
     language_codes = ("cn", "de", "el", "en", "es", "fr", "it", "pt", "ru")
 
     boolean( chance_of_getting_true=50)= rand(1:100) <= chance_of_getting_true
@@ -19,8 +15,6 @@
     language_code() = language_codes[rand(1:length(language_codes))]
 
     locale()="$(language_code())_$(country_code())"
-
-
 
     #=uuid4()==#
 

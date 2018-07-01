@@ -32,8 +32,8 @@
     t= formats[rand(1:length(formats))]
 
     for i=t
-     t= replace(t,"#","$(rand(0:9))",1)
+     t= replace(t,"#" => "$(rand(0:9))", count= 1)
     end
-     
-    return t 
+
+    return t
 end
