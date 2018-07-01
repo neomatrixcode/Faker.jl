@@ -1,5 +1,5 @@
 
-type CreditCard
+mutable struct CreditCard
     name :: AbstractString
     prefixes :: AbstractString
     length :: Int64
@@ -37,19 +37,19 @@ end
     function credit_card_provider(card_type="None")
         if card_type == "None"
             card_type = [key for key in  keys(credit_card_types)][rand(1:9)]
-        end 
+        end
         credit_card_types[card_type].name
     end
-   
+
     function credit_card_number(card="None")
          if card == "None"
             card = [key for key in  keys(credit_card_types)][rand(1:9)]
             card = credit_card_types[card]
-        end 
+        end
         prefix = card.prefixes
         number = generate_number(prefix, card.length)
         return number
-    end 
+    end
 
     #=function credit_card_expire(start="now", end="+10y", date_format="%m/%y")
 
@@ -73,13 +73,13 @@ end
         if card_type == "None"
             card_type = [key for key in  keys(credit_card_types)][rand(1:9)]
             card_type = credit_card_types[card_type]
-        end 
+        end
         sec_len = card_type.security_code_length
         return numerify("#"^sec_len)
     end
 
     function credit_card_type()
-   
+
         card_type = [key for key in  keys(credit_card_types)][rand(1:9)]
 
         credit_card_types[card_type]
@@ -105,9 +105,9 @@ end
                 tot += Int(reverse[pos+1])
             end
         pos += 2
-        end 
+        end
         # Calculate check digit
         check_digit = (10 - (tot % 10)) % 10
         number *= "$(check_digit)"
         return number
-    end 
+    end

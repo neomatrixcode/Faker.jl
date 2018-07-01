@@ -5,10 +5,10 @@ include("loremla.jl")
 
 
     word()=word_list[rand(1:length(word_list))]
-        
+
 
     words(nb=3)= [ (word_list[rand(1:length(word_list))]) for i=1:nb ]
- 
+
     sentence( nb_words=6, variable_nb_words=true)= ( nb_words <= 0 && (return " ");
         variable_nb_words && (nb_words = rand(1:nb_words));
         palabras = words(nb_words);
@@ -35,27 +35,27 @@ include("loremla.jl")
         if max_nb_chars < 25
                 size = 0
                 while size < max_nb_chars
-                    palabra = ( size>0? " " : "") * word();
+                    palabra = ( (size > 0) ? " " : "") * word();
                     push!(texto, palabra)
                     size += length(palabra)
                 end
             texto[1] = ucfirst(texto[1]);
             texto[end] *= "."
- 
+
         elseif max_nb_chars < 100
                 size = 0
                 while size < max_nb_chars
-                    sentencia = (size>0? " " : "") * sentence()
+                    sentencia = ((size > 0) ? " " : "") * sentence()
                     push!(texto, sentencia)
                     size += length(sentencia)
                 end
         else
-                size = 0     
+                size = 0
                 while size < max_nb_chars
-                    parrafo = (size>0? " " : "") * paragraph()
+                    parrafo = ((size > 0) ? " " : "") * paragraph()
                     push!(texto, parrafo)
                     size += length(parrafo)
-                end            
+                end
         end ;
 
         join(texto,"") )

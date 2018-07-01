@@ -41,7 +41,7 @@ module Faker
 #timezone
 #time
 #date_time_between
-#geo_coordinate 
+#geo_coordinate
 #century
 #year
 #email
@@ -74,7 +74,7 @@ module Faker
 #boolean
 
 
-importall Base
+
 import Base.Callable
 import Base: getindex
 #:  #isequal isfinite isinf, isinteger,

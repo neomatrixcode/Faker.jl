@@ -1,5 +1,5 @@
 #Pkg.add("Nettle")
-using Nettle
+#using Nettle
 
 
     language_codes = ("cn", "de", "el", "en", "es", "fr", "it", "pt", "ru")
@@ -8,11 +8,11 @@ using Nettle
 
     null_boolean()=Dict( 0=> "none", 1=> true, -1=> false)[rand(-1:1)]
 
-    md5() = hexdigest("md5", "$(rand())")
+    #md5() = hexdigest("md5", "$(rand())")
 
-    sha1() = hexdigest("sha1", "$(rand())")
+    #sha1() = hexdigest("sha1", "$(rand())")
 
-    sha256() = hexdigest("sha256", "$(rand())")
+    #sha256() = hexdigest("sha256", "$(rand())")
 
     country_code()= timeszon[rand(1:length(timeszon))]["code"]
 

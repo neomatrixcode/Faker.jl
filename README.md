@@ -17,17 +17,17 @@ Below are some of the features that are planned to be added in future versions o
  + Julia version 1.0 syntax update
 #### Version 0.1.1
  + Unicode symbol generator
- 
+
 #### Version 0.1.2
  + Language support, generation in the formats of each language
-  > Possible syntax : 
+  > Possible syntax :
   ```bash
    Faker.language("en_US")   - English (United States)
    ```
-   
+
 #### Version 0.1.3
   + Possibility of creating a generator
-  + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results. 
+  + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results.
   > Possible syntax :
   ```bash
   Fake.seed(4321)
@@ -49,7 +49,7 @@ Installing
 ```bash
 1) Stable version
   Pkg.add("Faker")
-2) Development version 
+2) Development version
   Pkg.clone("git://github.com/codeneomatrix/Faker.jl.git")
 ```
 
@@ -214,10 +214,7 @@ Faker.phone_number()                            # => 456-089-3337x803
 ```julia
 Faker.password()                                # => cQYVB)X%0$
 Faker.locale()                                  # => en_SE
-Faker.md5()                                     # => 74c3bf36bfc61f2bda75492b422bfaa7
-Faker.sha1()                                    # => b221ee6090aa125f9acca8ea851d0dc7d9fb0886
 Faker.null_boolean()                            # => True
-Faker.sha256()                                  # => 87a636998cfd1b73b371079d51df2b6b419c94053d73b0da29a7f2e2da7f070a
 Faker.country_code()                            # => DO
 Faker.language_code()                           # => ru
 Faker.boolean()                                 # => True

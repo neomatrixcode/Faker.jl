@@ -4,19 +4,13 @@
 
     safe_colors = ("Black","Maroon", "Green", "Navy", "Olive","Purple", "Teal", "Lime", "Blue", "Silver","Gray", "Yellow", "Fuchsia", "Aqua", "White")
 
-
     color_name()= [key for key in  keys(all_colors)][rand(1:140)]
 
-  	
     safe_color_name()= safe_colors[rand(1:length(safe_colors))]
-      
 
     hex_color()= [key for key in values(all_colors)][rand(1:140)]
-        
 
     safe_hex_color()= all_colors[ safe_color_name()]
-    
-        
 
     rgb_color_list()="($(rand(1:255)),$(rand(1:255)),$(rand(1:255)))"
 
