@@ -82,9 +82,8 @@ import Base: getindex
             # typemin, typemax
 
 # ---------------------------------------------------------------------------------------
-include("creditcard.jl")
 include("persona.jl")
-include("direccion.jl")
+include("creditcard.jl")
 include("trabajo.jl")
 include("datatime.jl")
 include("phone_number.jl")
@@ -97,6 +96,7 @@ include("lorem.jl")
 include("misc.jl")
 include("profile.jl")
 include("country.jl")
+include("direccion.jl")
 include("user_agent.jl")
 
 end # module
