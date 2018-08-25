@@ -1,5 +1,3 @@
-include("country.jl")
-include("persona.jl")
 
     city_prefixes = ("Sur", "Norte",)
     city_adjetives = ("Nueva", "Vieja",)
@@ -81,7 +79,7 @@ city() = city_formats[rand(1:length(city_formats))]
     street_name_formats = ( "$(street_prefix()) $(last_name())","$(street_prefix()) $(country())","$(street_prefix()) $(state())","$(street_prefix()) $(city_prefix()) $(last_name())")
 
 
-function geo_coordinate( center="None", radius=0.001)
+function geo_coordinate(;center="None", radius=0.001)
 
         if center=="None"
             center=0

@@ -1,36 +1,45 @@
 # Faker
-*Generator of fake data for julia .*
 
-[![Build Status](https://travis-ci.org/codeneomatrix/Faker.jl.svg)](https://travis-ci.org/codeneomatrix/Faker.jl)
-[![Faker](http://pkg.julialang.org/badges/Faker_0.6.svg)](http://pkg.julialang.org/?pkg=Faker)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md)
-
-This package is a library that generates fake data.
+<p align="center">
+<p align="center">
+<strong>Generator of fake data for julia.</strong>
+<br><br>
+<a href="https://travis-ci.org/codeneomatrix/Faker.jl"><img src="https://travis-ci.org/codeneomatrix/Faker.jl.svg?branch=master"></a>
+<a href="https://codecov.io/gh/codeneomatrix/Faker.jl">
+  <img src="https://codecov.io/gh/codeneomatrix/Faker.jl/branch/master/graph/badge.svg" />
+</a>
+&nbsp;&nbsp
+<a href="https://pkg.julialang.org/detail/Faker"><img src="https://pkg.julialang.org/badges/Faker_0.4.svg"></a>
+ &nbsp;&nbsp;
+<a href="https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
 
 Roadmap
 -----
 Below are some of the features that are planned to be added in future versions of Faker.jl once version 1.0 of the language is released.
 ### All contributions and suggestions are welcome !!!!
 #### Version 0.1.0
- + Julia version 1.0 syntax update
-#### Version 0.1.1
+ + Julia version 0.7 syntax update
+
+#### Version 0.2.0
+ + Julia version 0.7 syntax update
  + Unicode symbol generator
 
-#### Version 0.1.2
+#### Version 0.2.1
  + Language support, generation in the formats of each language
   > Possible syntax :
   ```bash
    Faker.language("en_US")   - English (United States)
    ```
 
-#### Version 0.1.3
+#### Version 0.2.2
   + Possibility of creating a generator
   + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results.
   > Possible syntax :
   ```bash
   Fake.seed(4321)
   ```
-#### Version 0.1.4
+
+#### Version 0.2.3
   + Modularization of the method Faker.simple_profile()
   > Possible syntax :
   ```bash
@@ -44,11 +53,11 @@ Below are some of the features that are planned to be added in future versions o
 
 Installing
 ----------
-```bash
-1) Stable version
-  Pkg.add("Faker")
-2) Development version
-  Pkg.clone("git://github.com/codeneomatrix/Faker.jl.git")
+```julia
+# Stable version
+  Pkg> add Faker
+# Development version
+  Pkg> add Faker#master
 ```
 
 ## Usage
@@ -165,17 +174,17 @@ Faker.url()                                     # => "http://schmeler.com/"
 
 ```julia
 
-Faker.text(max_nb_chars=200)                                    # => Et dolor voluptates quaerat. Natus qui consequatur dolor facere. Tenetur repudiandae totam id vitae aut.
-Faker.sentence(number_words=6, variable_nb_words=true)                                # => Alias officiis dignissimos maxime nam ad distinctio.
-Faker.word()                                    # => qui
-Faker.paragraphs()                              # => [u'Numquam cupiditate omnis impedit nesciunt laboriosam. Vitae hic iste qui deleniti quo incidunt ratione.
+Faker.text(number_chars=200)                              # => Et dolor voluptates quaerat. Natus qui consequatur dolor facere. Tenetur repudiandae totam id vitae aut.
+Faker.sentence(number_words=6, variable_nb_words=true)    # => Alias officiis dignissimos maxime nam ad distinctio.
+Faker.word()                                              # => qui
+Faker.paragraphs()                                        # => [u'Numquam cupiditate omnis impedit nesciunt laboriosam. Vitae hic iste qui deleniti quo incidunt ratione.
                        Natus ullam libero dolore sunt.', u'Veritatis nostrum quod dolorem soluta cupiditate qui incidunt.
                        Rerum minus commodi repreh enderit. Sed in dolor quia ut est. Impedit eos nihil aut m olestiae
                        reiciendis.', u'Ullam dolor molestias sit officii s expedita fuga repellat. Et fuga sequi sit. Aperiam
                       quaer at sint quasi vel nam.']
-Faker.words(number_words=3)                                   # => [u'corrupti', u'ipsum', u'inventore']
-Faker.paragraph(number=3)                               # => Voluptatibus quae nihil aut amet quos. Vitae fugiat adipisci inventore eaque adipisci quia. Nostrum non et numquam illum. Sed id dolore quia.
-Faker.sentences(number_sentences=3)                               # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro
+Faker.words(number_words=3)                                # => [u'corrupti', u'ipsum', u'inventore']
+Faker.paragraph(number=3)                                  # => Voluptatibus quae nihil aut amet quos. Vitae fugiat adipisci inventore eaque adipisci quia. Nostrum non et numquam illum. Sed id dolore quia.
+Faker.sentences(number_sentences=3)                        # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro
                       recusandae sit voluptatem sint accusamus.', u'Repellendus explicabo delectus ad #Name
 ```
 
@@ -262,14 +271,13 @@ Faker.prefixe()                                 # => Mrs
 ### Profile
 ---------------------
 ```julia
-Faker.simple_profile()                          # => ("name"=>"Benito","mail"=>"Sandra66@hotmail.com","username"=>"nGamez",
-                                                      "birthdate"=>"1997-3-16","sex"=>"F",
-                                                      "address"=>"Pasaje Morelos 373 572 San Carlota de la Montaña,BC 47785")
-Faker.profile()                                 # => ("blood_group"=>"AB-","job"=>"Radiographer, therapeutic",
-                                                      "residence"=>"Ampliación Escobar 515 Interior 017 San Carlota de la Montaña,
-                                                      Q. ROO 75906","company"=>"Bañuelos-Delgadillo y Asociados",
-                                                      "website"=>Any["http://bdya.com/","http://www.mgyc.com/"],
-                                                      "current_location"=>(4.50390625,17.015625))
+Faker.simple_profile()                          # =>
+  "name"      => "Iván"
+  "mail"      => "XMeléndez@hotmail.com"
+  "username"  => "Genaro.Garibay"
+  "birthdate" => "1990-3-10"
+  "sex"       => "M"
+  "address"   => "Privada Sur Malave 059 Edif. 163 , Depto. 573 San Emilio de la Montaña, SIN 64501-6962"
 ```
 
 ### Job
@@ -289,7 +297,7 @@ Faker.linux_platform_token()                    # => X11; Linux x86_64
 Faker.mac_platform_token()                      # => Macintosh; U; PPC Mac OS X 10_6_5
 Faker.chrome()                                  # => Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/5311 (KHTML, like Gecko)                                          # => Chrome/14.0.867.0 Safari/5311
 Faker.firefox()                                 # => Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_8_7; rv:1.9.3.20)                                    # => Gecko/2002-10-25 15:36:53 Firefox/7.0
-Faker.safari()                                  # => Mozilla/5.0 (Macintosh; PPC Mac OS X 10_5_9 rv:3.0; it-IT)                                             # => AppleWebKit/532.42.3 (KHTML, like Gecko) Version/5.0.1 Safari/532.42.3
+Faker.safari()                                  # => Mozilla/5.0 (Macintosh; PPC Mac OS X 10_5_9 rv:3.0; it-IT)                                          # => AppleWebKit/532.42.3 (KHTML, like Gecko) Version/5.0.1 Safari/532.42.3
 Faker.opera()                                   # => Opera/9.97.(Windows CE; sl-SI) Presto/2.9.182 Version/12.00)
 Faker.internet_explorer()                       # => Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 5.01; Trident/5.0)
 ```

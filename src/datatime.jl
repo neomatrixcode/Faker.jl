@@ -55,7 +55,7 @@
     end
 
 
-    function date_time_this_century(before_now=true, after_now=false)
+    function date_time_this_century(;before_now=true, after_now=false)
         r = Dates.DateTime(Dates.now())
         this_century_start = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 100)), 1, 1)
         next_century_start = Dates.DateTime(Dates.year(this_century_start) + 100, 1, 1)
@@ -74,7 +74,7 @@
 
     end
 
-    function  date_time_this_decade(before_now=true, after_now=false)
+    function  date_time_this_decade(;before_now=true, after_now=false)
           r = Dates.DateTime(Dates.now())
         this_decade_start = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 10)), 1, 1)
         next_decade_start = Dates.DateTime(Dates.year(this_decade_start) + 10, 1, 1)
@@ -94,7 +94,7 @@
 
 
 
-   function date_time_this_year( before_now=true, after_now=false)
+   function date_time_this_year(;before_now=true, after_now=false)
         r = Dates.DateTime(Dates.now())
         this_year_start = Dates.DateTime(Dates.year(r), 1, 1)
         next_year_start = Dates.DateTime(Dates.year(r) + 1, 1, 1)
@@ -114,7 +114,7 @@
 
 
 
-    function date_time_this_month(before_now=true, after_now=false)
+    function date_time_this_month(;before_now=true, after_now=false)
         r = Dates.DateTime(Dates.now())
         this_month_start = Dates.DateTime(Dates.year(r), Dates.month(r), 1)
         next_month_start = Dates.DateTime(Dates.year(r), (Dates.month(r)+ 1)%12, 1)
