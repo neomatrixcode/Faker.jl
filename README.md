@@ -21,7 +21,8 @@ Below are some of the features that are planned to be added in future versions o
  + Julia version 0.7 syntax update
 
 #### Version 0.2.0
- + Julia version 0.7 syntax update
+ + Julia version 1.0 syntax update
+ + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results.
  + Unicode symbol generator
 
 #### Version 0.2.1
@@ -33,11 +34,7 @@ Below are some of the features that are planned to be added in future versions o
 
 #### Version 0.2.2
   + Possibility of creating a generator
-  + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results.
-  > Possible syntax :
-  ```bash
-  Fake.seed(4321)
-  ```
+
 
 #### Version 0.2.3
   + Modularization of the method Faker.simple_profile()
@@ -60,19 +57,23 @@ Installing
   Pkg> add Faker#master
 ```
 
-## Usage
------
 ```julia
 using Faker
 
 Faker.email() #  => "kirsten.greenholt@corkeryfisher.info"
 ```
 
-NOTE: While Faker generates data at random, returned values are not guaranteed to be unique.
 
+## Features available in the current release
+------------------
+### Seed
+-----------------
+```julia
+  Faker.seed(4321)
+```
 
-## Base
------
+### Base
+-----------------
 ```julia
 Faker.random_digit()                                        # => 9
 Faker.random_digit_not_null()                               # => 1
@@ -187,27 +188,6 @@ Faker.paragraph(number=3)                                  # => Voluptatibus qua
 Faker.sentences(number_sentences=3)                        # => [u'Ipsam rerum molestias quod magni totam pariatur enim.',u'Dolores perspiciatis consequatur porro
                       recusandae sit voluptatem sint accusamus.', u'Repellendus explicabo delectus ad #Name
 ```
-
-
-### PhoneNumber
----------------------
-
-Phone numbers may be in any of the following formats:
-
-  * +33(3)3333333333
-  * +33(3)3333333333
-  * 03333333333
-  * 03333333333
-  * 333-333-3333
-  * (333)333-3333
-  * 1-333-333-3333
-  * 333.333.3333
-  * 333-333-3333
-  * (333)333-3333
-  * 1-333-333-3333
-  * 333-333-3333x333
-
-(Don't let the example output below fool you - any format can be returned at random.)
 
 ```julia
 

@@ -1,9 +1,3 @@
-using Dates
-using Random
-
-internet_rng = MersenneTwister(millisecond(Time(now()))+rand(1:100))
-
-reseed_internet(seed) = internet_rng = MersenneTwister(seed)
 
 safe_email_tlds = ("org", "com", "net")
 free_email_domains = ("gmail.com", "yahoo.com", "hotmail.com")
@@ -44,19 +38,19 @@ email_formats = [
    ]
 
 function email()
-    return email_formats[rand(internet_rng,1:length(email_formats))]()
+    return email_formats[rand(1:length(email_formats))]()
 end
 
-user_name()= bothify(user_name_formats[rand(internet_rng,1:length(user_name_formats))]())
+user_name()= bothify(user_name_formats[rand(1:length(user_name_formats))]())
 
 
 
-safe_email()= "$(user_name())@example.$(safe_email_tlds[rand(internet_rng, 1:length(safe_email_tlds))])"
+safe_email()= "$(user_name())@example.$(safe_email_tlds[rand( 1:length(safe_email_tlds))])"
 
 
 free_email()= "$(user_name())@$(free_email_domain())"
 
-domain_suffix()= tlds[rand(internet_rng, 1:length(tlds))]
+domain_suffix()= tlds[rand( 1:length(tlds))]
 
 domain_word()=
    ( company_elements = split(company(), [',', ' ','-']);
@@ -71,14 +65,14 @@ domain_word()=
 
 
 
-url()=url_formats[rand(internet_rng, 1:length(url_formats))]
+url()=url_formats[rand( 1:length(url_formats))]
 
 
-ipv4()= "$(rand(internet_rng, 172:255)).$(rand(internet_rng, 0:255)).$(rand(internet_rng,0:255)).$(rand(internet_rng,0:255))"
+ipv4()= "$(rand( 172:255)).$(rand( 0:255)).$(rand(0:255)).$(rand(0:255))"
 
 ipv6()= (res = "";
     for i = 1:8
-        res*= "$(string(rand(internet_rng, 4100:65535),base=16))"
+        res*= "$(string(rand( 4100:65535),base=16))"
         if i < 8
             res*= ":"
         end
@@ -88,22 +82,22 @@ ipv6()= (res = "";
 mac_address()=
     (res = "";
     for i = 1:6
-        res*= "$(hex(rand(internet_rng, 0x00:0xff)))"
+        res*= "$(hex(rand( 0x00:0xff)))"
         i < 6 && (res*= ":")
     end;res)
 
-uri_page()= uri_pages[rand(internet_rng, 1:length(uri_pages))]
+uri_page()= uri_pages[rand( 1:length(uri_pages))]
 
 uri_path(deep="None")=
     (if deep =="None"
         deep = rand(1:3)
     end; sa="";
         for i =0:deep
-           sa*= uri_paths[rand(internet_rng, 1:length(uri_paths))]
+           sa*= uri_paths[rand( 1:length(uri_paths))]
             i < deep && (sa*= "/")
         end; sa )
 
-uri_extension()= uri_extensions[rand(internet_rng, 1:length(uri_extensions))]
+uri_extension()= uri_extensions[rand( 1:length(uri_extensions))]
 
 url_formats = (
     "http://www.$(domain_name())/",
@@ -117,7 +111,7 @@ uri_formats = (
     "$(url())$(uri_path())/$(uri_page())$(uri_extension())",
 )
 
-uri()= uri_formats[rand(internet_rng, 1:length(uri_formats))]
+uri()= uri_formats[rand( 1:length(uri_formats))]
 
 
 #=slug(value="None")=
@@ -125,10 +119,10 @@ uri()= uri_formats[rand(internet_rng, 1:length(uri_formats))]
         value = Lorem.text(20)
         value=#
 image_placeholder_services = (
-    "http://placekitten.com/$(rand(internet_rng,1:1024))/$(rand(internet_rng, 1:1024))",
-    "http://placehold.it/$(rand(internet_rng,1:1024))x$(rand(internet_rng,1:1024))",
-    "http://www.lorempixum.com/$(rand(internet_rng, 1:1024))/$(rand(internet_rng, 1:1024))",
-    "http://dummyimage.com/$(rand(internet_rng, 1:1024))x$(rand(internet_rng, 1:1024))",
+    "http://placekitten.com/$(rand(1:1024))/$(rand( 1:1024))",
+    "http://placehold.it/$(rand(1:1024))x$(rand(1:1024))",
+    "http://www.lorempixum.com/$(rand( 1:1024))/$(rand( 1:1024))",
+    "http://dummyimage.com/$(rand( 1:1024))x$(rand( 1:1024))",
  )
 
 image_url(width="None", height="None")=

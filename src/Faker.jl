@@ -1,15 +1,19 @@
 module Faker
 
-import Base.Callable
-import Base: getindex
+using Dates
+using Random
 
+import YAML
+#data = YAML.load(open("es-MX.yml"))
+#data["es-MX"]["faker"]
+
+include("base.jl")
 include("persona.jl")
 include("creditcard.jl")
 include("trabajo.jl")
 include("datatime.jl")
 include("phone_number.jl")
 include("color.jl")
-include("base.jl")
 include("company.jl")
 include("file.jl")
 include("internet.jl")

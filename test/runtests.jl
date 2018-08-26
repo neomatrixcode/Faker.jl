@@ -146,3 +146,17 @@ Faker.internet_explorer()                       # => Mozilla/5.0 (compatible; MS
 @test (occursin(r"http://.+",Faker.uri()) ) == true
 @test (occursin(r"([a-zA-Z]|\s)*",Faker.text(number_chars=10)) ) == true
 @test (occursin(r".+",Faker.password()) ) == true
+
+Faker.seed(1234)
+
+@test Faker.random_digit() == "7"
+@test Faker.random_digit_not_null() == "4"
+@test Faker.random_digit_or_empty() == " "
+@test Faker.random_number(digits= 1) == "6"
+@test Faker.random_int(min=0, max=9999) == "4994"
+@test Faker.randomize_nb_elements(number=10, le=false, ge=false) == "14.9"
+@test Faker.random_letter() == "d"
+@test Faker.random_element(("a", "b", "b")) == "b"
+@test Faker.lexify("????") == "VTSa"
+@test Faker.numerify("####") == "7491"
+@test Faker.bothify("## ??") == "26 Eu"

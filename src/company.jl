@@ -1,5 +1,5 @@
 
-    catch_phrase_words = (
+    catch_phrase_words = ( #buzzwords
         (  "habilidad", "acceso", "adaptador", "algoritmo", "alianza",
            "analista", "aplicación", "enfoque", "arquitectura",
            "archivo", "inteligencia artificial", "array", "actitud",
@@ -128,10 +128,10 @@
     company_suffixes = ("A.C.", "S.A.", "S.A. de C.V.", "S.C.",
         "S. R.L. de C.V.","e Hijos", "y Asociados")
 
- 
+
     company_suffix()= company_suffixes[rand(1:length(company_suffixes))]
 
-    
+
     company_prefix() = company_preffixes[rand(1:length(company_preffixes))]
 
 
