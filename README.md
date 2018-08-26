@@ -1,6 +1,6 @@
 # Faker
 
-<p align="center">
+<p align="center"><img src="faker.png" width="25%" ></p>
 <p align="center">
 <strong>Generator of fake data for julia.</strong>
 <br><br>
