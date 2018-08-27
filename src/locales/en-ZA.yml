@@ -19,9 +19,9 @@ en-ZA:
       suffix: [Pty Ltd, CC, Group, and Sons, Sole Proprietor, Trust]
       name:
         - "#{company_names}"
-        - "#{Name.last_name} #{suffix}"
-        - "#{Name.last_name}-#{Name.last_name}"
-        - "#{Name.last_name}, #{Name.last_name} and #{Name.last_name}"
+        - "#{last_name} #{suffix}"
+        - "#{last_name}-#{last_name}"
+        - "#{last_name}, #{last_name} and #{last_name}"
       type: [Pty Ltd, Close Corporation, Sole Proprietor, Trust, Non Profit Organisation, Listed Company]
     phone_number:
       # https://en.wikipedia.org/wiki/Telephone_numbers_in_South_Africa

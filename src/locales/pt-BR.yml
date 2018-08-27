@@ -27,8 +27,8 @@ pt-BR:
       building_number: ["#####", "####", "###", "s/n"]
       street_suffix: ["Rua", "Avenida", "Travessa", "Ponte", "Alameda", "Marginal", "Viela", "Rodovia"]
       street_name:
-        - "#{street_suffix} #{Name.first_name}"
-        - "#{street_suffix} #{Name.first_name} #{Name.last_name}"
+        - "#{street_suffix} #{first_name}"
+        - "#{street_suffix} #{first_name} #{last_name}"
       secondary_address: ["Apto. ###", "Sobrado ##", "Casa #", "Lote ##", "Quadra ##"]
       # Though these are US-specific, they are here (in the default locale) for backwards compatibility
       postcode: ["#####-###"]
@@ -67,22 +67,22 @@ pt-BR:
     company:
       suffix: ["S.A.", "LTDA", "e Associados", "Comércio", "EIRELI"]
       name:
-        - "#{Name.last_name} #{suffix}"
-        - "#{Name.last_name}-#{Name.last_name}"
-        - "#{Name.last_name}, #{Name.last_name} e #{Name.last_name}"
+        - "#{last_name} #{suffix}"
+        - "#{last_name}-#{last_name}"
+        - "#{last_name}, #{last_name} e #{last_name}"
 
     university:
       prefix: [Universidade, Faculdade, Centro Tecnológico]
       region: [Federal, Estadual, Municipal, Rural, Regional, Católica, Metodista]
       suffix: ['do Sul', 'do Norte', 'a Distância', 'EAD', 'do Leste', 'do Oeste', 'do Nordeste', 'do Suldeste', 'da Floresta Amazônica', 'da Caatinga', 'Atlântica']
       name:
-              - "#{University.prefix} #{Name.last_name} #{University.suffix}"
+              - "#{University.prefix} #{last_name} #{University.suffix}"
               - "#{University.prefix} do(a) #{Address.state} #{University.suffix}"
               - "#{University.prefix} do(a) #{Address.state}"
               - "#{University.prefix} #{University.region} do(a) #{Address.state}"
               - "#{University.prefix} #{University.region} do(a) #{Address.state} #{University.suffix}"
-              - "#{University.prefix} #{Name.last_name} #{University.suffix}"
-              - "#{University.prefix} #{Name.last_name}"
+              - "#{University.prefix} #{last_name} #{University.suffix}"
+              - "#{University.prefix} #{last_name}"
 
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com, live.com, bol.com.br]

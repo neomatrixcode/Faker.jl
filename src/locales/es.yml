@@ -17,8 +17,8 @@ es:
       city:
         - "#{city_prefix}"
       street_name:
-        - "#{street_suffix} #{Name.first_name}"
-        - "#{street_suffix} #{Name.first_name} #{Name.last_name}"
+        - "#{street_suffix} #{first_name}"
+        - "#{street_suffix} #{first_name} #{last_name}"
       street_address:
         - "#{street_name}#{building_number}"
         - "#{street_name}#{building_number} #{secondary_address}"
@@ -32,10 +32,10 @@ es:
         - ["24 horas", "24/7", "3rd generación", "4th generación", "5th generación", "6th generación", "analizada", "asimétrica", "asíncrona", "monitorizada por red", "bidireccional", "bifurcada", "generada por el cliente", "cliente servidor", "coherente", "cohesiva", "compuesto", "sensible al contexto", "basado en el contexto", "basado en contenido", "dedicada", "generado por la demanda", "didactica", "direccional", "discreta", "dinámica", "potenciada", "acompasada", "ejecutiva", "explícita", "tolerante a fallos", "innovadora", "amplio ábanico", "global", "heurística", "alto nivel", "holística", "homogénea", "hibrida", "incremental", "intangible", "interactiva", "intermedia", "local", "logística", "maximizada", "metódica", "misión crítica", "móbil", "modular", "motivadora", "multimedia", "multiestado", "multitarea", "nacional", "basado en necesidades", "neutral", "nueva generación", "no-volátil", "orientado a objetos", "óptima", "optimizada", "radical", "tiempo real", "recíproca", "regional", "escalable", "secundaria", "orientada a soluciones", "estable", "estatica", "sistemática", "sistémica", "tangible", "terciaria", "transicional", "uniforme", "valor añadido", "vía web", "defectos cero", "tolerancia cero"]
         - ["Adaptativo", "Avanzado", "Asimilado", "Automatizado", "Equilibrado", "Centrado en el negocio", "Centralizado", "Clonado", "Compatible", "Configurable", "Multi grupo", "Multi plataforma", "Centrado en el usuario", "Configurable", "Descentralizado", "Digitalizado", "Distribuido", "Diverso", "Reducido", "Mejorado", "Para toda la empresa", "Ergonomico", "Exclusivo", "Expandido", "Extendido", "Cara a cara", "Enfocado", "Totalmente configurable", "Fundamental", "Orígenes", "Horizontal", "Implementado", "Innovador", "Integrado", "Intuitivo", "Inverso", "Gestionado", "Obligatorio", "Monitorizado", "Multi canal", "Multi lateral", "Multi capa", "En red", "Orientado a objetos", "Open-source", "Operativo", "Optimizado", "Opcional", "Organico", "Organizado", "Perseverando", "Persistente", "en fases", "Polarizado", "Pre-emptivo", "Proactivo", "Enfocado a benficios", "Profundo", "Programable", "Progresivo", "Public-key", "Enfocado en la calidad", "Reactivo", "Realineado", "Re-contextualizado", "Re-implementado", "Reducido", "Ingenieria inversa", "Robusto", "Fácil", "Seguro", "Auto proporciona", "Compartible", "Intercambiable", "Sincronizado", "Orientado a equipos", "Total", "Universal", "Mejorado", "Actualizable", "Centrado en el usuario", "Amigable", "Versatil", "Virtual", "Visionario"]
       name:
-        - "#{Name.last_name} #{suffix}"
-        - "#{Name.last_name} y #{Name.last_name}"
-        - "#{Name.last_name} #{Name.last_name} #{suffix}"
-        - "#{Name.last_name}, #{Name.last_name} y #{Name.last_name} Asociados"
+        - "#{last_name} #{suffix}"
+        - "#{last_name} y #{last_name}"
+        - "#{last_name} #{last_name} #{suffix}"
+        - "#{last_name}, #{last_name} y #{last_name} Asociados"
       industry: ["Defensa", "Equipo de Cómputo", "Software", "Redes", "Internet", "Semiconductores", "Telecomunicaciones", "Despacho de Abogados", "Servicos Legales", "Consultoría en Administración", "Biotecnología", "Clínica", "Hospitales y Cuidado Médico", "Farmacéutica", "Veterinaria", "Dispositivos Médicos", "Cosméticos", "Moda", "Equipo Deportivo", "Tabaco", "Supermercados", "Elaboración de Comida", "Electrodomésticos", "Bienes", "Muebles", "Retail", "Entretenimiento", "Juegos y Apuestas", "Viajes y Turismo", "Hospitalidad", "Restaurantes", "Deportes", "Comida y Bebida", "Cine", "Broadcast Media", "Museos e Instituciones", "Bellas Artes", "Artes Escénicas", "Banca", "Seguros", "Servicios Financieros", "Bienes Raíces", "Banca de Inversión", "Manejo de Inversiones", "Contabilidad", "Construcción", "Materiales de Construcción", "Arquitectura", "Ingeniería Civil", "Aeroespacial", "Automotriz", "Química", "Maquinaria", "Minería y Metales", "Petróleo y Energía", "Construcción de Barcos", "Servicios", "Textiles", "Papel", "Ferrocarriles", "Agricultura", "Ganadería", "Lácteos", "Pesca", "Educación Basica", "Educación Media Superior", "Administración de Educación", "Investigación", "Militar", "Asamblea Legislativa", "Juzgado", "Relaciones Internacionales", "Gobierno", "Dirección General", "Policía", "Seguridad Pública", "Política Pública", "Marketing", "Periódicos", "Publicaciones", "Imprenta", "Tecnologías de Información", "Bibliotecas", "Medio Ambiente", "Paquetería y Mensajería", "Servicios Familiares", "Instituciones Religiosas", "Sociedad Civil", "Servicios del Consumidor", "Transportes", "Almacenamiento", "Líneas Aéreas", "Marítimo", "Investigación de Mercado", "Relaciones Públicas", "Diseño", "Sin Fines de Lucro", "Recaudación", "Edición", "Staffing y Reclutamiento", "Coaching", "VC", "Partidos Políticos", "Traducciones", "Juegos de Cómputo", "Planeación de Eventos", "Artes y Manualidades", "Manufactura Eléctrica/Electrónica", "Medios Online", "Nanotecnología", "Música", "Logística y Supply Chain", "Plásticos", "Seguridad de Cómputo y Redes", "Inalámbrico", "Outsourcing / Offshoring", "Bienestar y Salud", "Medicina Alternativa", "Producción de Medios", "Animación", "Bienes Raíces Comerciales", "Mercados Capitales", "Filantropía", "E-Learning", "Mayoreo", "Importaciones y Exportaciones", "Ingeniería Mecánica e Industrial", "Fotografía", "Recursos Humanos", "Equipo de Oficina", "Cuidado de la Salud Mental", "Diseño Gráfico", "Desarrollo y Comercio Exterior", "Vinos y Licores", "Joyería y Bienes de Lujo", "Renovables y Medio Ambiente", "Vidrios y Cerámicos", "Almacenamiento y Contenedores", "Automatización Industrial", "Relaciones Gubernamentales"]
       profession: ["maestro", "actor", "músico", "filósofo", "escritor", "doctor", "contador", "agricultor", "arquitecto", "economista", "ingeniero", "intérprete", "abogado", "bibliotecario", "actuario", "recursos humanos", "bombero", "juez", "policía", "astrónomo", "biólogo", "químico", "físico", "programador", "desarrollador web", "diseñador"]
 
@@ -43,9 +43,9 @@ es:
             prefix: [El, Septentrional, Norte, Occidental, Oeste, Del Sur, Sur, Oriental, Oriente]
             suffix: [Universidad, Instituto, Academia]
             name:
-              - "#{Name.last_name} #{University.suffix}"
-              - "#{University.prefix} #{Name.last_name} #{University.suffix}"
-              - "#{University.prefix} #{Name.last_name}"
+              - "#{last_name} #{University.suffix}"
+              - "#{University.prefix} #{last_name} #{University.suffix}"
+              - "#{University.prefix} #{last_name}"
               - "#{University.prefix} #{Address.state} #{University.suffix}"
 
 

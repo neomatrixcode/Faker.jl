@@ -10,7 +10,7 @@
 
     #sha256() = hexdigest("sha256", "$(rand())")
 
-    country_code()= timeszon[rand(1:length(timeszon))]["code"]
+    country_code()= executor(data["en"]["faker"]["address"]["country_code"])
 
     language_code() = language_codes[rand(1:length(language_codes))]
 

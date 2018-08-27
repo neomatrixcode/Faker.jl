@@ -68,9 +68,9 @@ uk:
       suffix: [постач, торг, пром, трейд, збут]
       product: [вапняк, камінь, цемент, бурштин, пісок, метал, мазут, бітум, цегла, скло, дерево]
       name:
-        - "#{prefix} #{Name.female_first_name}"
-        - "#{prefix} #{Name.male_first_name}"
-        - "#{prefix} #{Name.male_last_name}"
+        - "#{prefix} #{female_first_name}"
+        - "#{prefix} #{male_first_name}"
+        - "#{prefix} #{male_last_name}"
         - "#{prefix} #{Address.city_name}#{product}#{suffix}"
         - "#{prefix} #{Address.city_name}#{suffix}"
 

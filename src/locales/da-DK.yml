@@ -16,8 +16,8 @@ da-DK:
       street_name:
         - "#{street_root}#{street_suffix}"
         - "#{street_prefix} #{street_root}#{street_suffix}"
-        - "#{Name.first_name}#{common_street_suffix}"
-        - "#{Name.last_name}#{common_street_suffix}"
+        - "#{first_name}#{common_street_suffix}"
+        - "#{last_name}#{common_street_suffix}"
       postcode: ['####']
       building_number: ['###', '##', '#']
       secondary_address: ['Hus ###', '# TH.', '#TV.', '# MF.', '# ST.']
@@ -28,9 +28,9 @@ da-DK:
     company:
       suffix: ["A/S", "ApS", "I/S", "IVS", "Holding", "SMBA", "K/S", "SPW"]
       name:
-        - "#{Name.last_name} #{suffix}"
-        - "#{Name.last_name}-#{Name.last_name}"
-        - "#{Name.last_name}, #{Name.last_name} #{suffix}"
+        - "#{last_name} #{suffix}"
+        - "#{last_name}-#{last_name}"
+        - "#{last_name}, #{last_name} #{suffix}"
 
     internet:
       domain_suffix: [dk, nu, com]

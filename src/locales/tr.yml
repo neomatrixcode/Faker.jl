@@ -29,6 +29,6 @@ tr:
 
     book:
       title: ['Taht Oyunları', 'Maymunlar Gezegeni', 'Benim Adım Kırmızı', 'Uykuların Doğusu', 'Yılanların Öcü']
-      author: "#{Name.name}"
+      author: "#{name}"
       publisher: ['Babıali Kültür Yayıncılığı', 'İletişim Yayınları', 'Turkuvaz Kitap', 'Kaynak Yayınları']
       quote: ['Sabır acıdır, meyvesi tatlıdır', 'Dost kara günde belli olur', 'Çıkmayan candan umit kesilmez', 'Gözden uzak olan gönülden de uzak olur.']

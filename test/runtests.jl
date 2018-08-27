@@ -123,7 +123,7 @@ Faker.internet_explorer()                       # => Mozilla/5.0 (compatible; MS
 @test (occursin(r".+",Faker.last_name()) ) == true
 @test (occursin(r".+",Faker.state()) ) == true
 @test (occursin(r".+",Faker.job()) ) == true
-@test (occursin(r"[0-9]{5}","$(Faker.zip_code("OAX"))") ) == true
+@test (occursin(r"[0-9]{5}","$(Faker.postcode())") ) == true
 @test (occursin(r"[a-zA-Z]+/[a-zA-Z]+",Faker.timezone()) ) == true
 @test (occursin(r"[a-zA-Z]{2}",Faker.am_pm()) ) == true
 @test (occursin(r"[a-zA-Z]+",Faker.day_of_week()) ) == true
@@ -160,3 +160,19 @@ Faker.seed(1234)
 @test Faker.lexify("????") == "VTSa"
 @test Faker.numerify("####") == "7491"
 @test Faker.bothify("## ??") == "26 Eu"
+
+@test Faker.first_name() == "Harrison"
+@test Faker.last_name() == "Bruen"
+@test Faker.prefixe() == "Mr."
+@test Faker.street_name() == "Wolf Parks"
+@test Faker.address() == "7602 Alex Row Keeblerburgh, WV 10789"
+@test Faker.street_address() == "92350 Aracely Mall"
+
+Faker.language("es-MX")
+
+@test Faker.first_name() == "Irene"
+@test Faker.last_name() == "Barragán"
+@test Faker.prefixe() == "Ing."
+@test Faker.street_name() == "Sector Santiago Morales"
+@test Faker.address() == "Avenida Rosario 8965 Naucalpan, MEX 27198"
+@test Faker.street_address() == "Pasaje Oxkutzcab S/N"

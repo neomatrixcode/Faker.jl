@@ -22,19 +22,14 @@ Below are some of the features that are planned to be added in future versions o
 
 #### Version 0.2.0
  + Julia version 1.0 syntax update
- + Implementation of the seed () method, seed for the random number generator. Calling the same script twice with the same seed will produce the same results.
- + Unicode symbol generator
+ + Implementation of the seed () method.
+ + Language support
 
 #### Version 0.2.1
- + Language support, generation in the formats of each language
-  > Possible syntax :
-  ```bash
-   Faker.language("en_US")   - English (United States)
-   ```
+  + Unicode symbol generator
 
 #### Version 0.2.2
   + Possibility of creating a generator
-
 
 #### Version 0.2.3
   + Modularization of the method Faker.simple_profile()
@@ -68,8 +63,15 @@ Faker.email() #  => "kirsten.greenholt@corkeryfisher.info"
 ------------------
 ### Seed
 -----------------
+Seed for the random number generator. Calling the same script twice with the same seed will produce the same results.
 ```julia
   Faker.seed(4321)
+```
+### Language support
+-----------------
+Generation of data in the formats of each language
+```julia
+   Faker.language("es-MX")   - Espanish (Mexico)
 ```
 
 ### Base

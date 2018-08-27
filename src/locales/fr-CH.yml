@@ -21,9 +21,9 @@ fr-CH:
     company:
       suffix: [AG, GmbH, et associés, "& Co.", Groupe, LLC, Inc.]
       name:
-        - "#{Name.last_name} #{suffix}"
-        - "#{Name.last_name}-#{Name.last_name}"
-        - "#{Name.last_name}, #{Name.last_name} et #{Name.last_name}"
+        - "#{last_name} #{suffix}"
+        - "#{last_name}-#{last_name}"
+        - "#{last_name}, #{last_name} et #{last_name}"
 
     internet:
       free_email: [gmail.com, yahoo.ch, hotmail.ch]
@@ -63,7 +63,7 @@ fr-CH:
 
     book:
       title: ['La Discipline des orphelins', 'Le Couloir de tous les mépris', "L'Odeur du sanglier", 'La Promise du voyeur', "L'Odyssée invisible", 'La Soumission comme passion', 'Le Siècle de la rue voisine', 'Le Désir des femmes fortes', 'Pourquoi je mens ?', 'La Peau des savants', 'La progéniture du mal']
-      author: "#{Name.name}"
+      author: "#{name}"
       publisher: ['Éditions du Soleil', 'La Perdrix', 'Les Éditions jaune turquoise', 'Bordel père et fils', 'Au lecteur éclairé', 'Lire en dormant']
       quote: ['Qui vivra verra', 'L’habit ne fait pas le moine', 'Chacun voit midi à sa porte', 'Mieux vaut prévenir que guérir', 'Petit a petit, l’oiseau fait son nid', 'Qui court deux lievres a la fois, n’en prend aucun', 'Qui n’avance pas, recule']
 

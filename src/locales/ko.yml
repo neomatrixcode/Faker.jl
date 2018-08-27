@@ -21,8 +21,8 @@ ko:
       suffix: ["연구소", "게임즈", "그룹", "전자", "물산", "코리아"]
       prefix: ["주식회사", "한국"]
       name:
-        - "#{prefix} #{Name.first_name}"
-        - "#{Name.first_name} #{suffix}"
+        - "#{prefix} #{first_name}"
+        - "#{first_name} #{suffix}"
 
     internet:
       free_email: [gmail.com, yahoo.co.kr, hanmail.net, naver.com]

@@ -8,9 +8,9 @@ de-CH:
     company:
       suffix: [AG, GmbH, und Söhne, und Partner, "& Co.", Gruppe, LLC, Inc.]
       name:
-        - "#{Name.last_name} #{suffix}"
-        - "#{Name.last_name}-#{Name.last_name}"
-        - "#{Name.last_name}, #{Name.last_name} und #{Name.last_name}"
+        - "#{last_name} #{suffix}"
+        - "#{last_name}-#{last_name}"
+        - "#{last_name}, #{last_name} und #{last_name}"
 
     internet:
       domain_suffix: [com, net, biz, ch, de, li, at, ch, ch]

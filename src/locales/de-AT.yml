@@ -22,9 +22,9 @@ de-AT:
       suffix: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OHG]
       legal_form: [GmbH, AG, Gruppe, KG, GmbH & Co. KG, UG, OHG]
       name:
-        - "#{Name.last_name} #{suffix}"
-        - "#{Name.last_name}-#{Name.last_name}"
-        - "#{Name.last_name}, #{Name.last_name} und #{Name.last_name}"
+        - "#{last_name} #{suffix}"
+        - "#{last_name}-#{last_name}"
+        - "#{last_name}, #{last_name} und #{last_name}"
 
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]

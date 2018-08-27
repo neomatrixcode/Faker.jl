@@ -34,11 +34,8 @@ end
     luhn_lookup = Dict("0"=> 0, "1"=> 2, "2"=> 4, "3"=> 6, "4"=> 8,
                    "5"=> 1, "6"=> 3, "7"=> 5, "8"=> 7, "9"=> 9)
 
-    function credit_card_provider(card_type="None")
-        if card_type == "None"
-            card_type = [key for key in  keys(credit_card_types)][rand(1:9)]
-        end
-        credit_card_types[card_type].name
+    function credit_card_provider()
+        executor(data["en"]["faker"]["business"]["credit_card_types"])
     end
 
     function credit_card_number(card="None")
@@ -63,19 +60,14 @@ end
         end
         card = credit_card_types[card]
 
-        tpl = ("$(card.name) $(first_name()) $(last_name()) $(generate_number(card.prefixes,card.length)) $(card.security_code) $(credit_card_security_code(card))")
+        tpl = ("$(card.name) $(first_name()) $(last_name()) $(generate_number(card.prefixes,card.length)) $(card.security_code) $(credit_card_security_code())")
 
         tpl
     end
 
 
-    function credit_card_security_code( card_type="None")
-        if card_type == "None"
-            card_type = [key for key in  keys(credit_card_types)][rand(1:9)]
-            card_type = credit_card_types[card_type]
-        end
-        sec_len = card_type.security_code_length
-        return numerify("#"^sec_len)
+    function credit_card_security_code()
+        return numerify("###")
     end
 
     function credit_card_type()

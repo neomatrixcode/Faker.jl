@@ -12,7 +12,7 @@ zh-TW:
       city:
         - "#{city_prefix}#{city_suffix}"
       street_name:
-        - "#{Name.last_name}#{street_suffix}"
+        - "#{last_name}#{street_suffix}"
       street_address:
         - "#{street_name} #{building_number} 號"
       default_country: [台灣]

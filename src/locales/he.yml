@@ -4,12 +4,12 @@ he:
     address:
       city_prefix: [רמת,הר,גבעת,כפר]
       city:
-        - "#{city_prefix} #{Name.first_name}"
-        - "#{city_prefix} #{Name.last_name}"
+        - "#{city_prefix} #{first_name}"
+        - "#{city_prefix} #{last_name}"
       building_number: ['##', '#']
       street_prefix: [רחוב,רחוב,נחל,דרך,שדרות]
       street_name:
-        - "#{street_prefix} #{Name.name}"
+        - "#{street_prefix} #{name}"
       street_address:
         - "#{building_number} #{street_name}"
         - "#{street_name} #{building_number}"
