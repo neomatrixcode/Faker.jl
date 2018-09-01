@@ -24,6 +24,7 @@ function loadfiles(nivel::String)
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("address.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("business.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("color.yml"))["en"]["faker"])
+		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("company.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("file.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("internet.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("job.yml"))["en"]["faker"])
@@ -52,7 +53,7 @@ function executor(data :: Array)
 if occursin(r"#{.+}",fn)
 	elements = collect((m.match for m = eachmatch(r"#{[a-zA-Z\_\.]+}", fn)))
 	for i in elements
-      fn= replace(fn, i => eval(Meta.parse(i[3:end-1]*"()")))
+      fn= replace(fn, i => eval(Meta.parse(i[3:end-1]*"()")),count=1)
     end
 end
 return fn
@@ -66,8 +67,8 @@ include("datatime.jl") #/
 include("misc.jl")     #/
 include("phone_number.jl")#/
 include("trabajo.jl")
-include("color.jl")
-include("company.jl")
+include("color.jl")    #/
+include("company.jl")  #/
 include("file.jl")    #/
 include("internet.jl")
 include("lorem.jl") #/
