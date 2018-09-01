@@ -108,8 +108,7 @@ Faker.file_name()                               == "sUwb.flac"
 @test Faker.last_name()                               == "Moreno"
 @test Faker.prefixe()                                 == "Dr."
 Faker.simple_profile()
-
-Faker.job()
+@test Faker.job()                                     == "Gerente de compras"
 
 Faker.mac_processor()                           == "U; PPC"
 Faker.linux_processor()                         == "x86_64"

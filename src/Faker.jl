@@ -27,7 +27,6 @@ function loadfiles(nivel::String)
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("company.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("file.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("internet.yml"))["en"]["faker"])
-		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("job.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("lorem.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("name.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("nation.yml"))["en"]["faker"])
@@ -66,7 +65,6 @@ include("creditcard.jl") #/
 include("datatime.jl") #/
 include("misc.jl")     #/
 include("phone_number.jl")#/
-include("trabajo.jl")
 include("color.jl")    #/
 include("company.jl")  #/
 include("file.jl")    #/
