@@ -87,13 +87,12 @@ Faker.language_code()                           == "ru"
 Faker.boolean()                                 == "True"
 
 
-Faker.color_name()                              == "DarkMagenta"
-Faker.safe_color_name()                         == "purple"
-Faker.hex_color()                               == "#77cc00"
-Faker.safe_hex_color()                          == "#16a100"
-Faker.rgb_color_list()                          == "(230, 94, 69)"
-Faker.rgb_color()                               == "213,100,110"
-Faker.rgb_css_color()                           == "rgb(88,244,35)"
+@test Faker.color_name()                              == "MediumSeaGreen"
+@test Faker.safe_color_name()                         == "white"
+@test Faker.hex_color()                               == "#C0C0C0"
+@test Faker.rgb_color_list()                          == "(34,112,7)"
+@test Faker.rgb_color()                               == "145,19,218"
+@test Faker.rgb_css_color()                           == "rgb(113,128,99)"
 
 
 Faker.credit_card_security_code()               == "768"
@@ -213,13 +212,12 @@ Faker.language_code()                           == "ru"
 Faker.boolean()                                 == "True"
 
 
-Faker.color_name()                              == "DarkMagenta"
-Faker.safe_color_name()                         == "purple"
-Faker.hex_color()                               == "#77cc00"
-Faker.safe_hex_color()                          == "#16a100"
-Faker.rgb_color_list()                          == "(230, 94, 69)"
-Faker.rgb_color()                               == "213,100,110"
-Faker.rgb_css_color()                           == "rgb(88,244,35)"
+@test Faker.color_name()                              == "Cornsilk"
+@test Faker.safe_color_name()                         == "gold"
+@test Faker.hex_color()                               == "#800080"
+@test Faker.rgb_color_list()                          == "(128,99,234)"
+@test Faker.rgb_color()                               == "239,250,27"
+@test Faker.rgb_css_color()                           == "rgb(125,104,163)"
 
 
 Faker.credit_card_security_code()               == "768"
@@ -232,10 +230,9 @@ Faker.mime_type()                               == "video/quicktime"
 Faker.file_extension()                          == "css"
 Faker.file_name()                               == "sUwb.flac"
 
-@test Faker.first_name()                              == "Francisco"
-@test Faker.last_name()                               == "Olvera"
-@test Faker.prefixe()                                 == "Dr."
-
+@test Faker.first_name()                              == "Reyna"
+@test Faker.last_name()                               == "Segura"
+@test Faker.prefixe()                                 == "Lic."
 Faker.simple_profile()
 
 Faker.job()
