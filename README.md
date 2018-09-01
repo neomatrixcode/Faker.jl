@@ -69,7 +69,7 @@ Seed for the random number generator. Calling the same script twice with the sam
 ```
 ### Language support
 -----------------
-Generation of data in the formats of each language
+Data generation in the formats of each language
 ```julia
    Faker.language("es-MX")   - Espanish (Mexico)
 ```

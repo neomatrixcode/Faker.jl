@@ -1,39 +1,8 @@
 
-    formats = (
-        "+##(#)##########",
-        "+##(#)##########",
-        "0##########",
-        "0##########",
-        "###-###-####",
-        "(###)###-####",
-        "1-###-###-####",
-        "###.###.####",
-        "###-###-####",
-        "(###)###-####",
-        "1-###-###-####",
-        "###.###.####",
-        "###-###-####x###",
-        "(###)###-####x###",
-        "1-###-###-####x###",
-        "###.###.####x###",
-        "###-###-####x####",
-        "(###)###-####x####",
-        "1-###-###-####x####",
-        "###.###.####x####",
-        "###-###-####x#####",
-        "(###)###-####x#####",
-        "1-###-###-####x#####",
-        "###.###.####x#####"
-    )
+lada_dos() = numerify(executor(data["en"]["faker"]["phone_number"]["lada_dos"]))
+lada_tres() = numerify(executor(data["en"]["faker"]["phone_number"]["lada_tres"]))
+area_code() = numerify(executor(data["en"]["faker"]["phone_number"]["area_code"]))
+exchange_code() = numerify(executor(data["en"]["faker"]["phone_number"]["exchange_code"]))
 
-
- function phone_number()
-
-    t= formats[(rand(1:length(formats)))]
-
-    for i=t
-     t= replace(t,"#" => "$(rand(0:9))", count= 1)
-    end
-
-    return t
-end
+phone_number() = numerify(executor(data["en"]["faker"]["phone_number"]["formats"]))
+cell_phone() = numerify(executor(data["en"]["faker"]["cell_phone"]["formats"]))
