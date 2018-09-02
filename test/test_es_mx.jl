@@ -16,21 +16,21 @@ Faker.seed(1234)
 
 Faker.seed(1234)
 
-Faker.state_abbr()                                 == "AP"
-Faker.latitude()                                   == "-74.518224"
-Faker.street_name()                                == "Green Knoll"
-Faker.address()                                    == "741 Drucilla Lights Marlenport, VT 54198-4463"
-Faker.street_address()                             == "4630 Kling Throughway"
-Faker.postcode()                                   == "18604-5538"
-Faker.longitude()                                  == "41.536069"
-Faker.country()                                    == "Montserrat"
-Faker.geo_coordinate(center="None", radius=0.001)  == "48.396071"
-Faker.secondary_address()                          == "Apt. 621"
-Faker.city_prefix()                                == "Lake"
-Faker.city_suffix()                                == "ville"
-Faker.building_number()                            == "7065"
-Faker.city()                                       == "West Donato"
-Faker.state()                                      == "WestVirginia"
+@test Faker.state_abbr() == "HID"
+@test Faker.latitude() == 2.505859375
+@test Faker.street_name() == "Paseo Coquimatlán"
+@test Faker.address() == "Escalinata Xochitepec 52 Querétaro, PUE 12657"
+@test Faker.street_address() == "Mercado Silvia Espinoza S/N 7ª Planta"
+@test Faker.postcode() == "77309"
+@test Faker.longitude() == 17.015625
+@test Faker.country() == "Kazajistán"
+@test Faker.geo_coordinate(center="None", radius=0.001) == Float16(-16.98)
+@test Faker.secondary_address() == "Depto. 894"
+@test Faker.city_prefix() == "Sur"
+@test Faker.city_suffix() == "los bajos"
+@test Faker.building_number() == "8"
+@test Faker.city() == "Asientos"
+@test Faker.state() == "Quintana Roo"
 
 Faker.seed(1234)
 
@@ -41,26 +41,24 @@ Faker.seed(1234)
 
 Faker.seed(1234)
 
-Faker.date_time_ad()                                           == "1446-03-17 04:03:47"
-Faker.months()                                                 == "10"
-Faker.am_pm()                                                  == "PM"
-Faker.iso8601()                                                == "1986-05-02T21:01:04"
-Faker.date_time()                                              == "1981-10-29 21:56:29"
-Faker.month_name()                                             == "November"
-Faker.day_of_week()                                            == "Thursday"
-Faker.day_of_month()                                           == "14"
-Faker.date_time_between("-30y", "now")                         == "1990-01-30 11:47:01"
-Faker.time("H:M:S")                                            == "21:44:43"
-Faker.unix_time()                                              == "711770812"
-Faker.timezone()                                               == "Atlantic/Reykjavik"
-Faker.century()                                                == "XV"
-Faker.date("Y-m-d")                                            == "1998-09-11"
-Faker.year()                                                   == "1998"
-Faker.date_time_this_century(before_now=true, after_now=false) == "1941-12-05 15:52:02"
-Faker.date_time_this_decade(before_now=true, after_now=false)  == "2013-02-24 18:47:46"
-Faker.date_time_this_year(before_now=true, after_now=false)    == "2013-04-22 14:51:26"
-Faker.date_time_this_month(before_now=true, after_now=false)   == "2014-04-02 08:38:48"
-
+@test Faker.months() ==8
+@test Faker.am_pm() =="PM"
+ Faker.iso8601() == "2076-06-20T03:19:24"
+ Faker.date_time() =="2041-1-3 08:20:25"
+ Faker.month_name() =="March"
+ Faker.day_of_week() =="Saturday"
+ Faker.day_of_month() == 13
+ Faker.date_time_between("-30y", "now") =="1989-6-7 21:38:44"
+ Faker.time("H:M:S") =="18:46:36"
+ Faker.unix_time() ==454113618933
+ Faker.timezone() =="Atlantic/Azores"
+ Faker.century() =="V"
+ Faker.date("Y-m-d") =="2023-2-19"
+ Faker.year() ==2035
+ Faker.date_time_this_century(before_now=true, after_now=false) =="2007-1-3 00:00:00"
+ Faker.date_time_this_decade(before_now=true, after_now=false) =="2018-7-23 00:00:00"
+ Faker.date_time_this_year(before_now=true, after_now=false) =="2018-5-17 00:00:00"
+ Faker.date_time_this_month(before_now=true, after_now=false) =="2018-9-1 00:00:00"
 Faker.seed(1234)
 
 @test Faker.email()                                   == "kPeña@agyaasrdc.org"
@@ -83,13 +81,13 @@ Faker.seed(1234)
 
 Faker.seed(1234)
 
-Faker.text(number_chars=200)
-Faker.sentence(number_words=6, variable_nb_words=true)
-Faker.word()
-Faker.paragraphs()
-Faker.words(number_words=3)
-Faker.paragraph(number=3)
-Faker.sentences(number_sentences=3)
+@test Faker.text(number_chars=200) ==  "Laudantium molestias eos rerum. Cupiditate voluptatem exercitationem enim.. Qui qui suscipit aspernatur porro. Non. Officiis consequatur harum architecto quibusdam. Explicabo voluptas cumque distinctio maiores voluptatibus.."
+@test Faker.sentence(number_words=6, variable_nb_words=true) == "Distinctio numquam velit voluptatem incidunt."
+@test Faker.word() == "eaque"
+@test Faker.paragraphs() == ["Numquam unde et dolorem. Rem aut harum perspiciatis. Veritatis..", "Consequuntur consequatur recusandae quis. Nobis dolorem ipsum non ipsam. Quia vel et minus sed. Molestiae velit iure..", "Culpa expedita. Quo voluptatibus voluptatem ea placeat.."]
+@test Faker.words(number_words=3) == ["qui", "eos", "sit"]
+@test Faker.paragraph(number=3) == "Earum exercitationem architecto deserunt dicta alias. Qui eos sint iusto aut.."
+@test Faker.sentences(number_sentences=3) == ["In et voluptatem.", "Nostrum sapiente molestiae.", "Saepe ut in non quasi.", "Ab totam perspiciatis."]
 
 Faker.seed(1234)
 
@@ -98,12 +96,12 @@ Faker.seed(1234)
 
 Faker.seed(1234)
 
-Faker.password()                                == "cQYVB)X%0"
-Faker.locale()                                  == "en_SE"
-Faker.null_boolean()                            == "True"
-Faker.country_code()                            == "DO"
-Faker.language_code()                           == "ru"
-Faker.boolean()                                 == "True"
+@test Faker.password() == "D3Wt#5(2&5&b#7'R%9BsA5Xr%*Uu%kRy99htT8Fn"
+@test Faker.locale() == "cn_NGA"
+@test Faker.null_boolean() == false
+@test Faker.country_code() == "SLV"
+@test Faker.language_code() == "es"
+@test Faker.boolean() == true
 
 Faker.seed(1234)
 
@@ -116,17 +114,17 @@ Faker.seed(1234)
 
 Faker.seed(1234)
 
-Faker.credit_card_security_code()               == "768"
-Faker.credit_card_full()                        == "VISA 16 digit Keon Marvin 4493818436107305 CVC 976"
-Faker.credit_card_number()                      == "4916619442820082"
-Faker.credit_card_provider()                    == "American Express"
-Faker.generate_number("52",16)                  == "5268029839131090"
+@test Faker.credit_card_security_code()               == "736"
+@test Faker.credit_card_full()                        =="JCB 16 digit Beatriz Acosta 3096935238270743 CVC 571"
+@test Faker.credit_card_number()                      == "3096544451199132"
+@test Faker.credit_card_provider()                    == "laser"
+@test Faker.generate_number("52",16)                  == "5276029874944399"
 
 Faker.seed(1234)
 
-Faker.mime_type()                               == "video/quicktime"
-Faker.file_extension()                          == "css"
-Faker.file_name()                               == "sUwb.flac"
+@test Faker.mime_type()                               == "image/x-freehand"
+@test Faker.file_extension()                          == "rmvb"
+@test Faker.file_name()                               == "wTPd.pgn"
 
 Faker.seed(1234)
 
