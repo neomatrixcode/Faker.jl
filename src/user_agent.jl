@@ -1,34 +1,33 @@
 
-    user_agents = (
-        "chrome", "firefox", "internet_explorer", "opera", "safari",
-    )
+    user_agents = [
+        "chrome", "firefox", "internet_explorer", "opera", "safari"
+    ]
 
-    windows_platform_tokens = (
+    windows_platform_tokens = [
         "Windows 95", "Windows 98", "Windows 98; Win 9x 4.90", "Windows CE",
         "Windows NT 4.0", "Windows NT 5.0", "Windows NT 5.01",
         "Windows NT 5.1", "Windows NT 5.2", "Windows NT 6.0", "Windows NT 6.1",
-        "Windows NT 6.2",
-    )
+        "Windows NT 6.2"
+    ]
 
-    linux_processors = ("i686", "x86_64",)
+    linux_processors = ["i686", "x86_64"]
 
-    mac_processors = ("Intel", "PPC", "U; Intel", "U; PPC",)
+    mac_processors = ["Intel", "PPC", "U; Intel", "U; PPC"]
 
-    langs = ("en-US", "sl-SI", "it-IT")
+    langs = ["en-US", "sl-SI", "it-IT"]
 
-    mac_processor()= mac_processors[rand(1:length(mac_processors))]
+    mac_processor()= executor(mac_processors)
 
-    linux_processor()= linux_processors[rand(1:length(linux_processors))]
+    linux_processor()= executor(linux_processors)
 
-    user_agent()= user_agents[rand(1:length(user_agents))]
+    user_agent()= executor(user_agents)
 
-    windows_platform_token()= windows_platform_tokens[rand(1:length(windows_platform_tokens))]
+    windows_platform_token()= executor(windows_platform_tokens)
+
+    linux_platform_token()= "X11; Linux $(linux_processor())"
 
 
-    linux_platform_token()= "X11; Linux $(linux_processors[rand(1:length(linux_processors))])"
-
-
-    mac_platform_token()= "Macintosh; $(mac_processors[rand(1:length(mac_processors))]) Mac OS X 10_$(rand(5:8))_$(rand(0:9))"
+    mac_platform_token()= "Macintosh; $(mac_processor()) Mac OS X 10_$(rand(5:8))_$(rand(0:9))"
 
 
     chrome()=

@@ -64,18 +64,18 @@ return fn
 
 end
 
-include("base.jl")   #/
-include("persona.jl") # /
-include("creditcard.jl") #/
-include("datatime.jl") #/
-include("misc.jl")     #/
-include("phone_number.jl")#/
-include("color.jl")    #/
-include("company.jl")  #/
-include("file.jl")    #/
+include("base.jl")
+include("persona.jl")
+include("creditcard.jl")
+include("datatime.jl")
+include("misc.jl")
+include("phone_number.jl")
+include("color.jl")
+include("company.jl")
+include("file.jl")
 include("internet.jl")
-include("lorem.jl") #/
-include("direccion.jl") #/
+include("lorem.jl")
+include("direccion.jl")
 include("user_agent.jl")
 
 end # module
