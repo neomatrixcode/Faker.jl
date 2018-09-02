@@ -3,6 +3,29 @@ en:
     internet:
       free_email: [gmail.com, yahoo.com, hotmail.com]
       domain_suffix: [com, biz, info, name, net, org, io, co]
+      user_name_formats:
+        - "#{last_name}.#{first_name}"
+        - "#{first_name}.#{last_name}"
+        - "#{first_name}##"
+        - "?#{last_name}"
+      url_formats:
+        - "http://www.#{domain_name}/"
+        - "http://#{domain_name}/"
+      uri_formats:
+        - "#{url}"
+        - "#{url}#{uri_page}/"
+        - "#{url}#{uri_page}#{uri_extension}"
+        - "#{url}#{uri_path}/#{uri_page}/"
+        - "#{url}#{uri_path}/#{uri_page}#{uri_extension}"
+      email_formats:
+        - "#{user_name}@#{domain_name}"
+        - "#{user_name}@#{free_email_domain}"
+      image_placeholder_services:
+        - "http://placekitten.com/#{pixels}/#{pixels}"
+        - "http://placehold.it/#{pixels}x#{pixels}"
+        - "http://www.lorempixum.com/#{pixels}/#{pixels}"
+        - "http://dummyimage.com/#{pixels}x#{pixels}"
+
       user_agent:
         aol:
           - Mozilla/5.0 (compatible; MSIE 9.0; AOL 9.7; AOLBuild 4343.19; Windows NT 6.1; WOW64; Trident/5.0; FunWebProducts)

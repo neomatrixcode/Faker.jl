@@ -1,56 +1,20 @@
 
-safe_email_tlds = ("org", "com", "net")
-free_email_domains = ("gmail.com", "yahoo.com", "hotmail.com")
-tlds = ("com", "biz", "info", "net", "org")
-
-uri_pages = (
-"index", "home", "search", "main", "post", "homepage", "category", "register", "login", "faq", "about", "terms",
-"privacy", "author")
-uri_paths = (
-"app", "main", "wp-content", "search", "category", "tag", "categories", "tags", "blog", "posts", "list", "explore")
-uri_extensions = (".html", ".html", ".html", ".htm", ".htm", ".php", ".php", ".jsp", ".asp")
+uri_pages = ["index", "home", "search", "main", "post", "homepage", "category", "register", "login", "faq", "about", "terms","privacy", "author"]
+uri_paths = ["app", "main", "wp-content", "search", "category", "tag", "categories", "tags", "blog", "posts", "list", "explore"]
+uri_extensions = [".html", ".html", ".html", ".htm", ".htm", ".php", ".php", ".jsp", ".asp"]
 
 
-ln_fn() = "$(last_name()).$(first_name())"
-fn_ln() = "$(first_name()).$(last_name())"
-fn_hashes() = "$(first_name())##"
-ln_question() = "?$(last_name())"
+pixels()= rand(1:1024)
 
-user_name_formats = (
-                     ln_fn,
-                     fn_ln,
-                     fn_hashes,
-                     ln_question
-)
+user_name()= bothify(executor(data["en"]["faker"]["internet"]["user_name_formats"]))
 
-domain_name()="$(domain_word()).$(domain_suffix())"
+domain_suffix()= executor(data["en"]["faker"]["internet"]["domain_suffix"])
+safe_email()= "$(user_name())@example.$(domain_suffix())"
 
-company_email()= "$(user_name())@$(domain_name())"
-
-free_email_domain() = free_email_domains[rand(1:length(free_email_domains))]
-
-fake_domain_email() = "$(user_name())@$(domain_name())"
-free_domain_email() = "$(user_name())@$(free_email_domain())"
-
-email_formats = [
-                fake_domain_email,
-                free_domain_email
-   ]
-
-function email()
-    return email_formats[rand(1:length(email_formats))]()
-end
-
-user_name()= bothify(user_name_formats[rand(1:length(user_name_formats))]())
-
-
-
-safe_email()= "$(user_name())@example.$(safe_email_tlds[rand( 1:length(safe_email_tlds))])"
-
-
+free_email_domain() = executor(data["en"]["faker"]["internet"]["free_email"])
 free_email()= "$(user_name())@$(free_email_domain())"
 
-domain_suffix()= tlds[rand( 1:length(tlds))]
+
 
 domain_word()=
    ( company_elements = split(company(), [',', ' ','-']);
@@ -63,9 +27,14 @@ domain_word()=
 
     lowercase(sal) )
 
+domain_name()="$(domain_word()).$(domain_suffix())"
+
+company_email()= "$(user_name())@$(domain_name())"
+
+email()= executor(data["en"]["faker"]["internet"]["email_formats"])
 
 
-url()=url_formats[rand( 1:length(url_formats))]
+url()= executor(data["en"]["faker"]["internet"]["url_formats"])
 
 
 ipv4()= "$(rand( 172:255)).$(rand( 0:255)).$(rand(0:255)).$(rand(0:255))"
@@ -82,11 +51,11 @@ ipv6()= (res = "";
 mac_address()=
     (res = "";
     for i = 1:6
-        res*= "$(hex(rand( 0x00:0xff)))"
+        res*= "$(Base.hex(unsigned(rand( 0x00:0xff)),2,false))"
         i < 6 && (res*= ":")
     end;res)
 
-uri_page()= uri_pages[rand( 1:length(uri_pages))]
+uri_page()= executor(uri_pages)
 
 uri_path(deep="None")=
     (if deep =="None"
@@ -97,33 +66,6 @@ uri_path(deep="None")=
             i < deep && (sa*= "/")
         end; sa )
 
-uri_extension()= uri_extensions[rand( 1:length(uri_extensions))]
-
-url_formats = (
-    "http://www.$(domain_name())/",
-    "http://$(domain_name())/",
-)
-uri_formats = (
-    "$(url())",
-    "$(url())$(uri_page())/",
-    "$(url())$(uri_page())$(uri_extension())",
-    "$(url())$(uri_path())/$(uri_page())/",
-    "$(url())$(uri_path())/$(uri_page())$(uri_extension())",
-)
-
-uri()= uri_formats[rand( 1:length(uri_formats))]
-
-
-#=slug(value="None")=
-    if value == "None"
-        value = Lorem.text(20)
-        value=#
-image_placeholder_services = (
-    "http://placekitten.com/$(rand(1:1024))/$(rand( 1:1024))",
-    "http://placehold.it/$(rand(1:1024))x$(rand(1:1024))",
-    "http://www.lorempixum.com/$(rand( 1:1024))/$(rand( 1:1024))",
-    "http://dummyimage.com/$(rand( 1:1024))x$(rand( 1:1024))",
- )
-
-image_url(width="None", height="None")=
-   image_placeholder_services[rand(1:length(image_placeholder_services))]
+uri_extension()= executor(uri_extensions)
+uri()= executor(data["en"]["faker"]["internet"]["uri_formats"])
+image_url()= executor(data["en"]["faker"]["internet"]["image_placeholder_services"])

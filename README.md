@@ -24,24 +24,14 @@ Below are some of the features that are planned to be added in future versions o
  + Julia version 1.0 syntax update
  + Implementation of the seed () method.
  + Language support
+ + Modularization of the method Faker.simple_profile()
+ + Modularization of the method Faker.profile()
 
 #### Version 0.2.1
   + Unicode symbol generator
 
 #### Version 0.2.2
   + Possibility of creating a generator
-
-#### Version 0.2.3
-  + Modularization of the method Faker.simple_profile()
-  > Possible syntax :
-  ```bash
-  Faker.simple_profile("name,birthdate")   # => ("name"=>"Benito","birthdate"=>"1997-3-16")
-  ```
-  + Modularization of the method Faker.profile()
-  > Possible syntax :
-  ```bash
-  Faker.profile("blood_group,job")   # => ("blood_group"=>"AB-","job"=>"Radiographer)
-  ```
 
 Installing
 ----------

@@ -11,10 +11,15 @@ data["en"]["faker"]=Dict()
 
 function language(file::String) #"es-MX"
 	original= pwd()
-	 cd("../src/locales")
-     data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("$(file).yml"))[file]["faker"])
+	cd("../src/locales")
+	newdata = YAML.load(open("$(file).yml"))[file]["faker"]
+	for (k, v) in newdata
+		data["en"]["faker"][k]=merge(data["en"]["faker"][k],newdata[k])
+	end
 	cd(original)
 end
+
+
 
 function loadfiles(nivel::String)
 	original= pwd()
@@ -70,7 +75,6 @@ include("company.jl")  #/
 include("file.jl")    #/
 include("internet.jl")
 include("lorem.jl") #/
-include("profile.jl")
 include("direccion.jl") #/
 include("user_agent.jl")
 
