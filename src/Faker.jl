@@ -1,5 +1,4 @@
 module Faker
-
 using Dates
 using Random
 
@@ -11,7 +10,7 @@ data["en"]["faker"]=Dict()
 
 function language(file::String) #"es-MX"
 	original= pwd()
-	cd("../src/locales")
+	cd(abspath(joinpath(dirname(Base.find_package("Faker")), "../src/locales")))
 	newdata = YAML.load(open("$(file).yml"))[file]["faker"]
 	for (k, v) in newdata
 		data["en"]["faker"][k]=merge(data["en"]["faker"][k],newdata[k])
@@ -23,8 +22,7 @@ end
 
 function loadfiles(nivel::String)
 	original= pwd()
-
-	cd("../src/locales/en")
+	cd(abspath(joinpath(dirname(Base.find_package("Faker")), "../src/locales/en")))
 	if (nivel=="base")
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("address.yml"))["en"]["faker"])
 		data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open("business.yml"))["en"]["faker"])
