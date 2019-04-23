@@ -13,7 +13,9 @@ function language(file::String) #"es-MX"
 	cd(abspath(joinpath(dirname(Base.find_package("Faker")), "../src/locales")))
 	newdata = YAML.load(open("$(file).yml"))[file]["faker"]
 	for (k, v) in newdata
-		data["en"]["faker"][k]=merge(data["en"]["faker"][k],newdata[k])
+        if (haskey(data["en"]["faker"], k))
+			data["en"]["faker"][k]=merge(data["en"]["faker"][k],newdata[k])
+		end
 	end
 	cd(original)
 end

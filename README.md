@@ -27,14 +27,15 @@ Below are some of the features that are planned to be added in future versions o
  + Modularization of the method Faker.simple_profile()
  + Modularization of the method Faker.profile()
 
-#### Version 0.2.1
+#### Version 0.3.0
   + Unicode symbol generator
 
-#### Version 0.2.2
+#### Version 0.4.0
   + Possibility of creating a generator
 
 Installing
 ----------
+Pkg comes with its own REPL mode, which can be entered from the Julia REPL by pressing ]. To get back to the Julia REPL press backspace or ^C.
 ```julia
   # Stable version
     Pkg> add Faker
