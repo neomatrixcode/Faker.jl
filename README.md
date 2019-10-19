@@ -14,31 +14,19 @@
 <a href="https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 </p>
 
-Roadmap
------
-Below are some of the features that are planned to be added in future versions of Faker.jl once version 1.0 of the language is released.
-### All contributions and suggestions are welcome !!!!
-#### Version 0.1.0
- + Julia version 0.7 syntax update
-
-#### Version 0.2.0
- + Julia version 1.0 syntax update
- + Implementation of the seed () method.
- + Language support
- + Modularization of the method Faker.simple_profile()
- + Modularization of the method Faker.profile()
-
-#### Version 0.2.1
-  + Unicode symbol generator
-
-#### Version 0.2.2
-  + Possibility of creating a generator
-
-
+## Example
 ```julia
   using Faker
 
   Faker.email() # => "kirsten.greenholt@corkeryfisher.info"
 ```
 
+Roadmap
+-----
+### All contributions and suggestions are welcome !!!!
 
+#### Version 0.2.3
+  + Unicode symbol generator
+
+#### Version 0.2.4
+  + Possibility of creating a generator
