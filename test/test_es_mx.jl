@@ -133,7 +133,35 @@ Faker.seed(1234)
 @test Faker.prefixe()                                 == "Dr."
 @test Faker.simple_profile()                          == Dict("name"=>"Elizabeth","mail"=>"Omar23@hotmail.com","username"=>"Marcos29","birthdate"=>"2022-2-9","sex"=>"M","address"=>"Avenida Luis Alberto de los Santos 3 5ª Planta Cerritos, SON 34045")
 @test Faker.job()                                     == "Administrador de alojamiento"
-@test "$(Faker.profile())"                            ==   "Dict{String,Any}(\"username\"=>\"Villegas.María Elena\",\"sex\"=>\"M\",\"address\"=>\"Huerta México 63143 Interior 080 Choix, COL 62719\",\"name\"=>\"Erika\",\"job\"=>\"Agrimensor, minero\",\"mail\"=>\"Rentería.Adriana@prodigy.net.mx\",\"birthdate\"=>\"2027-12-6\",\"current_location\"=>(-0.995117, 8.00781),\"blood_group\"=>\"AB-\",\"residence\"=>\"Barranco Querétaro 71590 Planta baja Nazareno Etla, TLA 69478\",\"company\"=>\"Morán y Trujillo S.R.L\",\"website\"=>\"http://www.neh.mx/\")"
+a= Faker.profile()
+b= Dict(
+ "username" => "Villegas.María Elena",
+  "sex" => "M",
+  "address" => "Huerta México 63143 Interior 080 Choix, COL 62719",
+  "name" => "Erika",
+  "job" => "Agrimensor, minero",
+  "mail" => "Rentería.Adriana@prodigy.net.mx",
+  "birthdate" => "2027-12-6",
+  "current_location" => (-0.9951171875, 8.0078125),
+  "blood_group" => "AB-",
+  "residence" => "Barranco Querétaro 71590 Planta baja Nazareno Etla, TLA 69478",
+  "company" => "Morán y Trujillo S.R.L",
+  "website" => "http://www.neh.mx/"
+  )
+
+@test a["username"]== b["username"]
+@test a["sex"]== b["sex"]
+@test a["address"]== b["address"]
+@test a["name"]== b["name"]
+@test a["job"]== b["job"]
+@test a["mail"]== b["mail"]
+@test a["birthdate"]== b["birthdate"]
+@test a["current_location"]== b["current_location"]
+@test a["blood_group"]== b["blood_group"]
+@test a["residence"]== b["residence"]
+@test a["company"]== b["company"]
+@test a["website"]== b["website"]
+
 @test Faker.profile("username")            ==  Dict{Any,Any}("username"=>"Delgado.Gerardo")
 @test Faker.profile("username","blood_group")   == Dict{Any,Any}("blood_group"=>"AB+","username"=>"zRamos")
 @test Faker.simple_profile("birthdate","address","sex")    ==  Dict{Any,Any}("birthdate"=>"2087-3-15","sex"=>"M","address"=>"Camino Luis Alberto Zárate S/N Int. 9 Bacalar, BCN 72662")

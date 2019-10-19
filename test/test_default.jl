@@ -133,7 +133,34 @@ Faker.seed(1234)
 @test Faker.prefixe()                                 == "Miss"
 @test Faker.simple_profile()                    ==  Dict("name"=>"Domingo","mail"=>"Durgan.Krystle@hotmail.com","username"=>"Kimbery29","birthdate"=>"2007-5-18","sex"=>"F","address"=>"8557 McDermott Shores West Alex, OR 96510-7890")
 @test Faker.job()                               == "Immigration officer"
-@test "$(Faker.profile())"                      ==  "Dict{String,Any}(\"username\"=>\"Howell.Dannie\",\"sex\"=>\"M\",\"address\"=>\"931 Grover Court Soilashire, WY 69092-3732\",\"name\"=>\"Marissa\",\"job\"=>\"Land/geomatics surveyor\",\"mail\"=>\"Blondell71@yahoo.com\",\"birthdate\"=>\"1984-12-1\",\"current_location\"=>(-1.49512, -5.98828),\"blood_group\"=>\"B-\",\"residence\"=>\"6427 Treutel Divide Tienfort, MT 97964-8925\",\"company\"=>\"Legros and Sons\",\"website\"=>\"http://ol.info/\")"
+a=Faker.profile()
+b= Dict("username"=>"Howell.Dannie",
+ "sex"=>"M",
+ "address"=>"931 Grover Court Soilashire, WY 69092-3732",
+ "name"=>"Marissa",
+ "job"=>"Land/geomatics surveyor",
+ "mail"=>"Blondell71@yahoo.com",
+ "birthdate"=>"1984-12-1",
+ "current_location"=> (-1.4951171875, -5.98828125),
+ "blood_group"=>"B-",
+ "residence"=>"6427 Treutel Divide Tienfort, MT 97964-8925",
+ "company"=>"Legros and Sons",
+ "website"=>"http://ol.info/"
+ )
+
+@test a["username"]== b["username"]
+@test a["sex"]== b["sex"]
+@test a["address"]== b["address"]
+@test a["name"]== b["name"]
+@test a["job"]== b["job"]
+@test a["mail"]== b["mail"]
+@test a["birthdate"]== b["birthdate"]
+@test a["current_location"]== b["current_location"]
+@test a["blood_group"]== b["blood_group"]
+@test a["residence"]== b["residence"]
+@test a["company"]== b["company"]
+@test a["website"]== b["website"]
+
 @test Faker.profile("username")             ==  Dict{Any,Any}("username"=>"Olson.Willy")
 @test Faker.profile("username","blood_group")==  Dict{Any,Any}("blood_group"=>"A-","username"=>"Ronda.Heller")
 @test Faker.simple_profile("birthdate","address","sex")    == Dict{Any,Any}("birthdate"=>"1974-11-23","sex"=>"F","address"=>"16379 Quigley Ramp Smithamborough, OK 39559-7992")
