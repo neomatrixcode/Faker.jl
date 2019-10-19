@@ -3,7 +3,6 @@ environment:
   - julia_version: 1.0
   - julia_version: latest
 
-
 branches:
   only:
     - master
