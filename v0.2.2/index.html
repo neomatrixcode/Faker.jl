@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Home · Faker.jl</title><link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js" data-main="assets/documenter.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link href="assets/documenter.css" rel="stylesheet" type="text/css"/></head><body><nav class="toc"><a href><img class="logo" src="assets/logo.png" alt="Faker.jl logo"/></a><h1>Faker.jl</h1><select id="version-selector" onChange="window.location.href=this.value" style="visibility: hidden"></select><form class="search" id="search-form" action="search/"><input id="search-query" name="q" type="text" placeholder="Search docs"/></form><ul><li class="current"><a class="toctext" href>Home</a><ul class="internal"><li><a class="toctext" href="#Faker.jl-1">Faker.jl</a></li><li><a class="toctext" href="#Installation-1">Installation</a></li><li><a class="toctext" href="#Seed-1">Seed</a></li><li><a class="toctext" href="#Language-support-1">Language support</a></li><li><a class="toctext" href="#Base-1">Base</a></li><li><a class="toctext" href="#Address-1">Address</a></li><li><a class="toctext" href="#Company-1">Company</a></li><li><a class="toctext" href="#Date-1">Date</a></li><li><a class="toctext" href="#Internet-1">Internet</a></li><li><a class="toctext" href="#Lorem-1">Lorem</a></li><li><a class="toctext" href="#Misc-1">Misc</a></li><li><a class="toctext" href="#Color-1">Color</a></li><li><a class="toctext" href="#Credit_card-1">Credit_card</a></li><li><a class="toctext" href="#File-1">File</a></li><li><a class="toctext" href="#Person-1">Person</a></li><li><a class="toctext" href="#User_agent-1">User_agent</a></li></ul></li></ul></nav><article id="docs"><header><nav><ul><li><a href>Home</a></li></ul><a class="edit-page" href="https://github.com/codeneomatrix/Faker.jl/blob/master/docs/src/index.md"><span class="fa"></span> Edit on GitHub</a></nav><hr/><div id="topbar"><span>Home</span><a class="fa fa-bars" href="#"></a></div></header><h1><a class="nav-anchor" id="Home-1" href="#Home-1">Home</a></h1><h2><a class="nav-anchor" id="Faker.jl-1" href="#Faker.jl-1">Faker.jl</a></h2><p>Generator of fake data for julia.</p><h2><a class="nav-anchor" id="Installation-1" href="#Installation-1">Installation</a></h2><pre><code class="language-julia">  # Stable version
+    Pkg&gt; add Faker
+  # Development version
+    Pkg&gt; add Faker#master</code></pre><h2><a class="nav-anchor" id="Seed-1" href="#Seed-1">Seed</a></h2><p>Seed for the random number generator. Calling the same script twice with the same seed will produce the same results.</p><pre><code class="language-julia">  Faker.seed(4321)</code></pre><h2><a class="nav-anchor" id="Language-support-1" href="#Language-support-1">Language support</a></h2><p>Data generation in the formats of each language</p><pre><code class="language-julia">   Faker.language(&quot;es-MX&quot;)   - Espanish (Mexico)</code></pre><h2><a class="nav-anchor" id="Base-1" href="#Base-1">Base</a></h2><pre><code class="language-julia">  Faker.random_digit()                                            # =&gt; &quot;7&quot;
+  Faker.random_digit_not_null()                                   # =&gt; &quot;4&quot;
+  Faker.random_digit_or_empty()                                   # =&gt; &quot; &quot;
+  Faker.random_number(digits= 1)                                  # =&gt; &quot;6&quot;
+  Faker.random_int(min=0, max=9999)                               # =&gt; &quot;4994&quot;
+  Faker.randomize_nb_elements(number=10, le=false, ge=false)      # =&gt; &quot;14.9&quot;
+  Faker.random_letter()                                           # =&gt; &quot;d&quot;
+  Faker.random_element((&quot;a&quot;, &quot;b&quot;, &quot;b&quot;))                           # =&gt; &quot;b&quot;
+  Faker.lexify(&quot;????&quot;)                                            # =&gt; &quot;VTSa&quot;
+  Faker.numerify(&quot;####&quot;)                                          # =&gt; &quot;7491&quot;
+  Faker.bothify(&quot;## ??&quot;)                                          # =&gt; &quot;26 Eu&quot;</code></pre><h2><a class="nav-anchor" id="Address-1" href="#Address-1">Address</a></h2><pre><code class="language-julia">
+  Faker.state_abbr()                                # =&gt; &quot;VT&quot;
+  Faker.latitude()                                  # =&gt; 2.505859375
+  Faker.street_name()                               # =&gt; &quot;Schaden Park&quot;
+  Faker.address()                                   # =&gt; &quot;32935 McClure Trail East Nia, OR 11991-3585&quot;
+  Faker.street_address()                            # =&gt; &quot;510 Maybell Keys&quot;
+  Faker.postcode()                                  # =&gt; &quot;22773&quot;
+  Faker.longitude()                                 # =&gt; 4.01171875
+  Faker.country()                                   # =&gt; &quot;Macedonia&quot;
+  Faker.geo_coordinate(center=&quot;None&quot;, radius=0.001) # =&gt; Float16(-15.99)
+  Faker.secondary_address()                         # =&gt; &quot;Apt. 312&quot;
+  Faker.city_prefix()                               # =&gt; &quot;West&quot;
+  Faker.city_suffix()                               # =&gt; &quot;town&quot;
+  Faker.building_number()                           # =&gt; &quot;532&quot;
+  Faker.city()                                      # =&gt; &quot;Port Rudy&quot;
+  Faker.state()                                     # =&gt; &quot;Florida&quot;
+
+</code></pre><h2><a class="nav-anchor" id="Company-1" href="#Company-1">Company</a></h2><pre><code class="language-julia">
+  Faker.company()                                 # =&gt;  &quot;Hammes Group&quot;
+  Faker.company_suffix()                          # =&gt; &quot;Group&quot;
+  Faker.catch_phrase()                            # =&gt; &quot;Synergistic uniform projection &quot;
+  Faker.bs()                                      # =&gt; &quot;integrate transparent users &quot;</code></pre><h2><a class="nav-anchor" id="Date-1" href="#Date-1">Date</a></h2><pre><code class="language-julia">   Faker.months()                                                 # =&gt;8
+   Faker.am_pm()                                                  # =&gt;&quot;PM&quot;
+   Faker.iso8601()                                                # =&gt;&quot;2076-06-20T03:19:24&quot;
+   Faker.date_time()                                              # =&gt;&quot;2041-1-3 08:20:25&quot;
+   Faker.month_name()                                             # =&gt;&quot;March&quot;
+   Faker.day_of_week()                                            # =&gt;&quot;Saturday&quot;
+   Faker.day_of_month()                                           # =&gt; 13
+   Faker.date_time_between(&quot;-30y&quot;, &quot;now&quot;)                         # =&gt;&quot;1989-6-7 21:38:44&quot;
+   Faker.time(&quot;H:M:S&quot;)                                            # =&gt;&quot;18:46:36&quot;
+   Faker.unix_time()                                              # =&gt;454113618933
+   Faker.timezone()                                               # =&gt;&quot;Asia/Ulaanbaatar&quot;
+   Faker.century()                                                # =&gt;&quot;V&quot;
+   Faker.date(&quot;Y-m-d&quot;)                                            # =&gt;&quot;2023-2-19&quot;
+   Faker.year()                                                   # =&gt;2035
+   Faker.date_time_this_century(before_now=true, after_now=false) # =&gt;&quot;2007-1-3 00:00:00&quot;
+   Faker.date_time_this_decade(before_now=true, after_now=false)  # =&gt;&quot;2018-7-23 00:00:00&quot;
+   Faker.date_time_this_year(before_now=true, after_now=false)    # =&gt;&quot;2018-5-17 00:00:00&quot;
+   Faker.date_time_this_month(before_now=true, after_now=false)   # =&gt;&quot;2018-9-1 00:00:00&quot;
+</code></pre><h2><a class="nav-anchor" id="Internet-1" href="#Internet-1">Internet</a></h2><hr/><pre><code class="language-julia">
+  Faker.email()                                   # =&gt; &quot;TCronin@vh.org&quot;
+  Faker.free_email()                              # =&gt; &quot;Franecki.Joanie@hotmail.com&quot;
+  Faker.safe_email()                              # =&gt; &quot;Laurence73@example.co&quot;
+  Faker.user_name()                               # =&gt; &quot;Iva.Ernser&quot;
+  Faker.domain_name()                             # =&gt; &quot;sas.info&quot;
+  Faker.domain_word()                             # =&gt; &quot;bg&quot;
+  Faker.domain_suffix()                           # =&gt;  &quot;io&quot;
+  Faker.ipv4()                                    # =&gt; &quot;242.110.49.158&quot;
+  Faker.ipv6()                                    # =&gt; &quot;7509:ff7a:85ec:55da:550d:4d4a:28df:e561&quot;
+  Faker.uri()                                     # =&gt; &quot;http://www.rk.co/categories/main/search/&quot;
+  Faker.url()                                     # =&gt; &quot;http://www.hi.org/&quot;
+  Faker.image_url()                               # =&gt; &quot;http://placekitten.com/933/77&quot;
+  Faker.uri_extension()                           # =&gt; &quot;.html&quot;
+  Faker.uri_path()                                # =&gt; &quot;search/app/tag/categories&quot;
+  Faker.uri_page()                                # =&gt; &quot;main&quot;
+  Faker.mac_address()                             # =&gt; &quot;ae:8b:61:b4:a3:52&quot;
+  Faker.company_email()                           # =&gt; &quot;Hilll.Delsie@td.name&quot;
+</code></pre><h2><a class="nav-anchor" id="Lorem-1" href="#Lorem-1">Lorem</a></h2><hr/><pre><code class="language-julia">
+  Faker.text(number_chars=200)                           # =&gt;  &quot;Laudantium molestias eos rerum. Cupiditate voluptatem exercitationem enim.. Qui qui suscipit aspernatur porro. Non. Officiis consequatur harum architecto quibusdam. Explicabo voluptas cumque distinctio maiores voluptatibus..&quot;
+  Faker.sentence(number_words=6, variable_nb_words=true) # =&gt; &quot;Distinctio numquam velit voluptatem incidunt.&quot;
+  Faker.word()                                           # =&gt; &quot;eaque&quot;
+  Faker.paragraphs()                                     # =&gt; [&quot;Numquam unde et dolorem. Rem aut harum perspiciatis. Veritatis..&quot;, &quot;Consequuntur consequatur recusandae quis. Nobis dolorem ipsum non ipsam. Quia vel et minus sed. Molestiae velit iure..&quot;, &quot;Culpa expedita. Quo voluptatibus voluptatem ea placeat..&quot;]
+  Faker.words(number_words=3)                            # =&gt;[&quot;qui&quot;, &quot;eos&quot;, &quot;sit&quot;]
+  Faker.paragraph(number=3)                              # =&gt;&quot;Earum exercitationem architecto deserunt dicta alias. Qui eos sint iusto aut..&quot;
+  Faker.sentences(number_sentences=3)                    # =&gt; [&quot;In et voluptatem.&quot;, &quot;Nostrum sapiente molestiae.&quot;, &quot;Saepe ut in non quasi.&quot;, &quot;Ab totam perspiciatis.&quot;]
+</code></pre><pre><code class="language-julia">
+  Faker.phone_number()   # =&gt; &quot;736-329-3523 x8270&quot;
+  Faker.cell_phone()     # =&gt;  &quot;(265) 714-5444&quot;
+</code></pre><h2><a class="nav-anchor" id="Misc-1" href="#Misc-1">Misc</a></h2><pre><code class="language-julia">  Faker.password()      # =&gt; &quot;D3Wt#5(2&amp;5&amp;b#7&#39;R%9BsA5Xr%*Uu%kRy99htT8Fn&quot;
+  Faker.locale()        # =&gt; &quot;cn_NF&quot;
+  Faker.null_boolean()  # =&gt; false
+  Faker.country_code()  # =&gt; &quot;SS&quot;
+  Faker.language_code() # =&gt; &quot;es&quot;
+  Faker.boolean()       # =&gt; true</code></pre><h2><a class="nav-anchor" id="Color-1" href="#Color-1">Color</a></h2><pre><code class="language-julia">  Faker.color_name()                              # =&gt; &quot;LightYellow&quot;
+  Faker.safe_color_name()                         # =&gt; &quot;orchid&quot;
+  Faker.hex_color()                               # =&gt; &quot;#FFFAFA&quot;
+  Faker.rgb_color_list()                          # =&gt; &quot;(215,221,84)&quot;
+  Faker.rgb_color()                               # =&gt; &quot;131,80,74&quot;
+  Faker.rgb_css_color()                           # =&gt; &quot;rgb(68,107,109)&quot;</code></pre><h2><a class="nav-anchor" id="Credit_card-1" href="#Credit_card-1">Credit_card</a></h2><pre><code class="language-julia">  Faker.credit_card_security_code()               # =&gt; &quot;736&quot;
+  Faker.credit_card_full()                        # =&gt;&quot;JCB 16 digit Catherine Crist 3096352382707498 CVC 714&quot;
+  Faker.credit_card_number()                      # =&gt; &quot;869944451199135&quot;
+  Faker.credit_card_provider()                    # =&gt; &quot;laser&quot;
+  Faker.generate_number(&quot;52&quot;,16)                  # =&gt; &quot;5276029874944399&quot;</code></pre><h2><a class="nav-anchor" id="File-1" href="#File-1">File</a></h2><pre><code class="language-julia">  Faker.mime_type()                               # =&gt; &quot;image/x-freehand&quot;
+  Faker.file_extension()                          # =&gt; &quot;rmvb&quot;
+  Faker.file_name()                               # =&gt; &quot;wTPd.pgn&quot;</code></pre><h2><a class="nav-anchor" id="Person-1" href="#Person-1">Person</a></h2><pre><code class="language-julia">  Faker.first_name()                                   # =&gt; &quot;Jacqulyn&quot;
+  Faker.last_name()                                    # =&gt;  &quot;Cronin&quot;
+  Faker.prefixe()                                      # =&gt; &quot;Miss&quot;
+  Faker.simple_profile()                               # =&gt;  Dict(&quot;name&quot;=&gt;&quot;Domingo&quot;,&quot;mail&quot;=&gt;&quot;Durgan.Krystle@hotmail.com&quot;,&quot;username&quot;=&gt;&quot;Kimbery29&quot;,&quot;birthdate&quot;=&gt;&quot;2007-5-18&quot;,&quot;sex&quot;=&gt;&quot;F&quot;,&quot;address&quot;=&gt;&quot;8557 McDermott Shores West Alex, OR 96510-7890&quot;)
+  Faker.job()                                          # =&gt; &quot;Immigration officer&quot;
+  Faker.profile())                                     # =&gt;  &quot;Dict{String,Any}(\&quot;username\&quot;=&gt;\&quot;Howell.Dannie\&quot;,\&quot;sex\&quot;=&gt;\&quot;M\&quot;,\&quot;address\&quot;=&gt;\&quot;931 Grover Court Soilashire, WY 69092-3732\&quot;,\&quot;name\&quot;=&gt;\&quot;Marissa\&quot;,\&quot;job\&quot;=&gt;\&quot;Land/geomatics surveyor\&quot;,\&quot;mail\&quot;=&gt;\&quot;Blondell71@yahoo.com\&quot;,\&quot;birthdate\&quot;=&gt;\&quot;1984-12-1\&quot;,\&quot;current_location\&quot;=&gt;(-1.49512, -5.98828),\&quot;blood_group\&quot;=&gt;\&quot;B-\&quot;,\&quot;residence\&quot;=&gt;\&quot;6427 Treutel Divide Tienfort, MT 97964-8925\&quot;,\&quot;company\&quot;=&gt;\&quot;Legros and Sons\&quot;,\&quot;website\&quot;=&gt;\&quot;http://ol.info/\&quot;)&quot;
+  Faker.profile(&quot;username&quot;)                            # =&gt;  Dict{Any,Any}(&quot;username&quot;=&gt;&quot;Olson.Willy&quot;)
+  Faker.profile(&quot;username&quot;,&quot;blood_group&quot;)              # =&gt;  Dict{Any,Any}(&quot;blood_group&quot;=&gt;&quot;A-&quot;,&quot;username&quot;=&gt;&quot;Ronda.Heller&quot;)
+  Faker.simple_profile(&quot;birthdate&quot;,&quot;address&quot;,&quot;sex&quot;)    # =&gt; Dict{Any,Any}(&quot;birthdate&quot;=&gt;&quot;1974-11-23&quot;,&quot;sex&quot;=&gt;&quot;F&quot;,&quot;address&quot;=&gt;&quot;16379 Quigley Ramp Smithamborough, OK 39559-7992&quot;)
+  Faker.simple_profile(&quot;name&quot;)                         # =&gt; Dict{Any,Any}(&quot;name&quot;=&gt;&quot;Elina&quot;)</code></pre><h2><a class="nav-anchor" id="User_agent-1" href="#User_agent-1">User_agent</a></h2><pre><code class="language-julia">  Faker.mac_processor()                           # =&gt; &quot;Intel&quot;
+  Faker.linux_processor()                         # =&gt; &quot;x86_64&quot;
+  Faker.user_agent()                              # =&gt; &quot;opera&quot;
+  Faker.windows_platform_token()                  # =&gt; &quot;Windows CE&quot;
+  Faker.linux_platform_token()                    # =&gt; &quot;X11; Linux i686&quot;
+  Faker.mac_platform_token()                      # =&gt;  &quot;Macintosh; U; Intel Mac OS X 10_5_3&quot;
+  Faker.chrome()                                  # =&gt;&quot;Mozilla/5.0 (Windows 98; Win 9x 4.90) AppleWebKit/5331 (KHTML, like Gecko) Chrome/32.0.824.0 Safari/5331&quot;
+  Faker.firefox()                                 # =&gt;&quot;Mozilla/5.0 (Windows NT 4.0; sl-SI; rv:1.9.0.20) Gecko/2015-4-22 21:10:48 Firefox/6.0&quot;
+  Faker.safari()                                  # =&gt; &quot;Mozilla/5.0 (iPod; U; CPU iPhone OS 3_1 like Mac OS X; it-IT) AppleWebKit/534.28.6 (KHTML, like Gecko) Version/3.0.5 Mobile/8B115 Safari/6534.28.6&quot;
+  Faker.opera()                                   # =&gt;  &quot;Opera/9.26.(Windows NT 6.1; sl-SI) Presto/2.9.160 Version/10.00)&quot;
+  Faker.internet_explorer()                       # =&gt; &quot;Mozilla/5.0 (compatible; MSIE 9.0; Windows 95; Trident/3.1)&quot;</code></pre><footer><hr/></footer></article></body></html>
