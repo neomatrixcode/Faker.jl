@@ -1,6 +1,7 @@
 # Home
 
-## Merly.jl
+## Faker.jl
+Generator of fake data for julia.
 
 ## Installation
 
