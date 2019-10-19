@@ -1,0 +1,10 @@
+name = "Faker"
+uuid = "0efc519c-db33-5916-ab87-703215c3906f"
+repo = "https://github.com/codeneomatrix/Faker.jl.git"
+version = "0.2.2"
+
+[deps]
+YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
+
+[compat]
+julia = "1"
