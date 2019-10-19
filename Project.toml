@@ -5,6 +5,7 @@ version = "0.2.2"
 
 [deps]
 YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
 [compat]
 julia = "1"
