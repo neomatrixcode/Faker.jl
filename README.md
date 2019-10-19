@@ -14,6 +14,11 @@
 <a href="https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 </p>
 
+## Installing
+```julia
+Pkg> add Merly
+```
+
 ## Example
 ```julia
   using Faker
