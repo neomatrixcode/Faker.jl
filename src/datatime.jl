@@ -38,50 +38,39 @@
 
  		try
  		end_date = Dates.DateTime(Dates.now()) + Dates.Year(parse(Int,end_date[1:end-1]))
- 	catch
- 	end_date = Dates.DateTime(Dates.now())
- end
+	 	catch
+	 	end_date = Dates.DateTime(Dates.now())
+	 	end
 
- dr=(start_date:Day(1):end_date)[rand(1:end)]
- return Dates.format(dr, "Y-m-d HH:MM:SS")
+	 dr=(start_date:Day(1):end_date)[rand(1:end)]
+	 return Dates.format(dr, "Y-m-d HH:MM:SS")
+	end
 
+function random_datetime(bf_now,af_now,time_start,now_time,time_finish)
+    if bf_now && af_now
+		return(time_start:Day(1):time_finish)[rand(1:end)]
+	elseif (bf_now==false) && af_now
+		return(now_time:Day(1):time_finish)[rand(1:end)]
+	else
+		return(time_start:Day(1):now_time)[rand(1:end)]
+	end
+	return  now_time
 end
 
 function date_time_this_century(;before_now=true, after_now=false)
 	r = Dates.DateTime(Dates.now())
 	this_century_start = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 100)), 1, 1)
-	next_century_start = Dates.DateTime(Dates.year(this_century_start) + 100, 1, 1)
+	this_century_finish = (Dates.DateTime(Dates.year(this_century_start) + 100, 1, 1))-Dates.Day(1)
 
-	if before_now && after_now
-		dr=(this_century_start:Day(1):next_century_start)[rand(1:end)]
-	elseif (before_now==false) && after_now
-		dr=(r:Day(1):next_century_start)[rand(1:end)]
-	elseif (after_now==false) && before_now
-		dr=(this_century_start:Day(1):r)[rand(1:end)]
-	else
-		return  Dates.format(r, "Y-m-d HH:MM:SS")
-	end
-
-	return Dates.format(dr, "Y-m-d HH:MM:SS")
-
+	return Dates.format(random_datetime(before_now,after_now,this_century_start,r,this_century_finish), "Y-m-d HH:MM:SS")
 end
 
 function  date_time_this_decade(;before_now=true, after_now=false)
 	r = Dates.DateTime(Dates.now())
 	this_decade_start = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 10)), 1, 1)
-	next_decade_start = Dates.DateTime(Dates.year(this_decade_start) + 10, 1, 1)
+	this_decade_finish = (Dates.DateTime(Dates.year(this_decade_start) + 10, 1, 1))-Dates.Day(1)
 
-	if before_now && after_now
-		dr=(this_decade_start:Day(1):next_decade_start)[rand(1:end)]
-	elseif (before_now==false) && after_now
-		dr=(r:Day(1):next_decade_start)[rand(1:end)]
-	elseif (after_now==false) && before_now
-		dr=(this_decade_start:Day(1):r)[rand(1:end)]
-	else
-		return  Dates.format(r, "Y-m-d HH:MM:SS")
-	end
-
-	return Dates.format(dr, "Y-m-d HH:MM:SS")
+	return Dates.format(random_datetime(before_now,after_now,this_decade_start,r,this_decade_finish), "Y-m-d HH:MM:SS")
 end
 
 
@@ -89,38 +78,18 @@ end
 function date_time_this_year(;before_now=true, after_now=false)
 	r = Dates.DateTime(Dates.now())
 	this_year_start = Dates.DateTime(Dates.year(r), 1, 1)
-	next_year_start = Dates.DateTime(Dates.year(r) + 1, 1, 1)
+	this_year_finish = this_year_start+Dates.Year(1)-Dates.Day(1)
 
-	if before_now && after_now
-		dr=(this_year_start:Day(1):next_year_start)[rand(1:end)]
-	elseif (before_now==false) && after_now
-		dr=(r:Day(1):next_year_start)[rand(1:end)]
-	elseif (after_now==false) && before_now
-		dr=(this_year_start:Day(1):r)[rand(1:end)]
-	else
-		return Dates.format(r, "Y-m-d HH:MM:SS")
-	end
-
-	return  Dates.format(dr, "Y-m-d HH:MM:SS")
+	return Dates.format(random_datetime(before_now,after_now,this_year_start,r,this_year_finish), "Y-m-d HH:MM:SS")
 end
 
 
 function date_time_this_month(;before_now=true, after_now=false)
 	r = Dates.DateTime(Dates.now())
-	this_month_start = Dates.DateTime(Dates.year(r), Dates.month(r), 1)
-	next_month_start = Dates.DateTime(Dates.year(r), (Dates.month(r)+ 1)%12, 1)
+	this_month_start = r-Dates.Day(r)+Dates.Day(1)
+	this_month_finish = this_month_start+Dates.Month(1)-Dates.Day(1)
 
-	if before_now && after_now
-		dr=(this_month_start:Day(1):next_month_start)[rand(1:end)]
-	elseif (before_now==false) && after_now
-		dr=(r:Day(1):next_month_start)[rand(1:end)]
-	elseif (after_now==false) && before_now
-		dr=(this_month_start:Day(1):r)[rand(1:end)]
-	else
-		return  Dates.format(r, "Y-m-d HH:MM:SS")
-	end
-
-	return Dates.format(dr, "Y-m-d HH:MM:SS")
+	return Dates.format(random_datetime(before_now,after_now,this_month_start,r,this_month_finish), "Y-m-d HH:MM:SS")
 end
 
 ap = ("AM","PM")
