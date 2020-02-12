@@ -16,7 +16,7 @@
 
 ## Installing
 ```julia
-Pkg> add Merly
+Pkg> add Faker
 ```
 
 ## Example
