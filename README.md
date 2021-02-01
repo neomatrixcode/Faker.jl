@@ -4,14 +4,14 @@
 <p align="center">
 <strong>Generator of fake data for julia.</strong>
 <br><br>
-<a href="https://travis-ci.org/codeneomatrix/Faker.jl"><img src="https://travis-ci.org/codeneomatrix/Faker.jl.svg?branch=master"></a>
-<a href="https://codecov.io/gh/codeneomatrix/Faker.jl">
-  <img src="https://codecov.io/gh/codeneomatrix/Faker.jl/branch/master/graph/badge.svg" />
+<a href="https://travis-ci.org/neomatrixcode/Faker.jl"><img src="https://travis-ci.org/neomatrixcode/Faker.jl.svg?branch=master"></a>
+<a href="https://codecov.io/gh/neomatrixcode/Faker.jl">
+  <img src="https://codecov.io/gh/neomatrixcode/Faker.jl/branch/master/graph/badge.svg" />
 </a>
-<a href="https://codeneomatrix.github.io/Faker.jl/stable"><img src="https://img.shields.io/badge/docs-stable-blue.svg"></a>
-<a href="https://codeneomatrix.github.io/Faker.jl/dev"><img src="https://img.shields.io/badge/docs-dev-blue.svg"></a>
+<a href="https://neomatrixcode.github.io/Faker.jl/stable"><img src="https://img.shields.io/badge/docs-stable-blue.svg"></a>
+<a href="https://neomatrixcode.github.io/Faker.jl/dev"><img src="https://img.shields.io/badge/docs-dev-blue.svg"></a>
 <a href="https://www.repostatus.org/#active"><img src="https://www.repostatus.org/badges/latest/active.svg"></a>
-<a href="https://raw.githubusercontent.com/codeneomatrix/Faker.jl/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+<a href="https://raw.githubusercontent.com/neomatrixcode/Faker.jl/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 </p>
 
 ## Installing
