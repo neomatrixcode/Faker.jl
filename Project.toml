@@ -1,6 +1,7 @@
 name = "Faker"
 uuid = "0efc519c-db33-5916-ab87-703215c3906f"
-repo = "https://github.com/codeneomatrix/Faker.jl.git"
+authors = ["Josue Acevedo Maldonado <josuecevedo@gmail.com>"]
+repo = "https://github.com/neomatrixcode/Faker.jl.git"
 version = "0.2.2"
 
 [deps]
