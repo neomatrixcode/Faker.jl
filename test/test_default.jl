@@ -175,7 +175,3 @@ Faker.seed(85)
 @test Faker.linux_platform_token()                    == "X11; Linux i686"
 @test Faker.mac_platform_token()                      ==  "Macintosh; Intel Mac OS X 10_7_0"
 @test Faker.chrome()                                  =="Mozilla/5.0 (Windows NT 6.2) AppleWebKit/5341 (KHTML, like Gecko) Chrome/41.0.843.0 Safari/5341"
-#@test Faker.firefox()                                 =="Mozilla/5.0 (Windows NT 4.0; sl-SI; rv:1.9.0.20) Gecko/2015-4-22 21:10:48 Firefox/6.0"
-#@test Faker.safari()      == "Mozilla/5.0 (iPod; U; CPU iPhone OS 3_1 like Mac OS X; it-IT) AppleWebKit/534.28.6 (KHTML, like Gecko) Version/3.0.5 Mobile/8B115 Safari/6534.28.6"
-#@test Faker.opera()                             ==  "Opera/9.26.(Windows NT 6.1; sl-SI) Presto/2.9.160 Version/10.00)"
-#@test Faker.internet_explorer()                 == "Mozilla/5.0 (compatible; MSIE 9.0; Windows 95; Trident/3.1)"
