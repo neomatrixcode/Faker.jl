@@ -1,46 +1,46 @@
 
-Faker.seed(1234)
+Faker.seed(85)
 
 @test Faker.random_digit() == "7"
-@test Faker.random_digit_not_null() == "4"
+@test Faker.random_digit_not_null() == "6"
 @test Faker.random_digit_or_empty() == " "
-@test Faker.random_number(digits= 1) == "6"
-@test Faker.random_int(min=0, max=9999) == "4994"
-@test Faker.randomize_nb_elements(number=10, le=false, ge=false) == "14.9"
-@test Faker.random_letter() == "d"
+@test Faker.random_number(digits= 1) == "4"
+@test Faker.random_int(min=0, max=9999) == "2886"
+@test Faker.randomize_nb_elements(number=10, le=false, ge=false) == "7.9"
+@test Faker.random_letter() == "a"
 @test Faker.random_element(("a", "b", "b")) == "b"
-@test Faker.lexify("????") == "VTSa"
-@test Faker.numerify("####") == "7491"
-@test Faker.bothify("## ??") == "26 Eu"
+@test Faker.lexify("????") == "exmO"
+@test Faker.numerify("####") == "1320"
+@test Faker.bothify("## ??") == "69 mp"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.state_abbr() == "VT"
+@test Faker.state_abbr() == "RI"
 @test Faker.latitude() == 2.505859375
-@test Faker.street_name() == "Schaden Park"
-@test Faker.address() == "32935 McClure Trail East Nia, OR 11991-3585"
-@test Faker.street_address() == "510 Maybell Keys"
-@test Faker.postcode() == "22773"
-@test Faker.longitude() == 4.01171875
-@test Faker.country() == "Macedonia"
-@test Faker.geo_coordinate(center="None", radius=0.001) == Float16(-15.99)
-@test Faker.secondary_address() == "Apt. 312"
-@test Faker.city_prefix() == "West"
-@test Faker.city_suffix() == "town"
-@test Faker.building_number() == "532"
-@test Faker.city() == "Port Rudy"
-@test Faker.state() == "Florida"
+@test Faker.street_name() == "Erinn Coves"
+@test Faker.address() == "56169 Edra Walk Port Neville, VT 59156-0600"
+@test Faker.street_address() == "09400 Leroy Square"
+@test Faker.postcode() == "06121"
+@test Faker.longitude() == 15.0078125
+@test Faker.country() == "Croatia"
+@test Faker.geo_coordinate(center="None", radius=0.001) == Float16(2.01)
+@test Faker.secondary_address() == "Apt. 936"
+@test Faker.city_prefix() == "Port"
+@test Faker.city_suffix() == "mouth"
+@test Faker.building_number() == "935"
+@test Faker.city() == "South Jarrod"
+@test Faker.state() == "Montana"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.company()                                 ==  "Hammes Group"
-@test Faker.company_suffix()                          == "Group"
-@test Faker.catch_phrase()                            == "Synergistic uniform projection "
-@test Faker.bs()                                      == "integrate transparent users "
+@test Faker.company()                                 ==  "Okuneva, Crist and Kertzmann"
+@test Faker.company_suffix()                          == "and Sons"
+@test Faker.catch_phrase()                            == "Cross-platform multi-state ability "
+@test Faker.bs()                                      == "deliver seamless initiatives "
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.months() ==8
+@test Faker.months() ==10
 @test Faker.am_pm() =="PM"
  Faker.iso8601() =="2076-06-20T03:19:24"
  Faker.date_time() =="2041-1-3 08:20:25"
@@ -59,93 +59,93 @@ Faker.seed(1234)
  Faker.date_time_this_year(before_now=true, after_now=false) =="2018-5-17 00:00:00"
  Faker.date_time_this_month(before_now=true, after_now=false) =="2018-9-1 00:00:00"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.email()                                   == "TCronin@vh.org"
-@test Faker.free_email()                              == "Franecki.Joanie@hotmail.com"
-@test Faker.safe_email()                              == "Laurence73@example.co"
-@test Faker.user_name()                               == "Iva.Ernser"
-@test Faker.domain_name()                             == "sas.info"
-@test Faker.domain_word()                             == "bg"
-@test Faker.domain_suffix()                           ==  "io"
-@test Faker.ipv4()                                    == "242.110.49.158"
-@test Faker.ipv6()                                    == "7509:ff7a:85ec:55da:550d:4d4a:28df:e561"
-@test Faker.uri()                                     == "http://www.rk.co/categories/main/search/"
-@test Faker.url()                                     == "http://www.hi.org/"
-@test Faker.image_url()                               == "http://placekitten.com/933/77"
+@test Faker.email()                                   == "Johanna21@hotmail.com"
+@test Faker.free_email()                              == "BLakin@yahoo.com"
+@test Faker.safe_email()                              == "BReichert@example.net"
+@test Faker.user_name()                               == "XChristiansen"
+@test Faker.domain_name()                             == "sg.com"
+@test Faker.domain_word()                             == "ltaw"
+@test Faker.domain_suffix()                           ==  "info"
+@test Faker.ipv4()                                    == "218.39.27.93"
+@test Faker.ipv6()                                    == "693a:ef86:6ef8:57a1:78e1:af47:83f1:8c3d"
+@test Faker.uri()                                     == "http://www.ns.biz/"
+@test Faker.url()                                     == "http://www.vi.co/"
+@test Faker.image_url()                               == "http://dummyimage.com/967x151"
 @test Faker.uri_extension()                           == ".html"
-@test Faker.uri_path()                                == "search/app/tag/categories"
-@test Faker.uri_page()                                == "main"
-@test Faker.mac_address()                             == "ae:8b:61:b4:a3:52"
-@test Faker.company_email()                           == "Hilll.Delsie@td.name"
+@test Faker.uri_path()                                == "tag/posts"
+@test Faker.uri_page()                                == "faq"
+@test Faker.mac_address()                             == "5c:68:54:b1:4e:8b"
+@test Faker.company_email()                           == "DBorer@pmak.co"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.text(number_chars=200) ==  "Laudantium molestias eos rerum. Cupiditate voluptatem exercitationem enim.. Qui qui suscipit aspernatur porro. Non. Officiis consequatur harum architecto quibusdam. Explicabo voluptas cumque distinctio maiores voluptatibus.."
-@test Faker.sentence(number_words=6, variable_nb_words=true) == "Distinctio numquam velit voluptatem incidunt."
-@test Faker.word() == "eaque"
-@test Faker.paragraphs() == ["Numquam unde et dolorem. Rem aut harum perspiciatis. Veritatis..", "Consequuntur consequatur recusandae quis. Nobis dolorem ipsum non ipsam. Quia vel et minus sed. Molestiae velit iure..", "Culpa expedita. Quo voluptatibus voluptatem ea placeat.."]
-@test Faker.words(number_words=3) == ["qui", "eos", "sit"]
-@test Faker.paragraph(number=3) == "Earum exercitationem architecto deserunt dicta alias. Qui eos sint iusto aut.."
-@test Faker.sentences(number_sentences=3) == ["In et voluptatem.", "Nostrum sapiente molestiae.", "Saepe ut in non quasi.", "Ab totam perspiciatis."]
+@test Faker.text(number_chars=200) ==  "Sequi iusto quis quia. Aut ut est quia. Ut et atque iusto. Consectetur sit sed et.. Alias rem quaerat aut totam reiciendis. Quo necessitatibus temporibus quas. Qui mollitia expedita alias harum inventore.."
+@test Faker.sentence(number_words=6, variable_nb_words=true) == "Omnis."
+@test Faker.word() == "magni"
+@test Faker.paragraphs() ==  ["Eveniet explicabo aspernatur qui. Quia consequatur et quisquam quidem maxime. Et corrupti omnis..", "Ut. Illo..", "Inventore accusantium quibusdam. Corrupti. Perferendis rem. Commodi aliquam molestiae.."]
+@test Faker.words(number_words=3) == ["ad", "provident", "animi"]
+@test Faker.paragraph(number=3) == "Quasi. Consectetur veniam aut aspernatur. Quo repellendus reprehenderit. Optio atque.."
+@test Faker.sentences(number_sentences=3) ==  ["Voluptates earum eius.", "Odit asperiores eum optio.", "Placeat.", "Quod perferendis reiciendis sed perferendis."]
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.phone_number()  ==  "736-329-3523 x8270"
-@test Faker.cell_phone() ==  "(265) 714-5444"
+@test Faker.phone_number()  ==  "614.216.0561 x6994"
+@test Faker.cell_phone() ==  "069-042-9495"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.password() == "D3Wt#5(2&5&b#7'R%9BsA5Xr%*Uu%kRy99htT8Fn"
-@test Faker.locale() == "cn_NF"
+@test Faker.password() == ")6E)\$SRA&6Eq*9Yl51Ix!6Z'&+Zm2a1fd5Ml'6aq"
+@test Faker.locale() == "es_AT"
 @test Faker.null_boolean() == false
-@test Faker.country_code() == "SS"
-@test Faker.language_code() == "es"
+@test Faker.country_code() == "TR"
+@test Faker.language_code() == "de"
 @test Faker.boolean() == true
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.color_name()                              == "LightYellow"
-@test Faker.safe_color_name()                         == "orchid"
-@test Faker.hex_color()                               == "#FFFAFA"
-@test Faker.rgb_color_list()                          == "(215,221,84)"
-@test Faker.rgb_color()                               == "131,80,74"
-@test Faker.rgb_css_color()                           == "rgb(68,107,109)"
+@test Faker.color_name()                              == "Peru"
+@test Faker.safe_color_name()                         == "olive"
+@test Faker.hex_color()                               == "#00008B"
+@test Faker.rgb_color_list()                          == "(112,74,32)"
+@test Faker.rgb_color()                               == "169,3,138"
+@test Faker.rgb_css_color()                           == "rgb(155,46,166)"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.credit_card_security_code()               == "736"
+@test Faker.credit_card_security_code()               == "761"
 Faker.credit_card_full()                        =="JCB 16 digit Catherine Crist 3096352382707498 CVC 714"
 Faker.credit_card_number()                      == "869944451199135"
-@test Faker.credit_card_provider()                    == "laser"
-@test Faker.generate_number("52",16)                  == "5276029874944399"
+@test Faker.credit_card_provider()                    == "visa"
+@test Faker.generate_number("52",16)                  == "5260071458008918"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.mime_type()                               == "image/x-freehand"
-@test Faker.file_extension()                          == "rmvb"
-@test Faker.file_name()                               == "wTPd.pgn"
+@test Faker.mime_type()                               == "application/vnd.sun.xml.writer.global"
+@test Faker.file_extension()                          == "rl"
+@test Faker.file_name()                               == "HROe.deploy"
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.first_name()                              == "Jacqulyn"
-@test Faker.last_name()                               ==  "Cronin"
-@test Faker.prefixe()                                 == "Miss"
-@test Faker.simple_profile()                    ==  Dict("name"=>"Domingo","mail"=>"Durgan.Krystle@hotmail.com","username"=>"Kimbery29","birthdate"=>"2007-5-18","sex"=>"F","address"=>"8557 McDermott Shores West Alex, OR 96510-7890")
-@test Faker.job()                               == "Immigration officer"
+@test Faker.first_name()                              == "Marvin"
+@test Faker.last_name()                               ==  "Crist"
+@test Faker.prefixe()                                 == "Ms."
+@test Faker.simple_profile()                    ==  Dict("name" => "Tarra","mail" => "Mann.Yuriko@hotmail.com","username" => "Maybell.Altenwerth","birthdate" => "2021-4-18","sex" => "M","address" => "400 Easter Via South Rey, CT 61211")
+@test Faker.job()                               == "Claims inspector/assessor"
 a=Faker.profile()
-b= Dict("username"=>"Howell.Dannie",
+b= Dict("username"=>"Ondricka.Scottie",
  "sex"=>"M",
- "address"=>"931 Grover Court Soilashire, WY 69092-3732",
- "name"=>"Marissa",
- "job"=>"Land/geomatics surveyor",
- "mail"=>"Blondell71@yahoo.com",
- "birthdate"=>"1984-12-1",
- "current_location"=> (-1.4951171875, -5.98828125),
+ "address"=>"9209 Rodolfo Mall Port Arturo, WV 74853-8463",
+ "name"=>"Gwyneth",
+ "job"=>"Clinical embryologist",
+ "mail"=>"Krista08@gmail.com",
+ "birthdate"=>"2018-12-17",
+ "current_location"=> (-1.9951171875, -5.98828125),
  "blood_group"=>"B-",
- "residence"=>"6427 Treutel Divide Tienfort, MT 97964-8925",
- "company"=>"Legros and Sons",
- "website"=>"http://ol.info/"
+ "residence"=>"1754 Schulist Springs Edmundoside, KY 71020-5393",
+ "company"=>"Hand Group",
+ "website"=>"http://www.mm.com/"
  )
 
 @test a["username"]== b["username"]
@@ -161,20 +161,20 @@ b= Dict("username"=>"Howell.Dannie",
 @test a["company"]== b["company"]
 @test a["website"]== b["website"]
 
-@test Faker.profile("username")             ==  Dict{Any,Any}("username"=>"Olson.Willy")
-@test Faker.profile("username","blood_group")==  Dict{Any,Any}("blood_group"=>"A-","username"=>"Ronda.Heller")
-@test Faker.simple_profile("birthdate","address","sex")    == Dict{Any,Any}("birthdate"=>"1974-11-23","sex"=>"F","address"=>"16379 Quigley Ramp Smithamborough, OK 39559-7992")
-@test Faker.simple_profile("name")  == Dict{Any,Any}("name"=>"Elina")
+@test Faker.profile("username")             ==  Dict{Any,Any}("username" => "Hester55")
+@test Faker.profile("username","blood_group")==  Dict{Any,Any}("blood_group" => "B-","username" => "Blick.Hoyt")
+@test Faker.simple_profile("birthdate","address","sex")    == Dict{Any,Any}("birthdate" => "2097-2-24","sex" => "M","address" => "9513 Lavera Lights Merlemouth, DE 77378-0832")
+@test Faker.simple_profile("name")  == Dict{Any,Any}("name" => "Rutha")
 
-Faker.seed(1234)
+Faker.seed(85)
 
-@test Faker.mac_processor()                           == "Intel"
+@test Faker.mac_processor()                           == "U; PPC"
 @test Faker.linux_processor()                         == "x86_64"
-@test Faker.user_agent()                              == "opera"
-@test Faker.windows_platform_token()                  == "Windows CE"
+@test Faker.user_agent()                              == "chrome"
+@test Faker.windows_platform_token()                  == "Windows NT 5.0"
 @test Faker.linux_platform_token()                    == "X11; Linux i686"
-@test Faker.mac_platform_token()                      ==  "Macintosh; U; Intel Mac OS X 10_5_3"
-@test Faker.chrome()                                  =="Mozilla/5.0 (Windows 98; Win 9x 4.90) AppleWebKit/5331 (KHTML, like Gecko) Chrome/32.0.824.0 Safari/5331"
+@test Faker.mac_platform_token()                      ==  "Macintosh; Intel Mac OS X 10_7_0"
+@test Faker.chrome()                                  =="Mozilla/5.0 (Windows NT 6.2) AppleWebKit/5341 (KHTML, like Gecko) Chrome/41.0.843.0 Safari/5341"
 #@test Faker.firefox()                                 =="Mozilla/5.0 (Windows NT 4.0; sl-SI; rv:1.9.0.20) Gecko/2015-4-22 21:10:48 Firefox/6.0"
 #@test Faker.safari()      == "Mozilla/5.0 (iPod; U; CPU iPhone OS 3_1 like Mac OS X; it-IT) AppleWebKit/534.28.6 (KHTML, like Gecko) Version/3.0.5 Mobile/8B115 Safari/6534.28.6"
 #@test Faker.opera()                             ==  "Opera/9.26.(Windows NT 6.1; sl-SI) Presto/2.9.160 Version/10.00)"
