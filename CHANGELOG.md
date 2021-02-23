@@ -1,4 +1,9 @@
 
+# Faker v0.2.3
+
+## Bug fixes
+- Update testing to Julia version 1.5
+
 # Faker v0.2.2
 
 ## Bug fixes
