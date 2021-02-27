@@ -5,18 +5,17 @@ using Random
 import YAML
 
 data=Dict()
-data["en"]=Dict()
-data["en"]["faker"]=Dict()
+data["faker"]=Dict()
 
 function language(file::String) #"es-MX"
 	original= pwd()
 	cd(abspath(joinpath(dirname(Base.find_package("Faker")), "../src/locales")))
 	newdata = YAML.load_file("$(file).yml")[file]["faker"]
 	for (k, v) in newdata
-        if (haskey(data["en"]["faker"], k))
-			data["en"]["faker"][k]=merge(data["en"]["faker"][k],newdata[k])
+        if (haskey(data["faker"], k))
+			data["faker"][k]=merge(data["faker"][k],newdata[k])
 		else
-			data["en"]["faker"][k]=newdata[k]
+			data["faker"][k]=newdata[k]
 		end
 	end
 	cd(original)
@@ -28,21 +27,21 @@ function loadfiles(nivel::String="base")
 	original= pwd()
 	cd(abspath(joinpath(dirname(Base.find_package("Faker")), "../src/locales/en")))
 	if (nivel=="base")
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("address.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("business.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("color.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("company.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("file.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("internet.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("lorem.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("name.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("nation.yml")["en"]["faker"])
-		data["en"]["faker"] = merge(data["en"]["faker"],YAML.load_file("phone_number.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("address.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("business.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("color.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("company.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("file.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("internet.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("lorem.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("name.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("nation.yml")["en"]["faker"])
+		data["faker"] = merge(data["faker"],YAML.load_file("phone_number.yml")["en"]["faker"])
 	else
 		ls= readdir()
 		for i=1:length(ls)
 			if ( (occursin(Regex("((.)*\\.(yml))"),ls[i])) && (!occursin(r"^(\.)",ls[i])))
-				data["en"]["faker"]=merge(data["en"]["faker"],YAML.load(open(ls[i]))["en"]["faker"])
+				data["faker"]=merge(data["faker"],YAML.load(open(ls[i]))["en"]["faker"])
 			end
 		end
 	end

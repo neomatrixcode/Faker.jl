@@ -35,7 +35,7 @@ end
                    "5"=> 1, "6"=> 3, "7"=> 5, "8"=> 7, "9"=> 9)
 
     function credit_card_provider()
-        executor(data["en"]["faker"]["business"]["credit_card_types"])
+        executor(data["faker"]["business"]["credit_card_types"])
     end
 
     function credit_card_number(card="None")

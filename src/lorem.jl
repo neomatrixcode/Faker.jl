@@ -1,7 +1,7 @@
 
-    word()=executor(data["en"]["faker"]["lorem"]["words"])
+    word()=executor(data["faker"]["lorem"]["words"])
 
-    words(;number_words=3::Int)= [ (executor(data["en"]["faker"]["lorem"]["words"])) for i=1:number_words ]
+    words(;number_words=3::Int)= [ (executor(data["faker"]["lorem"]["words"])) for i=1:number_words ]
 
     function sentence(;number_words=6::Int, variable_nb_words=true)
         number_words <= 0 && (return " ");

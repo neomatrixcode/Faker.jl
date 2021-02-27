@@ -1,12 +1,12 @@
 
     function mime_type()
-        executor(data["en"]["faker"]["file"]["mime_type"])
+        executor(data["faker"]["file"]["mime_type"])
     end
 
         #param category: application|audio|image|message|model|multipart|text|video
 
     function file_extension()
-        executor(data["en"]["faker"]["file"]["extension"])
+        executor(data["faker"]["file"]["extension"])
     end
 
   function file_name( extencion="None")

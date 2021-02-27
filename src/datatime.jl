@@ -108,5 +108,5 @@ year()=rand(1920:year_top)
 century()= centuries[rand(1:length(centuries))]
 
 function timezone()
-	executor(data["en"]["faker"]["address"]["time_zone"])
+	executor(data["faker"]["address"]["time_zone"])
 end

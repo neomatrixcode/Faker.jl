@@ -10,8 +10,7 @@
 
     #sha256() = hexdigest("sha256", "$(rand())")
 
-    country_code()= executor(data["en"]["faker"]["address"]["country_code"])
-
+    country_code()= executor(data["faker"]["address"]["country_code"])
     language_code() = language_codes[rand(1:length(language_codes))]
 
     locale()="$(language_code())_$(country_code())"

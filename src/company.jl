@@ -1,7 +1,7 @@
 
     function catch_phrase()
         resultado =""
-        for word_list in data["en"]["faker"]["company"]["buzzwords"]
+        for word_list in data["faker"]["company"]["buzzwords"]
             resultado *= executor(word_list)*" "
         end
         resultado
@@ -9,14 +9,14 @@
 
     function bs()
         resultado =""
-        for word_list in data["en"]["faker"]["company"]["bs"]
+        for word_list in data["faker"]["company"]["bs"]
             resultado *= executor(word_list)*" "
         end
         resultado
     end
 
-    company_suffix()= executor(data["en"]["faker"]["company"]["suffix"])
+    company_suffix()= executor(data["faker"]["company"]["suffix"])
 
-    company_prefix() = executor(data["en"]["faker"]["company"]["prefix"])
-    company()=executor(data["en"]["faker"]["company"]["name"])
+    company_prefix() = executor(data["faker"]["company"]["prefix"])
+    company()=executor(data["faker"]["company"]["name"])
 
