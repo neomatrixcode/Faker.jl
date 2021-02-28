@@ -5,8 +5,9 @@ random_digit_not_null()= string(rand(1:9))
 random_digit_or_empty() = string(rand(append!([' '],collect('0':'9'))))
 random_digit_not_null_or_empty() = string(rand(append!([' '],collect('1':'9'))))
 random_number(;digits= 1::Int ) = string(rand(0 : ((10^digits) - 1)))
-random_letter()= string(rand(append!(collect('a':'z'),collect('A':'Z'))))
-random_element(elements=("a", "b", "b"))= rand(elements)
+const collectaZ = append!(collect('a':'z'),collect('A':'Z'))
+random_letter() = string(rand(collectaZ))
+random_element(elements=("a", "b", "b")) = rand(elements)
 
 function randomize_nb_elements(;number=10::Int, le=false::Bool, ge=false::Bool)
     if le==true && ge==true
@@ -25,12 +26,6 @@ function randomize_nb_elements(;number=10::Int, le=false::Bool, ge=false::Bool)
     string(((rand(min : max))number / 100) + 1 )
 end
 
-function numerify( text = "####"::String)
-    for i in text
-        text= replace(text,"#"=>string(rand(0:9)),count=1)
-    end
-    return text
-end
-
-lexify( text="????"::String)= (for i=text  text= replace(text,"?"=>"$(random_letter())",count=1) end ; return text)
-bothify( text="## ??"::String)=lexify(numerify(text))
+numerify( text = "####"::String) = map( x -> x=='#' ? rand('0':'9') : x  , text )
+lexify( text="????"::String) = map( x -> x=='?' ? rand(collectaZ) : x  , text )
+bothify( text="## ??"::String) = lexify(numerify(text))
