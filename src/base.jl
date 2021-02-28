@@ -23,7 +23,7 @@ function randomize_nb_elements(;number=10::Int, le=false::Bool, ge=false::Bool)
     else
         max=140
     end
-    string(((rand(min : max))number / 100) + 1 )
+    string(((rand(min : max))*number / 100) + 1 )
 end
 
 numerify( text = "####"::String) = map( x -> x=='#' ? rand('0':'9') : x  , text )
