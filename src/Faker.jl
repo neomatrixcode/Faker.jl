@@ -51,9 +51,11 @@ end
 loadfiles()
 
 
+select_random(data :: Array)= rand(data)
+
 function executor(data :: Array)
 
- fn= data[rand(1:length(data))]
+fn= select_random(data)
 
 if occursin(r"#{.+}",fn)
 	elements = collect((m.match for m = eachmatch(r"#{[a-zA-Z\_\.]+}", fn)))
