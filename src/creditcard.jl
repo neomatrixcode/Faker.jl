@@ -58,7 +58,7 @@ end
 
     credit_card_security_code(code_length=3) = numerify("#"^(code_length))
 
-    function generate_card_number(prefix, len)
+    function generate_card_number(prefix="52", len=16)
         """
         "prefix" is the start of the CC number as a AbstractString, any number of digits.
         "len" is the len of the CC number to generate. Typically 13 or 16

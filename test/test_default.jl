@@ -101,7 +101,8 @@ Faker.seed(85)
 @test typeof(  Faker.credit_card_number() )                                    == String
 @test typeof(  Faker.credit_card_number("amex") )                              == String
 @test typeof(  Faker.credit_card_provider() )                                  == String
-@test typeof(  Faker.generate_card_number("52",16) )                                == String
+@test typeof(  Faker.generate_card_number() )                                  == String
+@test typeof(  Faker.generate_card_number("52",16) )                           == String
 Faker.seed(85)
 @test typeof(  Faker.mime_type() )                                             == String
 @test typeof(  Faker.file_extension() )                                        == String
