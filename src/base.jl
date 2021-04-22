@@ -1,4 +1,4 @@
-seed(seed::Int)::Random.MersenneTwister = Random.seed!(seed)
+seed(seed::Int=83)::Random.MersenneTwister = Random.seed!(seed)
 random_int(;min::Int=0, max::Int=9999)::String = string(rand(min : max))
 random_digit()::String = string(rand(0:9))
 random_digit_not_null()::String= string(rand(1:9))

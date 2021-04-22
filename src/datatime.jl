@@ -1,9 +1,9 @@
 
- 	centuries = ("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI","XVII", "XVIII", "XIX", "XX", "XXI")
+ 	const centuries = ("I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI","XVII", "XVIII", "XIX", "XX", "XXI")
 
- 	year_top =2100
+ 	const year_top =2100
 
- 	ap = ("AM","PM")
+ 	const ap = ("AM","PM")
 
  	unix_time()::Int= rand(0: Dates.datetime2unix(Dates.DateTime(Dates.now())))
  	iso8601()::DateTime = Dates.DateTime(rand(1970:year_top),rand(01:12),1,rand(01:23),rand(00:59),rand(00:59)) + Dates.Day(rand(01:31))
