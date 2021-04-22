@@ -15,7 +15,7 @@ Faker.seed(85)
 @test typeof(  Faker.state_abbr() )                                            == String
 @test typeof(  Faker.latitude() )                                              == Float64
 @test typeof(  Faker.street_name() )                                           == String
-@test typeof(  Faker.address() )                                               == String
+@test typeof(  Faker.address((Faker.street_address(),Faker.city(),Faker.state_abbr(),Faker.postcode())) )                                                                           == String
 @test typeof(  Faker.street_address() )                                        == String
 @test typeof(  Faker.postcode() )                                              == String
 @test typeof(  Faker.longitude() )                                             == Float64

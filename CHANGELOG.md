@@ -1,7 +1,7 @@
 
 # Faker v0.2.3
 
-## Bug fixes
+## New features
 - Update testing to Julia version 1.5
 - Added static typing
 - Faker.date_time("Y-m-d HH:MM:SS") accept pattern
@@ -10,7 +10,7 @@
 - Faker.date_time_this_decade("Y-m-d HH:MM:SS") accept pattern
 - Faker.date_time_this_year("Y-m-d HH:MM:SS") accept pattern
 - Faker.date_time_this_month("Y-m-d HH:MM:SS") accept pattern
-
+- Faker.address((Faker.street_address(),Faker.city(),Faker.state_abbr(),Faker.postcode())) accept tuple of functions
 
 
 # Faker v0.2.2

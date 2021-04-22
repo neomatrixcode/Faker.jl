@@ -1,32 +1,33 @@
 
-country() = executor(data["faker"]["address"]["country"])
-city_prefix() = executor(data["faker"]["address"]["city_prefix"])
-city_suffix()= executor(data["faker"]["address"]["city_suffix"])
-street_prefix()= executor(data["faker"]["address"]["street_prefix"])
-street_suffix()= executor(data["faker"]["address"]["street_suffix"])
-secondary_address() = bothify(executor(data["faker"]["address"]["secondary_address"]))
-state() = executor(data["faker"]["address"]["state"])
-state_abbr() = executor(data["faker"]["address"]["state_abbr"])
-municipality() = executor(data["faker"]["address"]["municipality"])
-street_name() = executor(data["faker"]["address"]["street_name"])
-street_address() = executor(data["faker"]["address"]["street_address"])
-address() = ("$(street_address()) $(city()), $(state_abbr()) $(postcode())")
-postcode() = bothify(executor(data["faker"]["address"]["postcode"]))
-building_number() = bothify(executor(data["faker"]["address"]["building_number"]))
-city() = executor(data["faker"]["address"]["city"])
+country()::String = executor(data["faker"]["address"]["country"])
+city_prefix()::String = executor(data["faker"]["address"]["city_prefix"])
+city_suffix()::String = executor(data["faker"]["address"]["city_suffix"])
+street_prefix()::String = executor(data["faker"]["address"]["street_prefix"])
+street_suffix()::String = executor(data["faker"]["address"]["street_suffix"])
+secondary_address()::String = bothify(executor(data["faker"]["address"]["secondary_address"]))
+state()::String = executor(data["faker"]["address"]["state"])
+state_abbr()::String = executor(data["faker"]["address"]["state_abbr"])
+municipality()::String = executor(data["faker"]["address"]["municipality"])
+street_name()::String = executor(data["faker"]["address"]["street_name"])
+street_address()::String = executor(data["faker"]["address"]["street_address"])
+postcode()::String = bothify(executor(data["faker"]["address"]["postcode"]))
+building_number()::String = bothify(executor(data["faker"]["address"]["building_number"]))
+city()::String = executor(data["faker"]["address"]["city"])
+address(items::Tuple=(street_address(),city(),state_abbr(),postcode()))::String = reduce(tostring, items )
 
-function geo_coordinate(;center="None", radius=0.001)
+function geo_coordinate(;center::String="None", radius::Float64=0.001)::Float16
+        my_center::Int = 0;
 
-        if center=="None"
-            center=0
+        if center != "None"
+             my_center = center
         end
 
-        if center == 0
+        if my_center == 0
             return Float16(rand(-17.99 : 17.99))
         else
-            return Float16(rand( center - radius : center + radius))
+            return Float16(rand( my_center - radius : my_center + radius))
         end
 end
 
-latitude() = geo_coordinate() / 2.0
-longitude() = geo_coordinate()/ 1.0
+latitude()::Float64 = geo_coordinate()/ 2.0
+longitude()::Float64 = geo_coordinate()/ 1.0
