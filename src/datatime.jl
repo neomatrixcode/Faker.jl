@@ -27,7 +27,7 @@ function date_time_between(start_date::String="-30y", finish_date::String="now",
 	 return Dates.format(rand(collect(init_date:Day(1):end_date)), pattern)
 end
 
-function random_datetime(bf_now,af_now,time_start,now_time,time_finish)
+function random_datetime(bf_now::Bool,af_now::Bool,time_start::DateTime,now_time::DateTime,time_finish::DateTime)::DateTime
     init_date::DateTime = now_time
     end_date::DateTime = now_time
 
@@ -42,7 +42,7 @@ function random_datetime(bf_now,af_now,time_start,now_time,time_finish)
     return rand(collect(time_start:Day(1):now_time))
 end
 
-function date_time_this_century(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
+function date_time_this_century(;before_now::Bool=true, after_now::Bool=false, pattern::String="Y-m-d HH:MM:SS")::String
 	r::DateTime = Dates.DateTime(Dates.now())
 	this_century_start::DateTime = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 100)), 1, 1)
 	this_century_finish::DateTime = (Dates.DateTime(Dates.year(this_century_start) + 100, 1, 1))-Dates.Day(1)
@@ -50,15 +50,15 @@ function date_time_this_century(;before_now=true, after_now=false, pattern::Stri
 	return Dates.format(random_datetime(before_now,after_now,this_century_start,r,this_century_finish), pattern)
 end
 
-function  date_time_this_decade(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
-	r::DateTime= Dates.DateTime(Dates.now())
+function  date_time_this_decade(;before_now::Bool=true, after_now::Bool=false, pattern::String="Y-m-d HH:MM:SS")::String
+	r::DateTime = Dates.DateTime(Dates.now())
 	this_decade_start::DateTime = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 10)), 1, 1)
 	this_decade_finish::DateTime = (Dates.DateTime(Dates.year(this_decade_start) + 10, 1, 1))-Dates.Day(1)
 
 	return Dates.format(random_datetime(before_now,after_now,this_decade_start,r,this_decade_finish), pattern)
 end
 
-function date_time_this_year(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
+function date_time_this_year(;before_now::Bool=true, after_now::Bool=false, pattern::String="Y-m-d HH:MM:SS")::String
 	r::DateTime = Dates.DateTime(Dates.now())
 	this_year_start::DateTime = Dates.DateTime(Dates.year(r), 1, 1)
 	this_year_finish::DateTime = this_year_start+Dates.Year(1)-Dates.Day(1)
@@ -66,7 +66,7 @@ function date_time_this_year(;before_now=true, after_now=false, pattern::String=
 	return Dates.format(random_datetime(before_now,after_now,this_year_start,r,this_year_finish), pattern)
 end
 
-function date_time_this_month(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
+function date_time_this_month(;before_now::Bool=true, after_now::Bool=false, pattern::String="Y-m-d HH:MM:SS")::String
 	r::DateTime = Dates.DateTime(Dates.now())
 	this_month_start::DateTime = r-Dates.Day(r)+Dates.Day(1)
 	this_month_finish::DateTime = this_month_start+Dates.Month(1)-Dates.Day(1)
