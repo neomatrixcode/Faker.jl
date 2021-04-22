@@ -3,110 +3,84 @@
 
  	year_top =2100
 
- 	unix_time()= rand(0: Dates.value((Dates.DateTime(Dates.now())) - (Dates.DateTime(1970,1,1))))
+ 	ap = ("AM","PM")
 
- 	function date_time()
- 		fec = Dates.DateTime(rand(1970:year_top),rand(01:12),1,rand(01:23),rand(00:59),rand(00:59)) + Dates.Day(rand(01:31))
- 		return Dates.format(fec, "Y-m-d HH:MM:SS")
- 	end
+ 	unix_time()::Int= rand(0: Dates.datetime2unix(Dates.DateTime(Dates.now())))
+ 	iso8601()::DateTime = Dates.DateTime(rand(1970:year_top),rand(01:12),1,rand(01:23),rand(00:59),rand(00:59)) + Dates.Day(rand(01:31))
+ 	date_time(pattern::String="Y-m-d HH:MM:SS")::String = Dates.format(iso8601(), pattern)
+ 	date(pattern::String="Y-m-d")::String = Dates.format(iso8601(), pattern)
+ 	time(pattern::String="H:M:S")::String = Dates.format(Dates.DateTime(1,1,1,rand(01:23),rand(00:59),rand(00:59)), pattern)
 
- 	date_time_ad()= Dates.format(iso8601(), "Y-m-d HH:MM:SS")
+function date_time_between(start_date::String="-30y", finish_date::String="now", pattern::String="Y-m-d HH:MM:SS")::String
 
- 	iso8601()=
- 	Dates.DateTime(rand(1970:year_top),rand(01:12),1,rand(01:23),rand(00:59),rand(00:59)) + Dates.Day(rand(01:31))
+ 	init_date::DateTime = Dates.DateTime(Dates.now())
+    end_date::DateTime = Dates.DateTime(Dates.now())
 
- 	function date(pattern="Y-m-d")
- 		x = Dates.DateTime(rand(1970:year_top),rand(01:12),1,rand(01:23),rand(00:59),rand(00:59)) + Dates.Day(rand(01:31))
+    if start_date != "now"
+    	init_date = init_date + Dates.Year(parse(Int,start_date[1:end-1]))
+    end
 
- 		return Dates.format(x, pattern)
+    if finish_date != "now"
+    	end_date = end_date + Dates.Year(parse(Int,start_date[1:end-1]))
+    end
 
- 	end
-
- 	function time(pattern="H:M:S")
- 		x= Dates.DateTime(1,1,1,rand(01:23),rand(00:59),rand(00:59))
-
- 		return Dates.format(x, pattern)
- 	end
-
- 	function date_time_between(start_date="-30y", end_date="now")
-
- 		try
- 			start_date = Dates.DateTime(Dates.now()) + Dates.Year(parse(Int,start_date[1:end-1]))
- 		catch
- 			start_date = Dates.DateTime(Dates.now())
- 		end
-
- 		try
- 		end_date = Dates.DateTime(Dates.now()) + Dates.Year(parse(Int,end_date[1:end-1]))
-	 	catch
-	 	end_date = Dates.DateTime(Dates.now())
-	 	end
-
-	 dr=(start_date:Day(1):end_date)[rand(1:end)]
-	 return Dates.format(dr, "Y-m-d HH:MM:SS")
-	end
+	 return Dates.format(rand(collect(init_date:Day(1):end_date)), pattern)
+end
 
 function random_datetime(bf_now,af_now,time_start,now_time,time_finish)
-    if bf_now && af_now
-		return(time_start:Day(1):time_finish)[rand(1:end)]
-	elseif (bf_now==false) && af_now
-		return(now_time:Day(1):time_finish)[rand(1:end)]
-	else
-		return(time_start:Day(1):now_time)[rand(1:end)]
-	end
-	return  now_time
+    init_date::DateTime = now_time
+    end_date::DateTime = now_time
+
+    if bf_now
+    	init_date = time_start
+    end
+
+    if af_now
+    	end_date = time_finish
+    end
+
+    return rand(collect(time_start:Day(1):now_time))
 end
 
-function date_time_this_century(;before_now=true, after_now=false)
-	r = Dates.DateTime(Dates.now())
-	this_century_start = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 100)), 1, 1)
-	this_century_finish = (Dates.DateTime(Dates.year(this_century_start) + 100, 1, 1))-Dates.Day(1)
+function date_time_this_century(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
+	r::DateTime = Dates.DateTime(Dates.now())
+	this_century_start::DateTime = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 100)), 1, 1)
+	this_century_finish::DateTime = (Dates.DateTime(Dates.year(this_century_start) + 100, 1, 1))-Dates.Day(1)
 
-	return Dates.format(random_datetime(before_now,after_now,this_century_start,r,this_century_finish), "Y-m-d HH:MM:SS")
+	return Dates.format(random_datetime(before_now,after_now,this_century_start,r,this_century_finish), pattern)
 end
 
-function  date_time_this_decade(;before_now=true, after_now=false)
-	r = Dates.DateTime(Dates.now())
-	this_decade_start = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 10)), 1, 1)
-	this_decade_finish = (Dates.DateTime(Dates.year(this_decade_start) + 10, 1, 1))-Dates.Day(1)
+function  date_time_this_decade(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
+	r::DateTime= Dates.DateTime(Dates.now())
+	this_decade_start::DateTime = Dates.DateTime((Int(Dates.year(r)) - (Dates.year(r) % 10)), 1, 1)
+	this_decade_finish::DateTime = (Dates.DateTime(Dates.year(this_decade_start) + 10, 1, 1))-Dates.Day(1)
 
-	return Dates.format(random_datetime(before_now,after_now,this_decade_start,r,this_decade_finish), "Y-m-d HH:MM:SS")
+	return Dates.format(random_datetime(before_now,after_now,this_decade_start,r,this_decade_finish), pattern)
 end
 
+function date_time_this_year(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
+	r::DateTime = Dates.DateTime(Dates.now())
+	this_year_start::DateTime = Dates.DateTime(Dates.year(r), 1, 1)
+	this_year_finish::DateTime = this_year_start+Dates.Year(1)-Dates.Day(1)
 
-
-function date_time_this_year(;before_now=true, after_now=false)
-	r = Dates.DateTime(Dates.now())
-	this_year_start = Dates.DateTime(Dates.year(r), 1, 1)
-	this_year_finish = this_year_start+Dates.Year(1)-Dates.Day(1)
-
-	return Dates.format(random_datetime(before_now,after_now,this_year_start,r,this_year_finish), "Y-m-d HH:MM:SS")
+	return Dates.format(random_datetime(before_now,after_now,this_year_start,r,this_year_finish), pattern)
 end
 
+function date_time_this_month(;before_now=true, after_now=false, pattern::String="Y-m-d HH:MM:SS")::String
+	r::DateTime = Dates.DateTime(Dates.now())
+	this_month_start::DateTime = r-Dates.Day(r)+Dates.Day(1)
+	this_month_finish::DateTime = this_month_start+Dates.Month(1)-Dates.Day(1)
 
-function date_time_this_month(;before_now=true, after_now=false)
-	r = Dates.DateTime(Dates.now())
-	this_month_start = r-Dates.Day(r)+Dates.Day(1)
-	this_month_finish = this_month_start+Dates.Month(1)-Dates.Day(1)
-
-	return Dates.format(random_datetime(before_now,after_now,this_month_start,r,this_month_finish), "Y-m-d HH:MM:SS")
+	return Dates.format(random_datetime(before_now,after_now,this_month_start,r,this_month_finish), pattern)
 end
 
-ap = ("AM","PM")
-am_pm()= ap[rand(1:2)]
-
-day_of_month()= rand(1:31)
-
-day_of_week()= Dates.dayname(Date(2015,07,rand(12:18)))
-
-months()=rand(1:12)
-
-month_name()= Dates.monthname(Date(2015,rand(1:12),15))
-
-year()=rand(1920:year_top)
-
-century()= centuries[rand(1:length(centuries))]
-
-function timezone()
+am_pm()::String = rand(ap)
+day_of_month()::Int = rand(1:31)
+day_of_week()::String = Dates.dayname(Date(2015,07,rand(12:18)))
+months()::Int =rand(1:12)
+month_name()::String = Dates.monthname(Date(2015,rand(1:12),15))
+year()::Int =rand(1920:year_top)
+century()::String = rand(centuries)
+function timezone()::String
 	executor(data["faker"]["address"]["time_zone"])
 end

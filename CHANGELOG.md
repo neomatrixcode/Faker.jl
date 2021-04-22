@@ -3,6 +3,15 @@
 
 ## Bug fixes
 - Update testing to Julia version 1.5
+- Added static typing
+- Faker.date_time("Y-m-d HH:MM:SS") accept pattern
+- Faker.date_time_between("Y-m-d HH:MM:SS") accept pattern
+- Faker.date_time_this_century("Y-m-d HH:MM:SS") accept pattern
+- Faker.date_time_this_decade("Y-m-d HH:MM:SS") accept pattern
+- Faker.date_time_this_year("Y-m-d HH:MM:SS") accept pattern
+- Faker.date_time_this_month("Y-m-d HH:MM:SS") accept pattern
+
+
 
 # Faker v0.2.2
 

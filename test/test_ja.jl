@@ -37,7 +37,7 @@ Faker.seed(85)
 @test typeof(  Faker.months() )                                                == Int64
 @test typeof(  Faker.am_pm() )                                                 == String
 @test typeof(  Faker.iso8601() )                                               == Dates.DateTime
-@test typeof(  Faker.date_time() )                                             == String
+@test typeof(  Faker.date_time("Y-m-d HH:MM:SS") )                             == String
 @test typeof(  Faker.month_name() )                                            == String
 @test typeof(  Faker.day_of_week() )                                           == String
 @test typeof(  Faker.day_of_month() )                                          == Int64
@@ -48,10 +48,10 @@ Faker.seed(85)
 @test typeof(  Faker.century() )                                               == String
 @test typeof(  Faker.date("Y-m-d") )                                           == String
 @test typeof(  Faker.year() )                                                  == Int64
-@test typeof(  Faker.date_time_this_century(before_now=true, after_now=false) )== String
-@test typeof(  Faker.date_time_this_decade(before_now=true, after_now=false) ) == String
-@test typeof(  Faker.date_time_this_year(before_now=true, after_now=false) )   == String
-@test typeof(  Faker.date_time_this_month(before_now=true, after_now=false) )  == String
+@test typeof(  Faker.date_time_this_century(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") )== String
+@test typeof(  Faker.date_time_this_decade(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") ) == String
+@test typeof(  Faker.date_time_this_year(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") )   == String
+@test typeof(  Faker.date_time_this_month(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") )  == String
 Faker.seed(85)
 @test typeof(  Faker.email() )                                                 == String
 @test typeof(  Faker.free_email() )                                            == String

@@ -55,14 +55,14 @@ select_random(data :: Array)= rand(data)
 
 function executor(data :: Array)
 
-fn= select_random(data)
+	fn= select_random(data)
 
-if occursin(r"#{.+}",fn)
-	elements = collect((m.match for m = eachmatch(r"#{[a-zA-Z\_\.]+}", fn)))
-	for i in elements
-      fn= replace(fn, i => eval(Meta.parse(i[3:end-1]*"()")),count=1)
-    end
-end
+	if occursin(r"#{.+}",fn)
+		elements = collect((m.match for m = eachmatch(r"#{[a-zA-Z\_\.]+}", fn)))
+		for i in elements
+	      fn= replace(fn, i => eval(Meta.parse(i[3:end-1]*"()")),count=1)
+	    end
+	end
 return fn
 
 end

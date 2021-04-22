@@ -30,9 +30,9 @@ end
     credit_card_types["visa"] = credit_card_types["visa16"]
     credit_card_types["jcb"] = credit_card_types["jcb16"]
 
-    credit_card_provider() = select_random(data["faker"]["business"]["credit_card_types"])
+    credit_card_provider()::String  = select_random(data["faker"]["business"]["credit_card_types"])
 
-    function getcard(card="None")
+    function getcard(card::String="None")::CreditCard
         if card == "None"
             return collect(rand(credit_card_types))[2]
         else
@@ -40,8 +40,8 @@ end
         end
     end
 
-    function credit_card_number(card="None")
-        card = getcard(card)
+    function credit_card_number(card::String="None")::String
+        card::CreditCard = getcard(card)
         return generate_card_number(card.prefixes, card.length)
     end
 
@@ -51,26 +51,26 @@ end
         return expire_date.strftime(date_format)
     end=#
 
-    function credit_card_full(card="None")
-        card = getcard(card)
+    function credit_card_full(card::String="None")::String
+        card::CreditCard = getcard(card)
         return string(card.name," ",first_name()," ",last_name()," ",generate_card_number(card.prefixes,card.length)," ",card.security_code," ",credit_card_security_code(card.security_code_length))
     end
 
-    credit_card_security_code(code_length=3) = numerify("#"^(code_length))
+    credit_card_security_code(code_length::Int=3)::String  = numerify("#"^(code_length))
 
-    function generate_card_number(prefix="52", len=16)
+    function generate_card_number(prefix::String="52", len::Int=16)::String
         """
         "prefix" is the start of the CC number as a AbstractString, any number of digits.
         "len" is the len of the CC number to generate. Typically 13 or 16
         """
         # Generate random char digits
-        number = numerify(string(prefix,"#"^(len - length(prefix) - 1)))
+        number::String = numerify(string(prefix,"#"^(len - length(prefix) - 1)))
 
-        result =  map( x -> parse(Int,x), collect(number))
-        odds= map( x ->(z=x*2;div(z,10)+rem(z,10)), result[end:-2:1])
+        result::Array{Int64,1} =  map( x -> parse(Int,x), collect(number))
+        odds::Array{Int64,1}  = map( x ->(z=x*2;div(z,10)+rem(z,10)), result[end:-2:1])
         # Calculate sum
-        tot = reduce(+, append!(result[end-1:-2:1],odds))
+        tot::Int = reduce(+, append!(result[end-1:-2:1],odds))
         # Calculate check digit
-        check_digit = (10 - (tot % 10)) % 10
+        check_digit::Int = (10 - (tot % 10)) % 10
         return string(number,check_digit)
     end
