@@ -1,56 +1,50 @@
 
-    word()=executor(data["faker"]["lorem"]["words"])
+    word()::String=rand(data["faker"]["lorem"]["words"])
 
-    words(;number_words=3::Int)= [ (executor(data["faker"]["lorem"]["words"])) for i=1:number_words ]
+    words(;number_words::Int=3)::Array{String, 1} = map( x -> word(), 1:number_words)
 
-    function sentence(;number_words=6::Int, variable_nb_words=true)
+    function sentence(;number_words::Int=6, variable_nb_words::Bool=true)::String
         number_words <= 0 && (return " ");
         variable_nb_words && (number_words = rand(1:number_words));
-        palabras = words(number_words=number_words);
+        palabras::Array{String, 1} = words(number_words=number_words);
         palabras[1] = uppercasefirst(palabras[1]);
-        sal = join(palabras," ");
-        sal*= ".";
-        sal
+        return join(palabras," ")*".";
     end
-    sentences(;number_sentences=3::Int) = [sentence() for i=0:number_sentences]
 
-    function paragraph(;number=3::Int, variable_nb_sentences=true)
+    sentences(;number_sentences::Int=3)::Array{String, 1} = map( x -> sentence(), 1:number_sentences)
+
+    function paragraph(;number::Int=3, variable_nb_sentences::Bool=true)::String
        number <= 0 && (return " ");
         variable_nb_sentences && (number = rand(1:number));
-        sal = join(sentences(number_sentences=number)," ");
-        sal*= ".";
-        sal
+        return join(sentences(number_sentences=number)," ");
     end
-    paragraphs(number=3::Int)= [paragraph() for i=1:number]
 
-    function text(;number_chars=200::Int)
-        texto = [];
-        number_chars < 5 && (return "text() can only generate text of at least 5 characters");
-        if number_chars < 25
-                size = 0
-                while size < number_chars
-                    palabra = ( (size > 0) ? " " : "") * word();
-                    push!(texto, palabra)
-                    size += length(palabra)
-                end
-            texto[1] = first(texto[1]);
-            texto[end] *= "."
+    paragraphs(number::Int=3)::Array{String, 1} = map( x -> paragraph(), 1:number)
 
+    function text(;number_chars::Int=200)::String
+        texto::Array{String, 1} = [];
+        createtext::Function= paragraph
+
+        if number_chars < 5
+            @warn("text() can only generate text of at least 5 characters")
+            return " "
+        elseif number_chars < 25
+            createtext = word
         elseif number_chars < 100
-                size = 0
-                while size < number_chars
-                    sentencia = ((size > 0) ? " " : "") * sentence()
-                    push!(texto, sentencia)
-                    size += length(sentencia)
-                end
-        else
-                size = 0
-                while size < number_chars
-                    parrafo = ((size > 0) ? " " : "") * paragraph()
-                    push!(texto, parrafo)
-                    size += length(parrafo)
-                end
-        end ;
+            createtext = sentence
+        end
 
-        join(texto,"")
+        size::Int = 0
+        while size < number_chars
+            text = createtext()
+            push!(texto, text)
+            size += length(text)
+        end
+
+        if number_chars < 25
+            texto[1] = uppercasefirst(texto[1]);
+            texto[end] *= "."
+        end
+
+        return join(texto," ")
     end

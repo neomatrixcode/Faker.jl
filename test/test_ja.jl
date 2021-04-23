@@ -71,12 +71,15 @@ Faker.seed(85)
 @test typeof(  Faker.mac_address() )                                           == String
 @test typeof(  Faker.company_email((Faker.user_name(),"@",Faker.domain_name())))== String
 Faker.seed(85)
+@test typeof(  Faker.text(number_chars=2) )                                    == String
+@test typeof(  Faker.text(number_chars=20) )                                   == String
+@test typeof(  Faker.text(number_chars=187) )                                  == String
 @test typeof(  Faker.text(number_chars=200) )                                  == String
 @test typeof(  Faker.sentence(number_words=6, variable_nb_words=true) )        == String
 @test typeof(  Faker.word() )                                                  == String
 @test typeof(  Faker.paragraphs() )                                            == Array{String,1}
 @test typeof(  Faker.words(number_words=3) )                                   == Array{String,1}
-@test typeof(  Faker.paragraph(number=3) )                                     == String
+@test typeof(  Faker.paragraph(number=3, variable_nb_sentences=true) )         == String
 @test typeof(  Faker.sentences(number_sentences=3) )                           == Array{String,1}
 Faker.seed(85)
 @test typeof(  Faker.phone_number() )                                          == String
