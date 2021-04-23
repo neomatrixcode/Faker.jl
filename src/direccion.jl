@@ -15,17 +15,12 @@ building_number()::String = bothify(executor(data["faker"]["address"]["building_
 city()::String = executor(data["faker"]["address"]["city"])
 address(items::Tuple=(street_address(),city(),state_abbr(),postcode()))::String = reduce(tostring, items )
 
-function geo_coordinate(;center::String="None", radius::Float64=0.001)::Float16
-        my_center::Int = 0;
+function geo_coordinate(;center::Int=0, radius::Float64=0.001)::Float16
 
-        if center != "None"
-             my_center = center
-        end
-
-        if my_center == 0
+        if center == 0
             return Float16(rand(-17.99 : 17.99))
         else
-            return Float16(rand( my_center - radius : my_center + radius))
+            return Float16(rand( center - radius : center + radius))
         end
 end
 

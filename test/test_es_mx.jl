@@ -21,7 +21,7 @@ Faker.seed(85)
 @test typeof(  Faker.postcode() )                                              == String
 @test typeof(  Faker.longitude() )                                             == Float64
 @test typeof(  Faker.country() )                                               == String
-@test typeof(  Faker.geo_coordinate(center="None", radius=0.001) )             == Float16
+@test typeof(  Faker.geo_coordinate(center=0, radius=0.001))                   == Float16
 @test typeof(  Faker.secondary_address() )                                     == String
 @test typeof(  Faker.city_prefix() )                                           == String
 @test typeof(  Faker.city_suffix() )                                           == String
@@ -54,10 +54,10 @@ Faker.seed(85)
 @test typeof(  Faker.date_time_this_month(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") )  == String
 Faker.seed(85)
 @test typeof(  Faker.email() )                                                 == String
-@test typeof(  Faker.free_email() )                                            == String
-@test typeof(  Faker.safe_email() )                                            == String
+@test typeof(  Faker.free_email((Faker.user_name(),"@",Faker.free_email_domain())) ) == String
+@test typeof(  Faker.safe_email((Faker.user_name(),"@example.", Faker.domain_suffix())) )== String
 @test typeof(  Faker.user_name() )                                             == String
-@test typeof(  Faker.domain_name() )                                           == String
+@test typeof(  Faker.domain_name((Faker.domain_word(),".",Faker.domain_suffix())) )== String
 @test typeof(  Faker.domain_word() )                                           == String
 @test typeof(  Faker.domain_suffix() )                                         == String
 @test typeof(  Faker.ipv4() )                                                  == String
@@ -66,10 +66,10 @@ Faker.seed(85)
 @test typeof(  Faker.url() )                                                   == String
 @test typeof(  Faker.image_url() )                                             == String
 @test typeof(  Faker.uri_extension() )                                         == String
-@test typeof(  Faker.uri_path() )                                              == String
+@test typeof(  Faker.uri_path(deep=0) )                                        == String
 @test typeof(  Faker.uri_page() )                                              == String
 @test typeof(  Faker.mac_address() )                                           == String
-@test typeof(  Faker.company_email() )                                         == String
+@test typeof(  Faker.company_email((Faker.user_name(),"@",Faker.domain_name())))== String
 Faker.seed(85)
 @test typeof(  Faker.text(number_chars=200) )                                  == String
 @test typeof(  Faker.sentence(number_words=6, variable_nb_words=true) )        == String

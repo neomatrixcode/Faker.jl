@@ -11,7 +11,12 @@
 - Faker.date_time_this_year("Y-m-d HH:MM:SS") accept pattern
 - Faker.date_time_this_month("Y-m-d HH:MM:SS") accept pattern
 - Faker.address((Faker.street_address(),Faker.city(),Faker.state_abbr(),Faker.postcode())) accept tuple of functions
-
+- safe_email((Faker.user_name(),"@example.", Faker.domain_suffix())) accept tuple of data
+- free_email((Faker.user_name(),"@",Faker.free_email_domain())) accept tuple of data
+- Faker.geo_coordinate(center="None", radius=0.001)) to Faker.geo_coordinate(center=0, radius=0.001))
+- Faker.uri_path("None") to Faker.uri_path(deep=0)
+- Faker.domain_name((Faker.domain_word(),".",Faker.domain_suffix())) accept tuple of data
+- Faker.company_email((Faker.user_name(),"@",Faker.domain_name())) accept tuple of data
 
 # Faker v0.2.2
 
