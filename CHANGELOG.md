@@ -2,6 +2,11 @@
 # Faker v0.2.3
 
 ## New features
+- random_lowercase_letter()
+- random_uppercase_letter()
+- random_special_caracteres()
+
+## Updates features
 - Update testing to Julia version 1.5
 - Added static typing
 - Faker.date_time("Y-m-d HH:MM:SS") accept pattern
@@ -17,6 +22,7 @@
 - Faker.uri_path("None") to Faker.uri_path(deep=0)
 - Faker.domain_name((Faker.domain_word(),".",Faker.domain_suffix())) accept tuple of data
 - Faker.company_email((Faker.user_name(),"@",Faker.domain_name())) accept tuple of data
+- Faker.locale(items::Tuple=(language_code(),"\_",country_code())) accept tuple of data
 
 # Faker v0.2.2
 

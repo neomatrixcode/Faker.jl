@@ -1,6 +1,6 @@
 using Dates
 Faker.language("es-MX")
-Faker.seed(85)
+Faker.seed(80)
 @test typeof(  Faker.random_digit() )                                          == String
 @test typeof(  Faker.random_digit_not_null() )                                 == String
 @test typeof(  Faker.random_digit_or_empty() )                                 == String
@@ -12,7 +12,6 @@ Faker.seed(85)
 @test typeof(  Faker.lexify("????") )                                          == String
 @test typeof(  Faker.numerify("####") )                                        == String
 @test typeof(  Faker.bothify("## ??") )                                        == String
-Faker.seed(85)
 @test typeof(  Faker.state_abbr() )                                            == String
 @test typeof(  Faker.latitude() )                                              == Float64
 @test typeof(  Faker.street_name() )                                           == String
@@ -28,12 +27,10 @@ Faker.seed(85)
 @test typeof(  Faker.building_number() )                                       == String
 @test typeof(  Faker.city() )                                                  == String
 @test typeof(  Faker.state() )                                                 == String
-Faker.seed(85)
 @test typeof(  Faker.company() )                                               == String
 @test typeof(  Faker.company_suffix() )                                        == String
 @test typeof(  Faker.catch_phrase() )                                          == String
 @test typeof(  Faker.bs() )                                                    == String
-Faker.seed(85)
 @test typeof(  Faker.months() )                                                == Int64
 @test typeof(  Faker.am_pm() )                                                 == String
 @test typeof(  Faker.iso8601() )                                               == Dates.DateTime
@@ -41,7 +38,7 @@ Faker.seed(85)
 @test typeof(  Faker.month_name() )                                            == String
 @test typeof(  Faker.day_of_week() )                                           == String
 @test typeof(  Faker.day_of_month() )                                          == Int64
-@test typeof(  Faker.date_time_between("-30y", "now", "Y-m-d HH:MM:SS") )      == String
+@test typeof(  Faker.date_time_between("-30y", "now","Y-m-d HH:MM:SS") )       == String
 @test typeof(  Faker.time("H:M:S") )                                           == String
 @test typeof(  Faker.unix_time() )                                             == Int64
 @test typeof(  Faker.timezone() )                                              == String
@@ -52,7 +49,6 @@ Faker.seed(85)
 @test typeof(  Faker.date_time_this_decade(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") ) == String
 @test typeof(  Faker.date_time_this_year(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") )   == String
 @test typeof(  Faker.date_time_this_month(before_now=true, after_now=false, pattern="Y-m-d HH:MM:SS") )  == String
-Faker.seed(85)
 @test typeof(  Faker.email() )                                                 == String
 @test typeof(  Faker.free_email((Faker.user_name(),"@",Faker.free_email_domain())) ) == String
 @test typeof(  Faker.safe_email((Faker.user_name(),"@example.", Faker.domain_suffix())) )== String
@@ -70,7 +66,6 @@ Faker.seed(85)
 @test typeof(  Faker.uri_page() )                                              == String
 @test typeof(  Faker.mac_address() )                                           == String
 @test typeof(  Faker.company_email((Faker.user_name(),"@",Faker.domain_name())))== String
-Faker.seed(85)
 @test typeof(  Faker.text(number_chars=2) )                                    == String
 @test typeof(  Faker.text(number_chars=20) )                                   == String
 @test typeof(  Faker.text(number_chars=187) )                                  == String
@@ -81,24 +76,21 @@ Faker.seed(85)
 @test typeof(  Faker.words(number_words=3) )                                   == Array{String,1}
 @test typeof(  Faker.paragraph(number=3, variable_nb_sentences=true) )         == String
 @test typeof(  Faker.sentences(number_sentences=3) )                           == Array{String,1}
-Faker.seed(85)
 @test typeof(  Faker.phone_number() )                                          == String
 @test typeof(  Faker.cell_phone() )                                            ==  String
-Faker.seed(85)
 @test typeof(  Faker.password() )                                              == String
-@test typeof(  Faker.locale() )                                                == String
-@test typeof(  Faker.null_boolean() )                                          == Bool
+@test typeof(  Faker.locale((Faker.language_code(),"_",Faker.country_code())) )                                                                           == String
+data= Faker.null_boolean()
+@test (typeof(data)              == Bool) || typeof(data) == String
 @test typeof(  Faker.country_code() )                                          == String
 @test typeof(  Faker.language_code() )                                         == String
 @test typeof(  Faker.boolean() )                                               == Bool
-Faker.seed(85)
 @test typeof(  Faker.color_name() )                                            == String
 @test typeof(  Faker.safe_color_name() )                                       == String
 @test typeof(  Faker.hex_color() )                                             == String
 @test typeof(  Faker.rgb_color_list() )                                        == String
 @test typeof(  Faker.rgb_color() )                                             == String
 @test typeof(  Faker.rgb_css_color() )                                         == String
-Faker.seed(85)
 @test typeof(  Faker.credit_card_security_code() )                             == String
 @test typeof(  Faker.credit_card_full() )                                      == String
 @test typeof(  Faker.credit_card_full("amex") )                                == String
@@ -107,11 +99,9 @@ Faker.seed(85)
 @test typeof(  Faker.credit_card_provider() )                                  == String
 @test typeof(  Faker.generate_card_number() )                                  == String
 @test typeof(  Faker.generate_card_number("52",16) )                           == String
-Faker.seed(85)
 @test typeof(  Faker.mime_type() )                                             == String
 @test typeof(  Faker.file_extension() )                                        == String
 @test typeof(  Faker.file_name() )                                             == String
-Faker.seed(85)
 @test typeof(  Faker.first_name() )                                            == String
 @test typeof(  Faker.last_name() )                                             == String
 @test typeof(  Faker.prefixe() )                                               == String
@@ -122,7 +112,6 @@ Faker.seed(85)
 @test typeof(  Faker.profile("username","blood_group") )                       == Dict{Any,Any}
 @test typeof(  Faker.simple_profile("birthdate","address","sex") )             == Dict{Any,Any}
 @test typeof(  Faker.simple_profile("name") )                                  == Dict{Any,Any}
-Faker.seed(85)
 @test typeof(  Faker.mac_processor() )                                         == String
 @test typeof(  Faker.linux_processor() )                                       == String
 @test typeof(  Faker.user_agent() )                                            == String
