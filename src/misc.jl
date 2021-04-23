@@ -1,6 +1,6 @@
     const language_codes = ("cn", "de", "el", "en", "es", "fr", "it", "pt", "ru")
 
-    boolean(chance_of_getting_true=50)::Bool = rand(1:100) <= chance_of_getting_true
+    boolean(chance_of_getting_true::Int=50)::Bool = rand(1:100) <= chance_of_getting_true
 
     null_boolean()::Union{Bool,String} = Dict{Int64,Any}( 0=> "none", 1=> true, -1=> false)[rand(-1:1)]
 
@@ -16,7 +16,7 @@
 
     #=uuid4()==#
 
-    function password( longitud=10, special_caracteres=true, digitos=true, upper_case=true, lower_case=true)::String
+    function password(; longitud::Int=10, special_caracteres::Bool=true, digitos::Bool=true, upper_case::Bool=true, lower_case::Bool=true)::String
         functions::Tuple = ();
 
         if special_caracteres==true

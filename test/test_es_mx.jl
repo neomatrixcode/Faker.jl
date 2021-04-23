@@ -78,7 +78,7 @@ Faker.seed(80)
 @test typeof(  Faker.sentences(number_sentences=3) )                           == Array{String,1}
 @test typeof(  Faker.phone_number() )                                          == String
 @test typeof(  Faker.cell_phone() )                                            ==  String
-@test typeof(  Faker.password() )                                              == String
+@test typeof(  Faker.password(longitud=10, special_caracteres=true, digitos=true, upper_case=true, lower_case=true) )                                              == String
 @test typeof(  Faker.locale((Faker.language_code(),"_",Faker.country_code())) )                                                                           == String
 data= Faker.null_boolean()
 @test (typeof(data)              == Bool) || typeof(data) == String

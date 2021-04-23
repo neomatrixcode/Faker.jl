@@ -23,6 +23,7 @@
 - Faker.domain_name((Faker.domain_word(),".",Faker.domain_suffix())) accept tuple of data
 - Faker.company_email((Faker.user_name(),"@",Faker.domain_name())) accept tuple of data
 - Faker.locale(items::Tuple=(language_code(),"\_",country_code())) accept tuple of data
+- Faker.password(longitud=10, special_caracteres=true, digitos=true, upper_case=true, lower_case=true) add parameters configuration
 
 # Faker v0.2.2
 
