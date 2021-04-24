@@ -8,15 +8,15 @@
 <a href="https://codecov.io/gh/neomatrixcode/Faker.jl">
   <img src="https://codecov.io/gh/neomatrixcode/Faker.jl/branch/master/graph/badge.svg" />
 </a>
-<a href="https://neomatrixcode.github.io/Faker.jl/stable"><img src="https://img.shields.io/badge/docs-stable-blue.svg"></a>
-<a href="https://neomatrixcode.github.io/Faker.jl/dev"><img src="https://img.shields.io/badge/docs-dev-blue.svg"></a>
+<a href="https://neomatrixcode.gitbook.io/faker/"><img src="https://img.shields.io/badge/docs-stable-blue.svg"></a>
 <a href="https://www.repostatus.org/#active"><img src="https://www.repostatus.org/badges/latest/active.svg"></a>
 <a href="https://raw.githubusercontent.com/neomatrixcode/Faker.jl/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
 </p>
 
+
 ## Installing
 ```julia
-Pkg> add Faker
+$ (@v1.5) pkg> add Faker
 ```
 
 ## Example
@@ -26,12 +26,3 @@ Pkg> add Faker
   Faker.email() # => "kirsten.greenholt@corkeryfisher.info"
 ```
 
-Roadmap
------
-### All contributions and suggestions are welcome !!!!
-
-#### Version 0.2.3
-  + Unicode symbol generator
-
-#### Version 0.2.4
-  + Possibility of creating a generator
