@@ -118,3 +118,7 @@ data= Faker.null_boolean()
 @test typeof(  Faker.linux_platform_token() )                                  == String
 @test typeof(  Faker.mac_platform_token() )                                    == String
 @test typeof(  Faker.chrome() )                                                == String
+@test typeof(  Faker.internet_explorer() )                                     == String
+@test typeof(  Faker.safari() )                                                == String
+@test typeof(  Faker.firefox() )                                               == String
+@test typeof(  Faker.opera() )                                                 == String
