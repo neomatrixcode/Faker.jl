@@ -1,6 +1,6 @@
     const language_codes = ("cn", "de", "el", "en", "es", "fr", "it", "pt", "ru")
 
-    boolean(chance_of_getting_true::Int=50)::Bool = rand(1:100) <= chance_of_getting_true
+    boolean(;chance_of_getting_true::Int=50)::Bool = rand(1:100) <= chance_of_getting_true
 
     null_boolean()::Union{Bool,String} = Dict{Int64,Any}( 0=> "none", 1=> true, -1=> false)[rand(-1:1)]
 

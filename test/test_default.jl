@@ -83,7 +83,7 @@ data= Faker.null_boolean()
 @test (typeof(data)              == Bool) || typeof(data) == String
 @test typeof(  Faker.country_code() )                                          == String
 @test typeof(  Faker.language_code() )                                         == String
-@test typeof(  Faker.boolean() )                                               == Bool
+@test typeof(  Faker.boolean(chance_of_getting_true=50) )                      == Bool
 @test typeof(  Faker.color_name() )                                            == String
 @test typeof(  Faker.safe_color_name() )                                       == String
 @test typeof(  Faker.hex_color() )                                             == String
