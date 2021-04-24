@@ -3,6 +3,7 @@ Faker.seed(85)
 @test typeof(  Faker.random_digit() )                                          == String
 @test typeof(  Faker.random_digit_not_null() )                                 == String
 @test typeof(  Faker.random_digit_or_empty() )                                 == String
+@test typeof(  Faker.random_digit_not_null_or_empty() )                        == String
 @test typeof(  Faker.random_number(digits= 1) )                                == String
 @test typeof(  Faker.random_int(min=0, max=9999) )                             == String
 @test typeof(  Faker.randomize_nb_elements(number=10, le=false, ge=false) )    == String
