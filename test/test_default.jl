@@ -128,3 +128,7 @@ data= Faker.null_boolean()
 @test typeof(  Faker.random_uppercase_letter() )                               == String
 @test typeof(  Faker.random_special_caracteres() )                             == String
 @test typeof(  Faker.unicode() )                                               == String
+@test typeof(  Faker.unicode() )                                               == String
+@test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.stringWithComa))              == String
+@test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.stringWithSpaces))            == String
+@test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.string))                      == String

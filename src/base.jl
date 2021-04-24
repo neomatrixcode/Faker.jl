@@ -39,3 +39,9 @@ lexify( text::String="????")::String = map( x -> x=='?' ? rand(letters) : x  , t
 bothify( text::String="## ??")::String = lexify(numerify(text))
 unicode()::String = string(Char(rand(0x2200:0x22FF)))
 
+generator(;items::Tuple=(user_name(),first_name(),city(),postcode(), user_name(),"@",domain_name()), separator=stringWithComa) = reduce(separator, items )
+
+
+
+
+
