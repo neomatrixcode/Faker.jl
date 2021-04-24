@@ -9,7 +9,7 @@ data["faker"]=Dict()
 stringWithSpaces(a::String,b::String)::String = string(a," ",b)
 stringWithComa(a::String,b::String)::String = string(a,", ",b)
 
-function language(file::String="es-MX") #"es-MX"
+function language(file::String="en-US") #"es-MX"
 	original= pwd()
 	cd(abspath(joinpath(dirname(Base.find_package("Faker")), "../src/locales")))
 	newdata = YAML.load_file("$(file).yml")[file]["faker"]
