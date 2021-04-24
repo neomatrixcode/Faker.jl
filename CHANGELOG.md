@@ -7,6 +7,7 @@
 - random_special_caracteres()
 - Faker.user_profile(Faker.user_name(),Faker.first_name(),rand(["M","F"]),Faker.address(),Faker.free_email(),Faker.date(),Faker.job(),Faker.company(),Faker.address(),string(Faker.latitude(), Faker.longitude()),string(rand(["A", "B", "AB", "O"]),rand(["+", "-"])),Faker.url())
 - blood_type()
+- unicode()
 
 ## Updates features
 - Update testing to Julia version 1.5

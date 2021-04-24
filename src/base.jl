@@ -37,3 +37,5 @@ end
 numerify( text::String = "####")::String = map( x -> x=='#' ? rand('0':'9') : x  , text )
 lexify( text::String="????")::String = map( x -> x=='?' ? rand(letters) : x  , text )
 bothify( text::String="## ??")::String = lexify(numerify(text))
+unicode()::String = string(Char(rand(0x2200:0x22FF)))
+

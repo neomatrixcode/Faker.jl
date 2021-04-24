@@ -127,3 +127,4 @@ data= Faker.null_boolean()
 @test typeof(  Faker.random_lowercase_letter() )                               == String
 @test typeof(  Faker.random_uppercase_letter() )                               == String
 @test typeof(  Faker.random_special_caracteres() )                             == String
+@test typeof(  Faker.unicode() )                                               == String
