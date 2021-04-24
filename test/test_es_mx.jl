@@ -107,6 +107,8 @@ data= Faker.null_boolean()
 @test typeof(  Faker.prefixe() )                                               == String
 @test typeof(  Faker.simple_profile() )                                        == Dict{String,String}
 @test typeof(  Faker.job() )                                                   == String
+@test typeof(  Faker.blood_type() )                                            == String
+@test typeof(  Faker.user_profile((Faker.user_name(),Faker.first_name(),rand(["M","F"]),Faker.address(),Faker.free_email(),Faker.date(),Faker.job(),Faker.company(),Faker.address(),string(Faker.latitude(), Faker.longitude()),Faker.blood_type(),Faker.url())) )                                               == String
 @test typeof(  Faker.profile() )                                               == Dict{String,Any}
 @test typeof(  Faker.profile("username") )                                     == Dict{Any,Any}
 @test typeof(  Faker.profile("username","blood_group") )                       == Dict{Any,Any}
@@ -123,3 +125,6 @@ data= Faker.null_boolean()
 @test typeof(  Faker.safari() )                                                == String
 @test typeof(  Faker.firefox() )                                               == String
 @test typeof(  Faker.opera() )                                                 == String
+@test typeof(  Faker.random_lowercase_letter() )                               == String
+@test typeof(  Faker.random_uppercase_letter() )                               == String
+@test typeof(  Faker.random_special_caracteres() )                             == String

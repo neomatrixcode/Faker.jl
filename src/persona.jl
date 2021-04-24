@@ -1,12 +1,13 @@
 
-male_first_name() = executor(data["faker"]["name"]["male_first_name"])
-female_first_name() = executor(data["faker"]["name"]["female_first_name"])
-first_name() = executor(data["faker"]["name"]["first_name"])
-last_name() = executor(data["faker"]["name"]["last_name"])
-prefixe() = executor(data["faker"]["name"]["prefix"])
-job() = executor(data["faker"]["name"]["title"]["job"])
+male_first_name()::String = executor(data["faker"]["name"]["male_first_name"])
+female_first_name()::String = executor(data["faker"]["name"]["female_first_name"])
+first_name()::String = executor(data["faker"]["name"]["first_name"])
+last_name()::String = executor(data["faker"]["name"]["last_name"])
+prefixe()::String = executor(data["faker"]["name"]["prefix"])
+job()::String = executor(data["faker"]["name"]["title"]["job"])
+blood_type()::String= string(rand(["A", "B", "AB", "O"]),rand(["+", "-"]))
 
-function seleccion_field(data::Dict, fields::Tuple)
+function seleccion_field(data::Dict, fields::Tuple)::Dict
 	e = Dict()
 	for (k, v) in data
 		if (k in fields)
@@ -47,7 +48,7 @@ function profile( fields...="None")
 		"company"=> company(),
 		"residence"=> address(),
 		"current_location"=> (latitude(), longitude()),
-		"blood_group"=> rand(["A", "B", "AB", "O"])*rand(["+", "-"]),
+		"blood_group"=> blood_type(),
 		"website"=> url()
 		);
 	if length(fields) > 0
@@ -56,4 +57,7 @@ function profile( fields...="None")
 		return d
 	end
 end
+#stringWithSpaces
+#
 
+user_profile(items::Tuple=(user_name(),first_name(),rand(["M","F"]),address(),free_email(),date(),job(),company(),address(),string(latitude(), longitude()),blood_type(),url()))::String = reduce(stringWithComa, items )

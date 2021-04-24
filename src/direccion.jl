@@ -13,7 +13,7 @@ street_address()::String = executor(data["faker"]["address"]["street_address"])
 postcode()::String = bothify(executor(data["faker"]["address"]["postcode"]))
 building_number()::String = bothify(executor(data["faker"]["address"]["building_number"]))
 city()::String = executor(data["faker"]["address"]["city"])
-address(items::Tuple=(street_address(),city(),state_abbr(),postcode()))::String = reduce(tostring, items )
+address(items::Tuple=(street_address(),city(),state_abbr(),postcode()))::String = reduce(stringWithSpaces, items )
 
 function geo_coordinate(;center::Int=0, radius::Float64=0.001)::Float16
 

@@ -7,7 +7,8 @@ import YAML
 data=Dict()
 data["faker"]=Dict()
 
-tostring(a::String,b::String)::String = string(a," ",b)
+stringWithSpaces(a::String,b::String)::String = string(a," ",b)
+stringWithComa(a::String,b::String)::String = string(a,", ",b)
 
 function language(file::String="es-MX") #"es-MX"
 	original= pwd()
