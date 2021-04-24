@@ -1,7 +1,6 @@
 module Faker
 using Dates
 using Random
-
 import YAML
 
 data=Dict()

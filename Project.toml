@@ -2,7 +2,7 @@ name = "Faker"
 uuid = "0efc519c-db33-5916-ab87-703215c3906f"
 authors = ["Josue Acevedo Maldonado <josuecevedo@gmail.com>"]
 repo = "https://github.com/neomatrixcode/Faker.jl.git"
-version = "0.2.2"
+version = "0.2.3"
 
 [deps]
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
