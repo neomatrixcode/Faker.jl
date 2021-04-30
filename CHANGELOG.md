@@ -1,5 +1,5 @@
 
-# Faker v0.2.3
+# Faker v0.3
 
 ## New features
 - random_lowercase_letter()
