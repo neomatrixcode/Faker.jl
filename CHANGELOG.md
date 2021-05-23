@@ -1,4 +1,9 @@
 
+# Faker v0.3.1
+
+## Bug fixes
+- Fix calls to cd
+
 # Faker v0.3
 
 ## New features
