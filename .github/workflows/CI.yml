@@ -25,7 +25,7 @@ jobs:
         include:
           - version: '1'
             os: ubuntu-latest
-            arch: x86
+            arch: x64
           - version: '1'
             os: windows-latest
             arch: x64
