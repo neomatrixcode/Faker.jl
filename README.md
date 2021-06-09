@@ -4,7 +4,7 @@
 <p align="center">
 <strong>Generator of fake data for julia.</strong>
 <br><br>
-<a href="https://travis-ci.org/neomatrixcode/Faker.jl"><img src="https://travis-ci.org/neomatrixcode/Faker.jl.svg?branch=master"></a>
+<a href="https://github.com/neomatrixcode/Faker.jl/actions/workflows/CI.yml?query=branch%3Amaster"><img src="https://github.com/neomatrixcode/Faker.jl/actions/workflows/CI.yml/badge.svg"></a>
 <a href="https://codecov.io/gh/neomatrixcode/Faker.jl">
   <img src="https://codecov.io/gh/neomatrixcode/Faker.jl/branch/master/graph/badge.svg" />
 </a>
