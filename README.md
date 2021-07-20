@@ -13,6 +13,7 @@
 <a href="https://juliahub.com/ui/Packages/Faker/wbANP"><img src="https://juliahub.com/docs/Faker/version.svg"></a>
 <a href="https://juliahub.com/ui/Packages/Faker/wbANP"><img src="https://juliahub.com/docs/Faker/pkgeval.svg"></a>
 <a href="https://raw.githubusercontent.com/neomatrixcode/Faker.jl/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+<a href="https://zenodo.org/badge/latestdoi/39113690"><img src="https://zenodo.org/badge/39113690.svg" alt="DOI"></a>
 </p>
 
 
