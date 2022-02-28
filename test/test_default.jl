@@ -133,3 +133,26 @@ data= Faker.null_boolean()
 @test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.stringWithComa))              == String
 @test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.stringWithSpaces))            == String
 @test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.string))                      == String
+
+#@test typeof(Faker.ssn("XYZ")) == ""
+
+@test Faker.ssn()              == "687-99-5399"
+@test Faker.ssn("SSN")         == "540-85-9841"
+@test Faker.ssn("ITIN")        == "963-76-2411"
+@test Faker.ssn("EIN")         == "87-0209613"
+@test Faker.ssn("INVALID_SSN") == "101-03-0000"
+
+
+Faker.seed(85)
+@test Faker.ssn()              == "802-34-9662"
+@test Faker.ssn("SSN")         == "145-47-5466"
+@test Faker.ssn("ITIN")        == "947-98-6598"
+@test Faker.ssn("EIN")         == "65-3692350"
+@test Faker.ssn("INVALID_SSN") == "782-16-0000"
+
+Faker.seed(5)
+@test Faker.ssn()              == "879-92-108"
+@test Faker.ssn("SSN")         == "494-36-4114"
+@test Faker.ssn("ITIN")        == "980-79-4913"
+@test Faker.ssn("EIN")         ==  "90-7549686"
+@test Faker.ssn("INVALID_SSN") == "599-00-3417"
