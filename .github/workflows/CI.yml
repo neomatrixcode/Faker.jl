@@ -42,7 +42,7 @@ jobs:
       - uses: codecov/codecov-action@v1
         with:
           file: lcov.info
-
+  changelog:
     name: changelog
     runs-on: ubuntu-latest
     steps:
