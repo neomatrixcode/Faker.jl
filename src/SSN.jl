@@ -70,8 +70,7 @@
         Additionally, return an invalid SSN that is NOT a valid ITIN by excluding certain ITIN related "group" values
     """
     function invalid_ssn()::String
-
-        itin_group_numbers = (70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,90,91,92,94,95,96,97,98,99)
+        # itin_group_numbers::NTuple{28, Int64} = (70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,90,91,92,94,95,96,97,98,99)
         area::Int = intrandom_int(min=0, max=999)
         serial::Int = 0
         group::Int = 0
@@ -88,8 +87,8 @@
         elseif area ∈ [666, 0]
             group = intrandom_int(min=0, max=99)
             serial = random_int(min=0, max=9999)
-        else
-            group = random_element([x for x in 0:100 if x ∉ itin_group_numbers ])
+        else #   random_element([x for x in 0:100 if x ∉ itin_group_numbers ])
+            group = random_element((0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 89, 93, 100))
             serial = intrandom_int(min=0, max=9999)
         end
 
