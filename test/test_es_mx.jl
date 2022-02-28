@@ -139,3 +139,10 @@ data= Faker.null_boolean()
 @test typeof(  Faker.ssn("ITIN")        )== String
 @test typeof(  Faker.ssn("EIN")         )== String
 @test typeof(  Faker.ssn("INVALID_SSN") )== String
+
+@test typeof(  Faker.female_first_name())== String
+@test typeof(  Faker.male_first_name()  )== String
+
+@test typeof(  Faker.first_name()       )== String
+@test typeof(  Faker.first_name("M")    )== String
+@test typeof(  Faker.first_name("F")    )== String
