@@ -30,12 +30,6 @@ jobs:
           body: |
             @JuliaRegistrator register branch=master
 
-      - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-
       - name: Create Release
         uses: actions/create-release@v1
         with:
