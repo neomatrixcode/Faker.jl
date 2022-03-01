@@ -42,12 +42,3 @@ jobs:
       - uses: codecov/codecov-action@v1
         with:
           file: lcov.info
-  changelog:
-    name: changelog
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
