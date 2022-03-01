@@ -133,3 +133,16 @@ data= Faker.null_boolean()
 @test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.stringWithComa))              == String
 @test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.stringWithSpaces))            == String
 @test typeof( Faker.generator(items=(Faker.user_name(),Faker.first_name(),Faker.city(),Faker.postcode(), Faker.user_name(),"@",Faker.domain_name()), separator=Faker.string))                      == String
+
+@test typeof(  Faker.ssn()              )== String
+@test typeof(  Faker.ssn("SSN")         )== String
+@test typeof(  Faker.ssn("ITIN")        )== String
+@test typeof(  Faker.ssn("EIN")         )== String
+@test typeof(  Faker.ssn("INVALID_SSN") )== String
+
+@test typeof(  Faker.female_first_name())== String
+@test typeof(  Faker.male_first_name()  )== String
+
+@test typeof(  Faker.first_name()       )== String
+@test typeof(  Faker.first_name("M")    )== String
+@test typeof(  Faker.first_name("F")    )== String

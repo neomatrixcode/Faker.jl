@@ -4,6 +4,7 @@ const letters = append!(collect('a':'z'),collect('A':'Z'))
 
 seed(seed::Int=83) = Random.seed!(seed)
 random_int(;min::Int=0, max::Int=9999)::String = string(rand(min : max))
+intrandom_int(;min::Int=0, max::Int=9999)::Int = rand(min : max)
 random_digit()::String = string(rand(0:9))
 random_digit_not_null()::String= string(rand(1:9))
 random_digit_or_empty()::String = string(rand(append!([' '],collect('0':'9'))))
