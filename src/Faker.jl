@@ -89,5 +89,6 @@ include("internet.jl")
 include("lorem.jl")
 include("direccion.jl")
 include("user_agent.jl")
+include("SSN.jl")
 
 end # module

@@ -1,11 +1,21 @@
 
 male_first_name()::String = executor(data["faker"]["name"]["male_first_name"])
 female_first_name()::String = executor(data["faker"]["name"]["female_first_name"])
-first_name()::String = executor(data["faker"]["name"]["first_name"])
 last_name()::String = executor(data["faker"]["name"]["last_name"])
 prefixe()::String = executor(data["faker"]["name"]["prefix"])
 job()::String = executor(data["faker"]["name"]["title"]["job"])
 blood_type()::String= string(rand(["A", "B", "AB", "O"]),rand(["+", "-"]))
+
+function first_name(genere::String="None")::String
+
+ if(cmp(genere, "M") == 0)
+ 	return male_first_name()
+ elseif(cmp(genere, "F") == 0)
+ 	return female_first_name()
+ end
+
+ return executor(data["faker"]["name"]["first_name"])
+end
 
 function seleccion_field(data::Dict, fields::Tuple)::Dict
 	e = Dict()
@@ -20,10 +30,11 @@ end
 
 function simple_profile(fields...="None")
 	fields[1] == "None" && (fields = []);
+	sex::String = rand(["M","F"])
 	data = Dict(
 		"username"=> user_name(),
-		"name"=> first_name(),
-		"sex"=> rand(["M","F"]),
+		"name"=> first_name(sex),
+		"sex"=> sex,
 		"address"=> address(),
 		"mail"=> free_email(),
 		"birthdate"=> date() )
@@ -37,10 +48,11 @@ end
 
 function profile( fields...="None")
 	fields[1] == "None" && (fields = []);
+	sex::String = rand(["M","F"])
 	d = Dict(
 		"username"=> user_name(),
-		"name"=> first_name(),
-		"sex"=> rand(["M","F"]),
+		"name"=> first_name(sex),
+		"sex"=> sex,
 		"address"=> address(),
 		"mail"=> free_email(),
 		"birthdate"=> date(),
