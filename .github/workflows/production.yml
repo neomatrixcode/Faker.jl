@@ -25,15 +25,11 @@ jobs:
       - name: List files in the repository
         run: |
           ls -a ${{ github.workspace }}
-      - name: List branches in the repository
-        run: |
-          git branch -a
 
       - name: Declare some variables
         id: vars
         shell: bash
         run: |
-          git checkout remotes/origin/master
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
           echo "::set-output name=sha::$(git rev-parse HEAD)"
 
