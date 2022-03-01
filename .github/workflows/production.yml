@@ -27,7 +27,7 @@ jobs:
           ls -a ${{ github.workspace }}
       - name: List branches in the repository
         run: |
-          git branch -a ${{ github.workspace }}
+          git branch -a
 
       - name: Declare some variables
         id: vars
