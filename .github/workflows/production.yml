@@ -10,6 +10,11 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
+      - name: Obtain Latest Git ONLY within container for checkout
+        run: |
+          apt-get update
+          apt-get install -y git
+
       - name: Declare some variables
         id: vars
         shell: bash
