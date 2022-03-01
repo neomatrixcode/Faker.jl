@@ -31,24 +31,24 @@ jobs:
           echo "Branch: ${{ steps.vars.outputs.branch }}"
           echo "Sha: ${{ steps.vars.outputs.sha }}"
 
-      - name: Build Changelog
-        id: github_release
-        uses: mikepenz/release-changelog-builder-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+      # - name: Build Changelog
+      #   id: github_release
+      #   uses: mikepenz/release-changelog-builder-action@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          body: ${{steps.github_release.outputs.changelog}}
-        env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+      # - name: Create Release
+      #   uses: actions/create-release@v1
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     release_name: ${{ github.ref }}
+      #     body: ${{steps.github_release.outputs.changelog}}
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
 
-      - name: Create commit comment
-        uses: peter-evans/commit-comment@v1
-        with:
-          sha: "${{ steps.vars.outputs.sha }}"
-          body: |
-            @JuliaRegistrator register branch=master
+      # - name: Create commit comment
+      #   uses: peter-evans/commit-comment@v1
+      #   with:
+      #     sha: "${{ steps.vars.outputs.sha }}"
+      #     body: |
+      #       @JuliaRegistrator register branch=master
